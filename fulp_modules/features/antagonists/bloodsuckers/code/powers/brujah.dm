@@ -17,17 +17,17 @@
 		owner.balloon_alert(owner, "already in a frenzy!")
 		return FALSE
 	var/mob/living/user = owner
-	user.apply_status_effect(STATUS_EFFECT_FRENZY)
-	. = ..()
+	user.apply_status_effect(/datum/status_effect/frenzy)
+	return ..()
 
 /datum/action/bloodsucker/brujah/DeactivatePower()
 	. = ..()
 	var/mob/living/user = owner
-	user.remove_status_effect(STATUS_EFFECT_FRENZY)
+	user.remove_status_effect(/datum/status_effect/frenzy)
 
 /datum/action/bloodsucker/brujah/CheckCanDeactivate()
 	var/mob/living/user = owner
 	if(user.blood_volume < FRENZY_THRESHOLD_EXIT)
 		owner.balloon_alert(owner, "not enough blood!")
 		return FALSE
-	. = ..()
+	return ..()
