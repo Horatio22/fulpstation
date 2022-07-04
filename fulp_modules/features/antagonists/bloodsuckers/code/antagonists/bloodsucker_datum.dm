@@ -9,6 +9,7 @@
 	can_coexist_with_others = FALSE
 	hijack_speed = 0.5
 	hud_icon = 'fulp_modules/features/antagonists/bloodsuckers/icons/bloodsucker_icons.dmi'
+	ui_name = "AntagInfoBloodsucker"
 	tips = BLOODSUCKER_TIPS
 	preview_outfit = /datum/outfit/bloodsucker_outfit
 
@@ -446,7 +447,7 @@
 	RemoveVampOrgans()
 	/// Eyes
 	var/mob/living/carbon/user = owner.current
-	var/obj/item/organ/eyes/user_eyes = user.getorganslot(ORGAN_SLOT_EYES)
+	var/obj/item/organ/internal/eyes/user_eyes = user.getorganslot(ORGAN_SLOT_EYES)
 	if(user_eyes)
 		user_eyes.flash_protect += 1
 		user_eyes.sight_flags = 0
