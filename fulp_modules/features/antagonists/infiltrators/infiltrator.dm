@@ -3,7 +3,8 @@
 	antagpanel_category = "Infiltrator"
 	job_rank = ROLE_INFILTRATOR
 	hijack_speed = 1
-	antag_hud_name = "traitor"
+	hud_icon = 'fulp_modules/features/antagonists/infiltrators/icons/infils.dmi'
+	antag_hud_name = "infil_hud"
 	show_name_in_check_antagonists = TRUE
 	show_to_ghosts = TRUE
 	preview_outfit = /datum/outfit/infiltrator
@@ -21,6 +22,8 @@
 			return infiltrator.equipOutfit(/datum/outfit/infiltrator/arc)
 		if(INFILTRATOR_FACTION_GORLEX_MARAUDERS)
 			return infiltrator.equipOutfit(/datum/outfit/infiltrator/gm)
+		if(INFILTRATOR_FACTION_SELF)
+			return infiltrator.equipOutfit(/datum/outfit/infiltrator/self)
 
 
 /datum/antagonist/traitor/infiltrator/on_gain()
@@ -29,17 +32,36 @@
 	owner.current.mind.special_role = ROLE_INFILTRATOR
 	uplink_handler.has_progression = FALSE
 	uplink_handler.has_objectives = FALSE
+	uplink_handler.maximum_potential_objectives = 0
+
+/datum/antagonist/traitor/infiltrator/admin_add(datum/mind/new_owner, mob/admin)
+	// Should probably be moved somewhere better to make full use of it
+	var/list/possible_employers = list(
+		INFILTRATOR_FACTION_CORPORATE_CLIMBER,
+		INFILTRATOR_FACTION_ANIMAL_RIGHTS_CONSORTIUM,
+		INFILTRATOR_FACTION_GORLEX_MARAUDERS,
+	)
+	var/choice = input("What affiliation would you like [new_owner] to have?", "Affiliation") in possible_employers
+	if(!choice)
+		return
+	employer = possible_employers[choice]
+	message_admins("[key_name_admin(usr)] made [key_name_admin(new_owner)] into \a [employer] [name]")
+	log_admin("[key_name_admin(usr)] made [key_name_admin(new_owner)] into \a [employer] [name]")
+	new_owner.add_antag_datum(src)
 
 /datum/antagonist/traitor/infiltrator/pick_employer(faction)
-	faction = prob(70) ? FACTION_SYNDICATE : FACTION_NANOTRASEN
+	faction = prob(75) ? FACTION_SYNDICATE : FACTION_NANOTRASEN
 	if(faction == FACTION_NANOTRASEN)
 		employer = INFILTRATOR_FACTION_CORPORATE_CLIMBER
 	else
-		employer = pick(INFILTRATOR_FACTION_ANIMAL_RIGHTS_CONSORTIUM , INFILTRATOR_FACTION_GORLEX_MARAUDERS)
+		employer = pick(INFILTRATOR_FACTION_ANIMAL_RIGHTS_CONSORTIUM , INFILTRATOR_FACTION_GORLEX_MARAUDERS, INFILTRATOR_FACTION_SELF)
 	if(give_equipment)
 		equip_infiltrator(owner.current)
 	forge_traitor_objectives()
-	traitor_flavor = strings(TRAITOR_FLAVOR_FILE, employer)
+	if(employer == INFILTRATOR_FACTION_SELF)
+		traitor_flavor = strings("infiltrator_self.json", "S.E.L.F", "fulp_modules/strings/infiltrator")
+	else
+		traitor_flavor = strings(TRAITOR_FLAVOR_FILE, employer)
 
 /datum/outfit/infiltrator
 	name = "Infiltrator"
@@ -49,10 +71,11 @@
 	mask = /obj/item/clothing/mask/gas/syndicate
 	head = /obj/item/clothing/head/helmet/space/syndicate
 	ears = /obj/item/radio/headset
-	back = /obj/item/storage/backpack/old
+	back = /obj/item/storage/backpack
 	backpack_contents = list(
 		/obj/item/storage/box/survival/syndie = 1,
 		/obj/item/knife/combat/survival = 1,
+		/obj/item/infiltrator_radio = 1,
 	)
 	id = /obj/item/card/id/advanced
 	id_trim = /datum/id_trim/chameleon/operative
@@ -72,12 +95,19 @@
 	name = "Animal Rights Consortium Infiltrator"
 	suit = /obj/item/clothing/suit/space/syndicate/green
 	head = /obj/item/clothing/head/helmet/space/syndicate/green
+	l_pocket = /obj/item/gorilla_serum
 
 /datum/outfit/infiltrator/gm
 	name = "Gorlex Marauders Infiltrator"
-	suit = /obj/item/clothing/suit/space/syndicate/orange
-	head = /obj/item/clothing/head/helmet/space/syndicate/orange
-	r_hand = /obj/item/card/emag
+	suit = /obj/item/clothing/suit/space/syndicate/black/red
+	head = /obj/item/clothing/head/helmet/space/syndicate/black/red
+
+
+/datum/outfit/infiltrator/self
+	name = "S.E.L.F Infiltrator"
+	suit = /obj/item/clothing/suit/space/syndicate/black/orange
+	head = /obj/item/clothing/head/helmet/space/syndicate/black/orange
+	r_hand = /obj/item/aicard
 
 
 

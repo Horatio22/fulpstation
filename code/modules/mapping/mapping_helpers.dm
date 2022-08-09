@@ -97,7 +97,6 @@
 	..()
 	return late ? INITIALIZE_HINT_LATELOAD : INITIALIZE_HINT_QDEL
 
-
 //airlock helpers
 /obj/effect/mapping_helpers/airlock
 	layer = DOOR_HELPER_LAYER
@@ -189,13 +188,13 @@
 	else
 		airlock.locked = TRUE
 
-
 /obj/effect/mapping_helpers/airlock/unres
 	name = "airlock unrestricted side helper"
 	icon_state = "airlock_unres_helper"
 
 /obj/effect/mapping_helpers/airlock/unres/payload(obj/machinery/door/airlock/airlock)
 	airlock.unres_sides ^= dir
+	airlock.unres_sensor = TRUE
 
 /obj/effect/mapping_helpers/airlock/abandoned
 	name = "airlock abandoned helper"
@@ -706,6 +705,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 	icon = 'icons/turf/damaged.dmi'
 	icon_state = "damaged1"
 	late = TRUE
+	layer = ABOVE_NORMAL_TURF_LAYER
 
 /obj/effect/mapping_helpers/broken_floor/Initialize(mapload)
 	.=..()
@@ -721,6 +721,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 	icon = 'icons/turf/damaged.dmi'
 	icon_state = "floorscorched1"
 	late = TRUE
+	layer = ABOVE_NORMAL_TURF_LAYER
 
 /obj/effect/mapping_helpers/burnt_floor/Initialize(mapload)
 	.=..()

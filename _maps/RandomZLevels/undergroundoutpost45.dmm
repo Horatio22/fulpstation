@@ -397,17 +397,13 @@
 	},
 /area/awaymission/undergroundoutpost45/central)
 "bi" = (
-/obj/structure/sink{
-	pixel_y = 25
-	},
+/obj/structure/sink/directional/south,
 /turf/open/floor/iron/freezer{
 	heat_capacity = 1e+006
 	},
 /area/awaymission/undergroundoutpost45/central)
 "bj" = (
-/obj/structure/sink{
-	pixel_y = 25
-	},
+/obj/structure/sink/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/freezer{
 	heat_capacity = 1e+006
@@ -1375,9 +1371,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/structure/sink{
-	pixel_y = 25
-	},
+/obj/structure/sink/directional/south,
 /obj/effect/turf_decal/tile/green{
 	dir = 1
 	},
@@ -1487,9 +1481,7 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
-/obj/structure/sink{
-	pixel_y = 25
-	},
+/obj/structure/sink/directional/south,
 /obj/effect/turf_decal/tile/green{
 	dir = 1
 	},
@@ -2013,9 +2005,7 @@
 "eV" = (
 /obj/structure/closet/emcloset,
 /obj/item/clothing/mask/breath,
-/obj/structure/sign/warning/vacuum/external{
-	pixel_y = -32
-	},
+/obj/structure/sign/warning/vacuum/external/directional/south,
 /turf/open/floor/plating{
 	heat_capacity = 1e+006
 	},
@@ -2485,10 +2475,9 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
-/obj/structure/sign/warning/deathsposal{
+/obj/structure/sign/warning/deathsposal/directional/south{
 	desc = "A warning sign which reads 'DISPOSAL: LEADS TO EXTERIOR'";
-	name = "\improper DISPOSAL: LEADS TO EXTERIOR";
-	pixel_y = -32
+	name = "\improper DISPOSAL: LEADS TO EXTERIOR"
 	},
 /turf/open/floor/iron/dark{
 	heat_capacity = 1e+006
@@ -2500,9 +2489,7 @@
 	},
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "ga" = (
-/obj/structure/sink/kitchen{
-	pixel_y = 28
-	},
+/obj/structure/sink/kitchen/directional/south,
 /turf/open/floor/iron/showroomfloor{
 	heat_capacity = 1e+006
 	},
@@ -2683,9 +2670,7 @@
 	},
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "gE" = (
-/obj/structure/sink/kitchen{
-	pixel_y = 28
-	},
+/obj/structure/sink/kitchen/directional/south,
 /turf/open/floor/iron/cafeteria{
 	dir = 5;
 	heat_capacity = 1e+006
@@ -3774,10 +3759,9 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/obj/structure/sign/warning/deathsposal{
+/obj/structure/sign/warning/deathsposal/directional/south{
 	desc = "A warning sign which reads 'DISPOSAL: LEADS TO EXTERIOR'";
-	name = "\improper DISPOSAL: LEADS TO EXTERIOR";
-	pixel_y = -32
+	name = "\improper DISPOSAL: LEADS TO EXTERIOR"
 	},
 /turf/open/floor/iron/cafeteria{
 	dir = 5;
@@ -4477,9 +4461,7 @@
 /obj/structure/table,
 /obj/item/storage/belt/utility,
 /obj/item/clothing/head/welding,
-/obj/structure/sign/warning/biohazard{
-	pixel_y = 32
-	},
+/obj/structure/sign/warning/biohazard/directional/north,
 /obj/item/assembly/prox_sensor,
 /obj/item/assembly/prox_sensor,
 /obj/effect/turf_decal/stripes/line{
@@ -4752,9 +4734,7 @@
 	},
 /area/awaymission/undergroundoutpost45/research)
 "la" = (
-/obj/machinery/shower{
-	pixel_y = 15
-	},
+/obj/machinery/shower/directional/south,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -4763,9 +4743,7 @@
 	},
 /area/awaymission/undergroundoutpost45/research)
 "lb" = (
-/obj/structure/sink{
-	pixel_y = 25
-	},
+/obj/structure/sink/directional/south,
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
@@ -4777,9 +4755,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
 	dir = 8
 	},
-/obj/structure/sign/departments/science{
-	pixel_x = -32
-	},
+/obj/structure/sign/departments/science/directional/west,
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
@@ -5250,10 +5226,9 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
-/obj/structure/sign/warning/deathsposal{
+/obj/structure/sign/warning/deathsposal/directional/south{
 	desc = "A warning sign which reads 'DISPOSAL: LEADS TO EXTERIOR'";
-	name = "\improper DISPOSAL: LEADS TO EXTERIOR";
-	pixel_y = -32
+	name = "\improper DISPOSAL: LEADS TO EXTERIOR"
 	},
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
@@ -6266,7 +6241,7 @@
 /obj/item/taperecorder{
 	pixel_x = -3
 	},
-/obj/item/paicard{
+/obj/item/pai_card{
 	pixel_x = 4
 	},
 /turf/open/floor/iron/cafeteria{
@@ -7021,10 +6996,9 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/obj/structure/sign/warning/deathsposal{
+/obj/structure/sign/warning/deathsposal/directional/south{
 	desc = "A warning sign which reads 'DISPOSAL: LEADS TO EXTERIOR'";
-	name = "\improper DISPOSAL: LEADS TO EXTERIOR";
-	pixel_y = -32
+	name = "\improper DISPOSAL: LEADS TO EXTERIOR"
 	},
 /turf/open/floor/iron/cafeteria{
 	dir = 5;
@@ -7409,10 +7383,7 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "pY" = (
 /obj/structure/mirror/directional/east,
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = 11
-	},
+/obj/structure/sink/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/freezer{
 	heat_capacity = 1e+006
@@ -7506,10 +7477,7 @@
 /area/awaymission/undergroundoutpost45/research)
 "qm" = (
 /obj/machinery/light/small/directional/south,
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = -11
-	},
+/obj/structure/sink/directional/east,
 /obj/structure/mirror/directional/west,
 /turf/open/floor/iron/freezer{
 	heat_capacity = 1e+006
@@ -7606,10 +7574,7 @@
 	},
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "qx" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = 11
-	},
+/obj/structure/sink/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/freezer{
 	heat_capacity = 1e+006
@@ -7884,10 +7849,7 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "rc" = (
 /obj/structure/mirror/directional/east,
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = 11
-	},
+/obj/structure/sink/directional/west,
 /turf/open/floor/iron/freezer{
 	heat_capacity = 1e+006
 	},
@@ -8686,10 +8648,9 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
-/obj/structure/sign/warning/deathsposal{
+/obj/structure/sign/warning/deathsposal/directional/south{
 	desc = "A warning sign which reads 'DISPOSAL: LEADS TO EXTERIOR'";
-	name = "\improper DISPOSAL: LEADS TO EXTERIOR";
-	pixel_y = -32
+	name = "\improper DISPOSAL: LEADS TO EXTERIOR"
 	},
 /turf/open/floor/iron/white/corner{
 	dir = 4;
@@ -8713,9 +8674,7 @@
 	},
 /area/awaymission/undergroundoutpost45/research)
 "sA" = (
-/obj/machinery/shower{
-	dir = 4
-	},
+/obj/machinery/shower/directional/east,
 /obj/item/soap/nanotrasen,
 /turf/open/floor/iron/freezer{
 	heat_capacity = 1e+006
@@ -8729,9 +8688,7 @@
 	},
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "sC" = (
-/obj/machinery/shower{
-	dir = 8
-	},
+/obj/machinery/shower/directional/west,
 /turf/open/floor/iron/freezer{
 	heat_capacity = 1e+006
 	},
@@ -9144,9 +9101,7 @@
 	},
 /area/awaymission/undergroundoutpost45/research)
 "ts" = (
-/obj/machinery/shower{
-	dir = 4
-	},
+/obj/machinery/shower/directional/east,
 /turf/open/floor/iron/freezer{
 	heat_capacity = 1e+006
 	},
@@ -9458,17 +9413,13 @@
 /turf/closed/wall/r_wall,
 /area/awaymission/undergroundoutpost45/research)
 "tX" = (
-/obj/machinery/shower{
-	dir = 1
-	},
+/obj/machinery/shower/directional/north,
 /turf/open/floor/iron/freezer{
 	heat_capacity = 1e+006
 	},
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "tY" = (
-/obj/machinery/shower{
-	dir = 1
-	},
+/obj/machinery/shower/directional/north,
 /obj/item/bikehorn/rubberducky,
 /turf/open/floor/iron/freezer{
 	heat_capacity = 1e+006
@@ -9855,9 +9806,7 @@
 "uN" = (
 /obj/structure/closet/emcloset,
 /obj/item/clothing/mask/breath,
-/obj/structure/sign/warning/vacuum/external{
-	pixel_x = -32
-	},
+/obj/structure/sign/warning/vacuum/external/directional/west,
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/plating{
 	heat_capacity = 1e+006
@@ -10619,10 +10568,7 @@
 	},
 /area/awaymission/undergroundoutpost45/engineering)
 "wL" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = 11
-	},
+/obj/structure/sink/directional/west,
 /obj/machinery/light/small/directional/south,
 /obj/structure/mirror/directional/east,
 /turf/open/floor/iron/freezer{
@@ -11124,9 +11070,7 @@
 /area/awaymission/undergroundoutpost45/mining)
 "ye" = (
 /obj/machinery/light/small/directional/east,
-/obj/structure/sign/warning/vacuum/external{
-	pixel_x = 32
-	},
+/obj/structure/sign/warning/vacuum/external/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/iron{
@@ -11147,9 +11091,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/warning/no_smoking{
-	pixel_x = 32
-	},
+/obj/structure/sign/warning/no_smoking/directional/east,
 /turf/open/floor/iron/dark{
 	heat_capacity = 1e+006
 	},
@@ -11202,9 +11144,7 @@
 	pixel_y = 3
 	},
 /obj/item/stock_parts/scanning_module,
-/obj/structure/sign/warning/no_smoking{
-	pixel_x = -32
-	},
+/obj/structure/sign/warning/no_smoking/directional/west,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -11298,9 +11238,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
 	dir = 4
 	},
-/obj/structure/sign/warning/electric_shock{
-	pixel_y = -32
-	},
+/obj/structure/sign/warning/electric_shock/directional/south,
 /obj/machinery/vending/engivend,
 /obj/machinery/camera/directional/south{
 	c_tag = "Engineering Foyer";
@@ -11413,9 +11351,7 @@
 	},
 /area/awaymission/undergroundoutpost45/research)
 "Cy" = (
-/obj/structure/sign/warning/secure_area{
-	pixel_y = 32
-	},
+/obj/structure/sign/warning/secure_area/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron{
 	heat_capacity = 1e+006
@@ -11438,9 +11374,7 @@
 /obj/machinery/computer/monitor/secret{
 	name = "primary power monitoring console"
 	},
-/obj/structure/sign/warning/no_smoking{
-	pixel_x = -32
-	},
+/obj/structure/sign/warning/no_smoking/directional/west,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},
@@ -11491,9 +11425,7 @@
 	pixel_y = -1
 	},
 /obj/item/multitool,
-/obj/structure/sign/warning/no_smoking{
-	pixel_x = -32
-	},
+/obj/structure/sign/warning/no_smoking/directional/west,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
@@ -11527,10 +11459,9 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "Ea" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/sign/warning/secure_area{
+/obj/structure/sign/warning/secure_area/directional/south{
 	desc = "A warning sign which reads 'SERVER ROOM'.";
-	name = "SERVER ROOM";
-	pixel_y = -32
+	name = "SERVER ROOM"
 	},
 /turf/open/floor/plating{
 	heat_capacity = 1e+006
@@ -11636,10 +11567,9 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "Gq" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/sign/warning/secure_area{
+/obj/structure/sign/warning/secure_area/directional/north{
 	desc = "A warning sign which reads 'SERVER ROOM'.";
-	name = "SERVER ROOM";
-	pixel_y = 32
+	name = "SERVER ROOM"
 	},
 /turf/open/floor/plating{
 	heat_capacity = 1e+006
@@ -11684,10 +11614,9 @@
 "IK" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk,
-/obj/structure/sign/warning/deathsposal{
+/obj/structure/sign/warning/deathsposal/directional/north{
 	desc = "A warning sign which reads 'DISPOSAL: LEADS TO EXTERIOR'";
-	name = "\improper DISPOSAL: LEADS TO EXTERIOR";
-	pixel_y = 32
+	name = "\improper DISPOSAL: LEADS TO EXTERIOR"
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron/dark{
@@ -11855,9 +11784,7 @@
 /area/awaymission/undergroundoutpost45/central)
 "No" = (
 /obj/machinery/door/firedoor,
-/obj/structure/sign/warning/secure_area{
-	pixel_y = 32
-	},
+/obj/structure/sign/warning/secure_area/directional/north,
 /obj/machinery/door/poddoor/preopen{
 	id = "UO45_Engineering";
 	name = "Engineering Security Door"
@@ -11905,13 +11832,9 @@
 	},
 /area/awaymission/undergroundoutpost45/central)
 "NR" = (
-/obj/structure/sink{
-	pixel_y = 25
-	},
+/obj/structure/sink/directional/south,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/warning/no_smoking{
-	pixel_x = -32
-	},
+/obj/structure/sign/warning/no_smoking/directional/west,
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
@@ -11973,10 +11896,9 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/obj/structure/sign/warning/deathsposal{
+/obj/structure/sign/warning/deathsposal/directional/west{
 	desc = "A warning sign which reads 'DISPOSAL: LEADS TO EXTERIOR'";
-	name = "\improper DISPOSAL: LEADS TO EXTERIOR";
-	pixel_x = -32
+	name = "\improper DISPOSAL: LEADS TO EXTERIOR"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
@@ -12035,9 +11957,7 @@
 /area/awaymission/undergroundoutpost45/caves)
 "QG" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/structure/sign/warning/secure_area{
-	pixel_x = -32
-	},
+/obj/structure/sign/warning/secure_area/directional/west,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -12048,9 +11968,7 @@
 "QX" = (
 /obj/structure/table,
 /obj/item/storage/medkit/regular,
-/obj/structure/sign/warning/biohazard{
-	pixel_x = -32
-	},
+/obj/structure/sign/warning/biohazard/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron{
 	heat_capacity = 1e+006
@@ -12084,9 +12002,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
 	dir = 4
 	},
-/obj/structure/sign/warning/secure_area{
-	pixel_x = 32
-	},
+/obj/structure/sign/warning/secure_area/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
@@ -12154,9 +12070,7 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/west,
-/obj/structure/sign/warning/secure_area{
-	pixel_x = -32
-	},
+/obj/structure/sign/warning/secure_area/directional/west,
 /turf/open/floor/iron/white{
 	heat_capacity = 1e+006
 	},
@@ -12174,9 +12088,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/structure/sign/warning/secure_area{
-	pixel_y = -32
-	},
+/obj/structure/sign/warning/secure_area/directional/south,
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
@@ -12231,9 +12143,7 @@
 	dir = 1;
 	name = "Unfiltered to Mix"
 	},
-/obj/structure/sign/warning/no_smoking{
-	pixel_x = 32
-	},
+/obj/structure/sign/warning/no_smoking/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron{
 	heat_capacity = 1e+006
@@ -12287,9 +12197,7 @@
 "Xq" = (
 /obj/structure/closet/firecloset,
 /obj/machinery/light/small/directional/south,
-/obj/structure/sign/warning/secure_area{
-	pixel_y = -32
-	},
+/obj/structure/sign/warning/secure_area/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/iron/white{
@@ -12380,9 +12288,7 @@
 /obj/machinery/conveyor{
 	id = "UO45_mining"
 	},
-/obj/structure/sign/warning/no_smoking{
-	pixel_x = -32
-	},
+/obj/structure/sign/warning/no_smoking/directional/west,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},

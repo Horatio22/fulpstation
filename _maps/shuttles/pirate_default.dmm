@@ -356,9 +356,7 @@
 /area/shuttle/pirate)
 "aI" = (
 /obj/machinery/light/small/directional/west,
-/obj/structure/sign/warning/vacuum/external{
-	pixel_x = -32
-	},
+/obj/structure/sign/warning/vacuum/external/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/shuttle/pirate)
@@ -540,9 +538,7 @@
 /area/shuttle/pirate)
 "bo" = (
 /obj/machinery/light/small/directional/east,
-/obj/structure/sign/warning/vacuum/external{
-	pixel_x = 32
-	},
+/obj/structure/sign/warning/vacuum/external/directional/east,
 /turf/open/floor/plating,
 /area/shuttle/pirate)
 "br" = (
@@ -689,9 +685,7 @@
 /area/shuttle/pirate)
 "bK" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sink{
-	pixel_y = 24
-	},
+/obj/structure/sink/directional/south,
 /obj/structure/toilet{
 	dir = 8
 	},
@@ -1016,9 +1010,8 @@
 /area/shuttle/pirate)
 "Gk" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/shower{
-	name = "decontamination shower";
-	pixel_y = 12
+/obj/machinery/shower/directional/south{
+	name = "decontamination shower"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/structure/window{

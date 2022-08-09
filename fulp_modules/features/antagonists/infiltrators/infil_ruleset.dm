@@ -15,7 +15,6 @@
 	weight = 7
 	cost = 5
 	requirements = list(101,101,101,80,60,50,30,20,10,10)
-	repeatable = TRUE
 	var/list/spawn_locs = list()
 
 /datum/dynamic_ruleset/midround/from_ghosts/infiltrator/execute()
@@ -30,17 +29,14 @@
 	return ..()
 
 /datum/dynamic_ruleset/midround/from_ghosts/infiltrator/generate_ruleset_body(mob/applicant)
-	var/mob/living/carbon/human/infiltrator = create_infiltrator(pick(spawn_locs))
-	infiltrator.key = applicant.key
-	infiltrator.mind.add_antag_datum(/datum/antagonist/traitor/infiltrator)
+	var/datum/mind/player_mind = new /datum/mind(applicant.key)
+	player_mind.active = TRUE
+
+	var/mob/living/carbon/human/infiltrator = new (pick(spawn_locs))
+	player_mind.transfer_to(infiltrator)
+	player_mind.add_antag_datum(/datum/antagonist/traitor/infiltrator)
 
 	message_admins("[ADMIN_LOOKUPFLW(infiltrator)] has been made into an infiltrator by the midround ruleset.")
 	log_game("DYNAMIC: [key_name(infiltrator)] was spawned as an infiltrator by the midround ruleset.")
-	return infiltrator
-
-/proc/create_infiltrator(spawn_loc)
-	var/mob/living/carbon/human/infiltrator = new(spawn_loc)
-	infiltrator.randomize_human_appearance(~RANDOMIZE_SPECIES)
-	infiltrator.dna.update_dna_identity()
 	return infiltrator
 

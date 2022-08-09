@@ -133,7 +133,7 @@
  * Spawns the first half anomalies instantly and calls the second half
  */
 /datum/supermatter_delamination/proc/spawn_anomalies()
-	var/list/anomaly_types = list(GRAVITATIONAL_ANOMALY = 55, HALLUCINATION_ANOMALY = 45, DELIMBER_ANOMALY = 35, FLUX_ANOMALY = 25, PYRO_ANOMALY = 5, VORTEX_ANOMALY = 1)
+	var/list/anomaly_types = list(GRAVITATIONAL_ANOMALY = 55, HALLUCINATION_ANOMALY = 45, BIOSCRAMBLER_ANOMALY = 35, FLUX_ANOMALY = 25, PYRO_ANOMALY = 5, VORTEX_ANOMALY = 1)
 	var/list/anomaly_places = GLOB.generic_event_spawns
 	var/currently_spawning_anomalies = round(anomalies_to_spawn * 0.5, 1)
 	anomalies_to_spawn -= currently_spawning_anomalies
@@ -149,7 +149,7 @@
  */
 /datum/supermatter_delamination/proc/spawn_overtime()
 
-	var/list/anomaly_types = list(GRAVITATIONAL_ANOMALY = 55, HALLUCINATION_ANOMALY = 45, DELIMBER_ANOMALY = 35, FLUX_ANOMALY = 25, PYRO_ANOMALY = 5, VORTEX_ANOMALY = 1)
+	var/list/anomaly_types = list(GRAVITATIONAL_ANOMALY = 55, HALLUCINATION_ANOMALY = 45, BIOSCRAMBLER_ANOMALY = 35, FLUX_ANOMALY = 25, PYRO_ANOMALY = 5, VORTEX_ANOMALY = 1)
 	var/list/anomaly_places = GLOB.generic_event_spawns
 
 	var/current_spawn = rand(5 SECONDS, 10 SECONDS)
@@ -223,7 +223,7 @@
  * Adds a bit of spiciness to the cascade by breaking lights and turning emergency maint access on
  */
 /datum/supermatter_delamination/proc/create_cascade_ambience()
-	if(SSsecurity_level.current_level != SEC_LEVEL_DELTA)
+	if(SSsecurity_level.get_current_level_as_number() != SEC_LEVEL_DELTA)
 		SSsecurity_level.set_level(SEC_LEVEL_DELTA) // skip the announcement and shuttle timer adjustment in set_security_level()
 	make_maint_all_access()
 	break_lights_on_station()
