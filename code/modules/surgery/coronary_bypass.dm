@@ -21,7 +21,7 @@
 
 //an incision but with greater bleed, and a 90% base success chance
 /datum/surgery_step/incise_heart
-	name = "incise heart"
+	name = "incise heart (scalpel)"
 	implements = list(
 		TOOL_SCALPEL = 90,
 		/obj/item/melee/energy/sword = 45,
@@ -44,7 +44,7 @@
 		if (!(NOBLOOD in target_human.dna.species.species_traits))
 			display_results(user, target, span_notice("Blood pools around the incision in [target_human]'s heart."),
 				span_notice("Blood pools around the incision in [target_human]'s heart."),
-				"")
+				span_notice("Blood pools around the incision in [target_human]'s heart."))
 			var/obj/item/bodypart/target_bodypart = target_human.get_bodypart(target_zone)
 			target_bodypart.adjustBleedStacks(10)
 			target_human.adjustBruteLoss(10)
@@ -63,7 +63,7 @@
 
 //grafts a coronary bypass onto the individual's heart, success chance is 90% base again
 /datum/surgery_step/coronary_bypass
-	name = "graft coronary bypass"
+	name = "graft coronary bypass (hemostat)"
 	implements = list(
 		TOOL_HEMOSTAT = 90,
 		TOOL_WIRECUTTER = 35,

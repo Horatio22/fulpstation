@@ -43,9 +43,9 @@
 		OFFSET_NECK = list(0,3),
 	)
 
-	bruising_desc = "tenderizing"
-	burns_desc = "searing"
-	cellulardamage_desc = "meat degradation"
+	brute_damage_desc = "tenderizing"
+	burn_damage_desc = "searing"
+	cellular_damage_desc = "meat degradation"
 
 	species_language_holder = /datum/language_holder/russian
 	mutanttongue = /obj/item/organ/internal/tongue/beefman
@@ -55,25 +55,21 @@
 	disliked_food = VEGETABLES | FRUIT | CLOTH
 	liked_food = RAW | MEAT | FRIED
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	attack_verb = "meat"
 	payday_modifier = 0.75
 	speedmod = -0.2
 	armor = -20
-	punchdamagelow = 1
-	punchdamagehigh = 5
 	siemens_coeff = 0.7 // base electrocution coefficient
 	bodytemp_normal = T20C
 
 	bodypart_overrides = list(
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/beef,\
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/beef,\
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/beef,\
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/beef,\
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/beef,\
-		BODY_ZONE_L_LEG = /obj/item/bodypart/l_leg/beef,\
-		BODY_ZONE_R_LEG = /obj/item/bodypart/r_leg/beef,\
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/beef,\
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/beef,\
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/beef,\
 	)
-	deathsound = 'fulp_modules/features/species/sounds/beef_die.ogg'
-	attack_sound = 'fulp_modules/features/species/sounds/beef_hit.ogg'
+	death_sound = 'fulp_modules/features/species/sounds/beef_die.ogg'
 	grab_sound = 'fulp_modules/features/species/sounds/beef_grab.ogg'
 	special_step_sounds = list(
 		'fulp_modules/features/species/sounds/footstep_splat1.ogg',
@@ -95,14 +91,13 @@
 
 // Taken from Ethereal
 /datum/species/beefman/on_species_gain(mob/living/carbon/human/user, datum/species/old_species, pref_load)
-	if(!user.dna.features["beef_color"]) // in case we're meant to be randomized.
-		randomize_beefman(user)
 	. = ..()
 	// Instantly set bodytemp to Beefmen levels to prevent bleeding out roundstart.
 	user.bodytemperature = bodytemp_normal
-
-	fixed_mut_color = user.dna.features["beef_color"]
 	var/obj/item/organ/internal/brain/has_brain = user.getorganslot(ORGAN_SLOT_BRAIN)
+	if(!user.dna.features["beef_color"])
+		randomize_features(user)
+	spec_updatehealth(user)
 	if(has_brain)
 		if(user.dna.features["beef_trauma"])
 			user.gain_trauma(user.dna.features["beef_trauma"], TRAUMA_RESILIENCE_ABSOLUTE)
@@ -113,10 +108,11 @@
 			continue
 		limb.update_limb(is_creating = TRUE)
 
-/proc/randomize_beefman(mob/living/carbon/human/human) // our version of randomize_human()
-	human.dna.features["beef_color"] = pick(GLOB.color_list_beefman[pick(GLOB.color_list_beefman)])
-	human.dna.features["beef_eyes"] = pick(GLOB.eyes_beefman)
-	human.dna.features["beef_mouth"] = pick(GLOB.mouths_beefman)
+/datum/species/beefman/randomize_features(mob/living/carbon/human/human_mob)
+	human_mob.dna.features["beef_color"] = pick(GLOB.color_list_beefman[pick(GLOB.color_list_beefman)])
+	human_mob.dna.species.fixed_mut_color = human_mob.dna.features["beef_color"]
+	human_mob.dna.features["beef_eyes"] = pick(GLOB.eyes_beefman)
+	human_mob.dna.features["beef_mouth"] = pick(GLOB.mouths_beefman)
 
 /datum/species/beefman/on_species_loss(mob/living/carbon/human/user, datum/species/new_species, pref_load)
 	user.cure_trauma_type(/datum/brain_trauma/special/bluespace_prophet/phobetor, TRAUMA_RESILIENCE_ABSOLUTE)
@@ -242,6 +238,11 @@
 	source.apply_overlay(BODY_BEHIND_LAYER)
 	source.apply_overlay(BODY_ADJ_LAYER)
 	source.apply_overlay(BODY_FRONT_LAYER)
+
+/datum/species/beefman/spec_updatehealth(mob/living/carbon/human/beefman)
+	..()
+	fixed_mut_color = beefman.dna.features["beef_color"]
+	beefman.update_body()
 
 /datum/species/beefman/get_features()
 	var/list/features = ..()
@@ -470,7 +471,7 @@
 	beefboy.visible_message(
 		span_notice("The meat sprouts digits and becomes [beefboy]'s new [new_bodypart.name]!"),
 		span_notice("The meat sprouts digits and becomes your new [new_bodypart.name]!"))
-	new_bodypart.attach_limb(beefboy)
+	new_bodypart.try_attach_limb(beefboy)
 	new_bodypart.update_limb(is_creating = TRUE)
 	beefboy.update_body_parts()
 	new_bodypart.give_meat(beefboy, meat)

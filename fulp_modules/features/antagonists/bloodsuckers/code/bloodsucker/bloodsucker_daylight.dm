@@ -12,7 +12,7 @@
 /// Over Time, tick down toward a "Solar Flare" of UV buffeting the station. This period is harmful to vamps.
 /obj/effect/sunlight
 	///If the Sun is currently out our not
-	var/amDay = FALSE
+	var/sunlight_active = FALSE
 	///The time between the next cycle
 	var/time_til_cycle = TIME_BLOODSUCKER_NIGHT
 	///If Bloodsuckers have been given their level yet
@@ -33,9 +33,9 @@
 			continue
 		var/datum/antagonist/bloodsucker/bloodsuckerdatum = bloodsucker_minds.has_antag_datum(/datum/antagonist/bloodsucker)
 		if(istype(bloodsuckerdatum))
-			bloodsuckerdatum.update_sunlight(max(0, time_til_cycle), amDay) // This pings all HUDs
+			bloodsuckerdatum.update_sunlight(max(0, time_til_cycle), sunlight_active) // This pings all HUDs
 	time_til_cycle--
-	if(amDay)
+	if(sunlight_active)
 		if(time_til_cycle > 0)
 			punish_vamps()
 			if(!issued_XP && time_til_cycle <= 15)
@@ -52,7 +52,7 @@
 			warn_daylight(5, span_announce("The solar flare has ended, and the daylight danger has passed... for now."), \
 				span_announce("The solar flare has ended, and the daylight danger has passed... for now."), \
 				"")
-			amDay = FALSE
+			sunlight_active = FALSE
 			issued_XP = FALSE
 			time_til_cycle = TIME_BLOODSUCKER_NIGHT
 			message_admins("BLOODSUCKER NOTICE: Daylight Ended. Resetting to Night (Lasts for [TIME_BLOODSUCKER_NIGHT / 60] minutes.")
@@ -80,7 +80,7 @@
 					"", \
 					"")
 			if(0)
-				amDay = TRUE
+				sunlight_active = TRUE
 				time_til_cycle = TIME_BLOODSUCKER_DAY
 				warn_daylight(4, span_userdanger("Solar flares bombard the station with deadly UV light!<br><span class = ''>Stay in cover for the next [TIME_BLOODSUCKER_DAY / 60] minutes or risk Final Death!"), \
 					span_userdanger("Solar flares bombard the station with UV light!"), \
@@ -127,14 +127,14 @@
 			continue
 		if(istype(bloodsucker_minds.current.loc, /obj/structure))
 			if(istype(bloodsucker_minds.current.loc, /obj/structure/closet/crate/coffin)) // Coffins offer the BEST protection
-				SEND_SIGNAL(bloodsucker_minds.current, COMSIG_ADD_MOOD_EVENT, "vampsleep", /datum/mood_event/coffinsleep)
+				bloodsucker_minds.current.add_mood_event("vampsleep", /datum/mood_event/coffinsleep)
 				continue
 			if(COOLDOWN_FINISHED(bloodsuckerdatum, bloodsucker_spam_sol_burn)) // Closets offer SOME protection
 				to_chat(bloodsucker_minds, span_warning("Your skin sizzles. [bloodsucker_minds.current.loc] doesn't protect well against UV bombardment."))
 				COOLDOWN_START(bloodsuckerdatum, bloodsucker_spam_sol_burn, BLOODSUCKER_SPAM_SOL) //This should happen twice per Sol
 			bloodsucker_minds.current.adjustFireLoss(0.5 + bloodsuckerdatum.bloodsucker_level / 2)
 			bloodsucker_minds.current.updatehealth()
-			SEND_SIGNAL(bloodsucker_minds.current, COMSIG_ADD_MOOD_EVENT, "vampsleep", /datum/mood_event/daylight_1)
+			bloodsucker_minds.current.add_mood_event("vampsleep", /datum/mood_event/daylight_1)
 		else // Out in the Open?
 			if(COOLDOWN_FINISHED(bloodsuckerdatum, bloodsucker_spam_sol_burn))
 				if(bloodsuckerdatum.bloodsucker_level > 0)
@@ -149,7 +149,7 @@
 				bloodsucker_minds.current.ignite_mob()
 			bloodsucker_minds.current.adjustFireLoss(2 + bloodsuckerdatum.bloodsucker_level)
 			bloodsucker_minds.current.updatehealth()
-			SEND_SIGNAL(bloodsucker_minds.current, COMSIG_ADD_MOOD_EVENT, "vampsleep", /datum/mood_event/daylight_2)
+			bloodsucker_minds.current.add_mood_event("vampsleep", /datum/mood_event/daylight_2)
 
 /// It's late, give the "Vanishing Act" (gohome) power to Bloodsuckers.
 /obj/effect/sunlight/proc/give_home_power()
@@ -169,3 +169,9 @@
 		for(var/datum/action/bloodsucker/power in bloodsuckerdatum.powers)
 			if(istype(power, /datum/action/bloodsucker/gohome))
 				bloodsuckerdatum.RemovePower(power)
+
+#undef TIME_BLOODSUCKER_DAY
+#undef TIME_BLOODSUCKER_NIGHT
+#undef TIME_BLOODSUCKER_DAY_WARN
+#undef TIME_BLOODSUCKER_DAY_FINAL_WARN
+#undef TIME_BLOODSUCKER_BURN_INTERVAL

@@ -13,7 +13,7 @@
 /datum/bloodsucker_clan/ventrue/spend_rank(datum/antagonist/bloodsucker/bloodsuckerdatum, mob/living/carbon/target, cost_rank = TRUE, blood_cost)
 	if(!target)
 		return ..()
-	var/datum/antagonist/vassal/vassaldatum = target.mind.has_antag_datum(/datum/antagonist/vassal)
+	var/datum/antagonist/vassal/favorite/vassaldatum = target.mind.has_antag_datum(/datum/antagonist/vassal/favorite)
 	// Purchase Power Prompt
 	var/list/options = list()
 	for(var/datum/action/bloodsucker/power as anything in bloodsuckerdatum.all_bloodsucker_powers)
@@ -72,7 +72,7 @@
 			if(!target.mind.has_antag_datum(/datum/antagonist/bloodsucker))
 				to_chat(target, span_notice("You feel your heart stop pumping for the last time as you begin to thirst for blood, you feel... dead."))
 				target.mind.add_antag_datum(/datum/antagonist/bloodsucker)
-				SEND_SIGNAL(bloodsuckerdatum.owner.current, COMSIG_ADD_MOOD_EVENT, "madevamp", /datum/mood_event/madevamp)
+				bloodsuckerdatum.owner.current.add_mood_event("madevamp", /datum/mood_event/madevamp)
 			vassaldatum.set_vassal_level(target)
 
 	finalize_spend_rank(bloodsuckerdatum, cost_rank, blood_cost)

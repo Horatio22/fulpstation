@@ -134,16 +134,8 @@
 		target.Paralyze(20)
 		return TRUE
 	if(target.mind.has_antag_datum(/datum/antagonist/bloodsucker))
-		var/datum/antagonist/bloodsucker/bloodsuckerdatum = IS_BLOODSUCKER(target)
-		if(bloodsuckerdatum.my_clan.get_clan() == CLAN_TREMERE)
-			to_chat(target, span_cultlarge("The holy water burns our flesh!"))
-			target.apply_damage(25, BURN)
-			target.adjustStaminaLoss(60)
-			target.Paralyze(20)
-			return TRUE
-		else
-			to_chat(target, span_warning("This just seems like regular water..."))
-			return TRUE
+		to_chat(target, span_warning("This just seems like regular water..."))
+		return TRUE
 	if(target.mind.has_antag_datum(/datum/antagonist/cult))
 		for(var/datum/action/innate/cult/blood_magic/BD in target.actions)
 			to_chat(target, span_cultlarge("Our blood rites falter as the holy water drips onto our body!"))
@@ -155,8 +147,7 @@
 	if(target.mind.has_antag_datum(/datum/antagonist/wizard) || (/datum/antagonist/wizard/apprentice))
 		to_chat(target, span_danger("The holy water seems to be muting us somehow!"))
 		var/mob/living/carbon/human/human_target = target // I guess monkey wizards aren't getting affected.
-		if(human_target.silent <= 10)
-			human_target.silent = clamp(human_target.silent + 10, 0, 10)
+		human_target.adjust_silence_up_to(20 SECONDS, 20 SECONDS)
 		target.adjustStaminaLoss(60)
 		target.Paralyze(20)
 		return TRUE

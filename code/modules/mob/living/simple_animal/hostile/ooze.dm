@@ -102,7 +102,7 @@
 	melee_damage_upper = 20
 	armour_penetration = 15
 	obj_damage = 20
-	deathmessage = "collapses into a pile of goo!"
+	death_message = "collapses into a pile of goo!"
 	///The ability to give yourself a metabolic speed boost which raises heat
 	var/datum/action/cooldown/metabolicboost/boost
 	///The ability to consume mobs
@@ -145,7 +145,7 @@
 
 
 ///Mob needs to have enough nutrition
-/datum/action/cooldown/metabolicboost/IsAvailable()
+/datum/action/cooldown/metabolicboost/IsAvailable(feedback = FALSE)
 	. = ..()
 	var/mob/living/simple_animal/hostile/ooze/ooze = owner
 	if(!.)
@@ -280,7 +280,7 @@
 	melee_damage_lower = 12
 	melee_damage_upper = 12
 	obj_damage = 15
-	deathmessage = "deflates and spills its vital juices!"
+	death_message = "deflates and spills its vital juices!"
 	edible_food_types = MEAT | VEGETABLES
 
 /mob/living/simple_animal/hostile/ooze/grapes/Initialize(mapload)
@@ -435,7 +435,7 @@
 	ooze.adjust_ooze_nutrition(-30)
 
 ///Mob needs to have enough nutrition
-/datum/action/cooldown/gel_cocoon/IsAvailable()
+/datum/action/cooldown/gel_cocoon/IsAvailable(feedback = FALSE)
 	. = ..()
 	if(!.)
 		return

@@ -5,7 +5,7 @@
  * I may have been able to make this work for carbons, but it would have been interjecting on some help mode interactions anyways.
  */
 /datum/element/pet_bonus
-	element_flags = ELEMENT_BESPOKE|ELEMENT_DETACH
+	element_flags = ELEMENT_BESPOKE
 	id_arg_index = 2
 
 	///optional cute message to send when you pet your pet!
@@ -35,4 +35,4 @@
 	new /obj/effect/temp_visual/heart(pet.loc)
 	if(emote_message && prob(33))
 		pet.manual_emote(emote_message)
-	SEND_SIGNAL(petter, COMSIG_ADD_MOOD_EVENT, "petting_bonus", moodlet, pet)
+	petter.add_mood_event("petting_bonus", moodlet, pet)

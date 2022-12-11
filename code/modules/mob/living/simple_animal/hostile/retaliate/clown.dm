@@ -1,7 +1,7 @@
 /mob/living/simple_animal/hostile/retaliate/clown
 	name = "Clown"
 	desc = "A denizen of clown planet."
-	icon = 'icons/mob/clown_mobs.dmi'
+	icon = 'icons/mob/simple/clown_mobs.dmi'
 	icon_state = "clown"
 	icon_living = "clown"
 	icon_dead = "clown_dead"
@@ -41,7 +41,8 @@
 /mob/living/simple_animal/hostile/retaliate/clown/Initialize(mapload)
 	. = ..()
 	if(attack_reagent)
-		AddElement(/datum/element/venomous, attack_reagent, list(1, 5))
+		var/static/list/injection_range = list(1, 5)
+		AddElement(/datum/element/venomous, attack_reagent, injection_range)
 
 /mob/living/simple_animal/hostile/retaliate/clown/attack_hand(mob/living/carbon/human/user, list/modifiers)
 	..()
@@ -390,7 +391,7 @@
 	attack_verb_continuous = "slams"
 	attack_verb_simple = "slam"
 	loot = list(/obj/effect/gibspawner/xeno/bodypartless, /obj/effect/gibspawner/generic, /obj/effect/gibspawner/generic/animal, /obj/effect/gibspawner/human/bodypartless)
-	deathsound = 'sound/misc/sadtrombone.ogg'
+	death_sound = 'sound/misc/sadtrombone.ogg'
 	///This is the list of items we are ready to regurgitate,
 	var/list/prank_pouch = list()
 
@@ -499,7 +500,7 @@
 	on_who.icon_state = initial(on_who.icon_state)
 	on_who.update_appearance(UPDATE_ICON)
 
-/datum/action/cooldown/regurgitate/IsAvailable()
+/datum/action/cooldown/regurgitate/IsAvailable(feedback = FALSE)
 	. = ..()
 	if(!.)
 		return FALSE
