@@ -2,7 +2,9 @@
 /datum/action/bloodsucker/targeted
 	power_flags = BP_AM_TOGGLE
 
-	var/target_range = 99
+	///If set, how far the target has to be for the power to work.
+	var/target_range
+	///Message sent to chat when clicking on the power, before you use it.
 	var/prefire_message = ""
 	///Most powers happen the moment you click. Some, like Mesmerize, require time and shouldn't cost you if they fail.
 	var/power_activates_immediately = TRUE
@@ -47,7 +49,7 @@
 	if(power_flags & BP_AM_TOGGLE)
 		STOP_PROCESSING(SSprocessing, src)
 	active = FALSE
-	UpdateButtons()
+	build_all_button_icons()
 //	..() // we don't want to pay cost here
 
 /// Check if target is VALID (wall, turf, or character?)
@@ -58,11 +60,12 @@
 
 /// Check if valid target meets conditions
 /datum/action/bloodsucker/targeted/proc/CheckCanTarget(atom/target_atom)
-	// Out of Range
-	if(!(target_atom in view(target_range, owner)))
-		if(target_range > 1) // Only warn for range if it's greater than 1. Brawn doesn't need to announce itself.
-			owner.balloon_alert(owner, "out of range.")
-		return FALSE
+	if(target_range)
+		// Out of Range
+		if(!(target_atom in view(target_range, owner)))
+			if(target_range > 1) // Only warn for range if it's greater than 1. Brawn doesn't need to announce itself.
+				owner.balloon_alert(owner, "out of range.")
+			return FALSE
 	return istype(target_atom)
 
 /// Click Target
