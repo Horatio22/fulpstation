@@ -5,9 +5,9 @@
 	tgui_icon = "robot"
 	alignment = ALIGNMENT_NEUT
 	desired_items = list(/obj/item/reagent_containers = "holding blood", /mob/living/basic/bull)
-	//rites_list = list(/datum/religion_rites/pure_heart, /datum/religion_rites/big_cow)
+	rites_list = list(/datum/religion_rites/pure_heart, /datum/religion_rites/big_cow, /datum/religion_rites/bull_sacrifice)
 	altar_icon_state = "convertaltar-blue"
-	max_favor = 2500
+	max_favor = 10000
 
 /obj/item/organ/internal/heart/cybernetic/earth
 	name = "pure heart"
@@ -19,19 +19,24 @@
 	dose_available = FALSE
 	emp_vulnerability = 0
 
+
 /obj/item/organ/internal/heart/cybernetic/earth/Insert(mob/living/carbon/heart_owner, special = FALSE, drop_if_replaced = TRUE)
 	. = ..()
 	ADD_TRAIT(heart_owner, TRAIT_SPIRITUAL, ORGAN_TRAIT)
 	ADD_TRAIT(heart_owner, TRAIT_VIRUSIMMUNE, ORGAN_TRAIT)
+	owner.faction |= "earth"
 
 
 /obj/item/organ/internal/heart/cybernetic/earth/Remove(mob/living/carbon/heart_owner, special = FALSE)
 	REMOVE_TRAIT(heart_owner, TRAIT_SPIRITUAL, ORGAN_TRAIT)
 	REMOVE_TRAIT(heart_owner, TRAIT_VIRUSIMMUNE, ORGAN_TRAIT)
+	owner.faction -= "earth"
 	return ..()
 
-
-
+/obj/item/organ/internal/heart/cybernetic/earth/on_life(mob/living/carbon/heart_owner, )
+	if(istype(get_turf(owner), /turf/open/floor/grass))
+		owner.set_timed_status_effect(2 SECONDS, /datum/status_effect/speed_boost, only_if_higher = TRUE)
+	return ..()
 
 /obj/item/organ/internal/heart/cybernetic/earth/Insert(mob/living/carbon/brain_owner, special, drop_if_replaced, no_id_transfer)
     . = ..()
@@ -62,61 +67,13 @@
     decal_reagent = /datum/reagent/medicine/earthsblood
     reagent_amount = 5
 
-/mob/living/basic/bull
-	name = "bull"
-	desc = "Sacred in some communities. Dinner in others."
-	icon = 'fulp_modules/features/sect/earth-cult.dmi'
-	icon_state = "bull"
-	icon_living = "bull"
-	icon_dead = "cow_dead"
-	icon_gib = "cow_gib"
-	gender = MALE
-	mob_biotypes = MOB_ORGANIC | MOB_BEAST
-	speak_emote = list("moos","moos hauntingly")
-	speed = 1.1
-	see_in_dark = 6
-	butcher_results = list(/obj/item/food/meat/slab = 8, /obj/item/stack/sheet/leather = 1)
-	response_help_continuous = "pets"
-	response_help_simple = "pet"
-	response_disarm_continuous = "gently pushes aside"
-	response_disarm_simple = "gently push aside"
-	response_harm_continuous = "kicks"
-	response_harm_simple = "kick"
-	attack_verb_continuous = "kicks"
-	attack_verb_simple = "kick"
-	attack_sound = 'sound/weapons/punch1.ogg'
-	attack_vis_effect = ATTACK_EFFECT_KICK
-	health = 75
-	maxHealth = 75
-	gold_core_spawnable = FRIENDLY_SPAWN
-	blood_volume = BLOOD_VOLUME_NORMAL
-	ai_controller = /datum/ai_controller/basic_controller/cow
-	var/list/food_types = list(/obj/item/food/grown/wheat)
-	var/tame_message = "lets out a happy moo"
-	var/self_tame_message = "let out a happy moo"
-
-/mob/living/basic/bull/Initialize(mapload)
-	. = ..()
-
-	AddComponent( \
-		/datum/component/aura_healing, \
-		range = 5, \
-		brute_heal = 0.4, \
-		burn_heal = 0.4, \
-		blood_heal = 0.4, \
-		simple_heal = 1.2, \
-		requires_visibility = FALSE, \
-		limit_to_trait = TRAIT_SPIRITUAL, \
-		healing_color = COLOR_VERY_DARK_LIME_GREEN, \
-	)
-
 /datum/religion_sect/earth/sect_bless(mob/living/target, mob/living/chap)
 	return TRUE
 
 /datum/religion_sect/earth/on_sacrifice(obj/item/reagent_containers/offering, mob/living/user)
 	if(!istype(offering))
 		return
-	var/datum/reagent/blood/wanted_blood = offering.reagents.has_reagent(/datum/reagent/blood)
+	//var/datum/reagent/blood/wanted_blood = offering.reagents.has_reagent(/datum/reagent/blood)
 	var/favor_earned = offering.reagents.get_reagent_amount(/datum/reagent/blood)
 	to_chat(user, span_notice("[GLOB.deity] appreciates your blood offering."))
 	adjust_favor(favor_earned, user)
@@ -124,17 +81,74 @@
 	offering.reagents.clear_reagents()
 	return TRUE
 
-/datum/religion_rites/earth/pure_heart
+/datum/religion_rites/pure_heart
 	name = "Trade hearts with Mother Earth."
 	desc = "Summons a pure heart. Replace your corrupted heart with it to become one with the Earth."
 	invoke_msg = "Let us trade hearts, Mother Earth."
 	favor_cost = 150
 
-/datum/religion_rites/earth/pure_heart/invoke_effect(mob/living/user, atom/movable/religious_tool)
+/datum/religion_rites/pure_heart/invoke_effect(mob/living/user, atom/movable/religious_tool)
 	..()
 	var/altar_turf = get_turf(religious_tool)
 	new /obj/item/organ/internal/heart/cybernetic/earth(altar_turf)
 	//playsound(get_turf(religious_tool), 'sound/effects/cashregister.ogg', 60, TRUE)
 	return TRUE
 
+/datum/religion_rites/bull_sacrifice
+	name = "Bull sacrifice"
+	desc = "put a fucking cow on the altar."
+	ritual_length = 5 SECONDS
+	ritual_invocations = list("This fearless bull ...",
+	"... blood for the earth  ...",
+	"... sacred cuts ...")
+	invoke_msg = "... nourish our Mother "
+	var/mob/living/basic/bull/chosen_sacrifice
+
+/datum/religion_rites/bull_sacrifice/perform_rite(mob/living/user, atom/religious_tool)
+	if(!ismovable(religious_tool))
+		to_chat(user, span_warning("This rite requires a religious device that individuals can be buckled to."))
+		return FALSE
+	var/atom/movable/movable_reltool = religious_tool
+	if(!movable_reltool)
+		return FALSE
+	if(!LAZYLEN(movable_reltool.buckled_mobs))
+		to_chat(user, span_warning("Nothing is buckled to the altar!"))
+		return FALSE
+	for(var/mob/living/basic/bull/alleged_cow in movable_reltool.buckled_mobs)
+		if(alleged_cow.stat != DEAD)
+			to_chat(user, span_warning("You can only sacrifice dead bulls. This one is still alive!"))
+			return FALSE
+		chosen_sacrifice = alleged_cow
+		return ..()
+
+/datum/religion_rites/bull_sacrifice/invoke_effect(mob/living/user, atom/movable/religious_tool)
+	..()
+	if(!(chosen_sacrifice in religious_tool.buckled_mobs))
+		to_chat(user, span_warning("The right sacrifice is no longer on the altar!"))
+		chosen_sacrifice = null
+		return FALSE
+	if(chosen_sacrifice.stat != DEAD)
+		to_chat(user, span_warning("The sacrifice has to stay dead for the rite to work!"))
+		chosen_sacrifice = null
+		return FALSE
+	var/favor_gained = 1000
+	GLOB.religious_sect.adjust_favor(favor_gained, user)
+	to_chat(user, span_notice("[GLOB.deity] absorbs the burning corpse and any trace of fire with it. [GLOB.deity] rewards you with [favor_gained] favor."))
+	chosen_sacrifice.dust(force = TRUE)
+	playsound(get_turf(religious_tool), 'sound/effects/supermatter.ogg', 50, TRUE)
+	chosen_sacrifice = null
+	return TRUE
+
+/datum/religion_rites/big_cow
+	name = "Big cow time."
+	desc = "Summons a mother fucking cow"
+	invoke_msg = "big beefy boy"
+	favor_cost = 8000
+
+/datum/religion_rites/big_cow/invoke_effect(mob/living/user, atom/movable/religious_tool)
+	..()
+	var/altar_turf = get_turf(religious_tool)
+	new /mob/living/basic/bull(altar_turf)
+	//playsound(get_turf(religious_tool), 'sound/effects/cashregister.ogg', 60, TRUE)
+	return TRUE
 
