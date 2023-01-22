@@ -3833,6 +3833,7 @@
 /obj/item/bedsheet/random,
 /obj/machinery/light/small/directional/east,
 /obj/effect/landmark/start/hangover,
+/obj/item/pillow/random,
 /turf/open/floor/carpet/black,
 /area/station/commons/dorms)
 "boE" = (
@@ -4916,6 +4917,7 @@
 /obj/item/bedsheet/random,
 /obj/machinery/light/small/directional/east,
 /obj/effect/landmark/start/hangover,
+/obj/item/pillow/random,
 /turf/open/floor/carpet/purple,
 /area/station/commons/dorms)
 "bFk" = (
@@ -5027,8 +5029,7 @@
 /turf/open/floor/iron/dark/telecomms,
 /area/station/tcommsat/server)
 "bHw" = (
-/obj/item/food/sandwich,
-/turf/open/floor/carpet/purple,
+/turf/open/misc/grass,
 /area/station/service/hydroponics/garden)
 "bHB" = (
 /obj/structure/rack,
@@ -5823,10 +5824,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/ai_upload)
-"bUc" = (
-/obj/item/storage/basket,
-/turf/open/floor/carpet/purple,
-/area/station/service/hydroponics/garden)
 "bUn" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/poddoor/shutters{
@@ -10042,10 +10039,11 @@
 /turf/open/floor/iron/white,
 /area/station/service/theater)
 "dpS" = (
-/obj/item/kirbyplants/random,
 /obj/effect/turf_decal/tile/science/half{
 	dir = 1
 	},
+/obj/machinery/dna_infuser,
+/obj/item/infuser_book,
 /turf/open/floor/iron/dark,
 /area/station/science/genetics)
 "dqi" = (
@@ -12005,13 +12003,8 @@
 /obj/structure/table/wood,
 /obj/item/storage/secure/briefcase,
 /obj/item/restraints/handcuffs,
-/obj/machinery/requests_console/directional/south{
-	announcementConsole = 1;
-	department = "Bridge";
-	departmentType = 5;
-	name = "Bridge RC"
-	},
 /obj/effect/turf_decal/tile/command/half,
+/obj/item/storage/secure/safe/caps_spare/directional/south,
 /turf/open/floor/vault,
 /area/station/command/bridge)
 "dYi" = (
@@ -12627,8 +12620,8 @@
 /turf/open/floor/plating,
 /area/station/maintenance/department/science/xenobiology)
 "eip" = (
-/obj/structure/flora/tree/jungle,
-/turf/open/misc/grass,
+/obj/item/food/sandwich,
+/turf/open/floor/carpet/purple,
 /area/station/service/hydroponics/garden)
 "eiz" = (
 /obj/structure/cable,
@@ -12791,6 +12784,10 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
+"eku" = (
+/obj/item/storage/basket,
+/turf/open/floor/carpet/purple,
+/area/station/service/hydroponics/garden)
 "eky" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Maintenance Hatch"
@@ -22912,6 +22909,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/structure/fireaxecabinet/mechremoval/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/science/robotics/lab)
 "hJG" = (
@@ -24275,6 +24273,7 @@
 /obj/item/bedsheet/random,
 /obj/machinery/light/small/directional/east,
 /obj/effect/landmark/start/hangover,
+/obj/item/pillow/random,
 /turf/open/floor/carpet/cyan,
 /area/station/commons/dorms)
 "ihF" = (
@@ -27260,6 +27259,7 @@
 /obj/structure/bed,
 /obj/item/bedsheet/random,
 /obj/machinery/light/small/directional/east,
+/obj/item/pillow/random,
 /turf/open/floor/carpet/blue,
 /area/station/commons/dorms)
 "jik" = (
@@ -28215,11 +28215,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/iron,
 /area/station/cargo/storage)
-"jyg" = (
-/obj/structure/flora/bush/flowers_pp/style_random,
-/mob/living/simple_animal/butterfly,
-/turf/open/misc/grass,
-/area/station/service/hydroponics/garden)
 "jyh" = (
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -32453,6 +32448,10 @@
 /obj/effect/turf_decal/tile/brown/half/contrasted,
 /turf/open/floor/iron,
 /area/station/cargo/storage)
+"kMR" = (
+/obj/item/storage/secure/safe/hos,
+/turf/closed/wall,
+/area/station/command/heads_quarters/hos)
 "kMS" = (
 /obj/machinery/airalarm/directional/north,
 /obj/structure/bed/maint,
@@ -39518,6 +39517,10 @@
 /obj/effect/turf_decal/tile/brown/opposingcorners,
 /turf/open/floor/iron,
 /area/station/cargo/miningoffice)
+"nbO" = (
+/obj/effect/landmark/start/hangover,
+/turf/open/floor/carpet/purple,
+/area/station/service/hydroponics/garden)
 "nbT" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/disposalpipe/segment{
@@ -47480,10 +47483,6 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/storage/secure/safe/caps_spare{
-	pixel_x = 6;
-	pixel_y = -25
-	},
 /obj/effect/turf_decal/tile/command/anticorner{
 	dir = 8
 	},
@@ -51724,6 +51723,12 @@
 /obj/effect/spawner/random/trash/mess,
 /turf/open/floor/plating,
 /area/station/maintenance/port/aft)
+"rlb" = (
+/obj/structure/flora/bush/flowers_br/style_random,
+/obj/structure/flora/bush/lavendergrass,
+/mob/living/simple_animal/chicken,
+/turf/open/misc/grass,
+/area/station/service/hydroponics/garden)
 "rld" = (
 /obj/effect/turf_decal/tile/medical/half,
 /turf/open/floor/iron/white,
@@ -56707,6 +56712,10 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/command/nuke_storage)
+"sWk" = (
+/obj/structure/flora/tree/cherry,
+/turf/open/floor/carpet/purple,
+/area/station/service/hydroponics/garden)
 "sWA" = (
 /turf/open/floor/plating,
 /area/station/maintenance/department/crew_quarters/dorms)
@@ -59590,6 +59599,7 @@
 /obj/item/bedsheet/random,
 /obj/machinery/light/small/directional/north,
 /obj/effect/landmark/start/hangover,
+/obj/item/pillow/random,
 /turf/open/floor/carpet/red,
 /area/station/commons/dorms)
 "tVg" = (
@@ -59927,6 +59937,7 @@
 /obj/structure/bed,
 /obj/item/bedsheet/random,
 /obj/machinery/light/small/directional/north,
+/obj/item/pillow/random,
 /turf/open/floor/carpet/orange,
 /area/station/commons/dorms)
 "uaR" = (
@@ -60033,10 +60044,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/command/gateway)
-"ubO" = (
-/obj/effect/landmark/start/hangover,
-/turf/open/floor/carpet/purple,
-/area/station/service/hydroponics/garden)
 "ubP" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/item/clothing/under/misc/pj/red,
@@ -60096,6 +60103,7 @@
 /obj/item/bedsheet/random,
 /obj/machinery/light/small/directional/north,
 /obj/effect/landmark/start/hangover,
+/obj/item/pillow/random,
 /turf/open/floor/carpet/green,
 /area/station/commons/dorms)
 "ucB" = (
@@ -62698,7 +62706,9 @@
 /turf/open/floor/iron,
 /area/station/hallway/secondary/service)
 "uWt" = (
-/turf/open/floor/carpet/purple,
+/obj/structure/flora/bush/flowers_pp/style_random,
+/mob/living/simple_animal/butterfly,
+/turf/open/misc/grass,
 /area/station/service/hydroponics/garden)
 "uWw" = (
 /obj/effect/turf_decal/tile/brown/anticorner/contrasted{
@@ -64336,6 +64346,12 @@
 /obj/structure/bed/roller,
 /obj/machinery/iv_drip,
 /obj/item/reagent_containers/blood/universal,
+/obj/machinery/requests_console/directional/south{
+	announcementConsole = 1;
+	department = "Bridge";
+	departmentType = 5;
+	name = "Bridge RC"
+	},
 /turf/open/floor/vault,
 /area/station/command/bridge)
 "vzJ" = (
@@ -71645,9 +71661,6 @@
 	pixel_x = 3;
 	pixel_y = 2
 	},
-/obj/item/storage/secure/safe/hos{
-	pixel_x = -25
-	},
 /obj/item/clothing/under/bodysash/security/hos,
 /obj/effect/turf_decal/tile/security/anticorner{
 	dir = 1
@@ -72411,10 +72424,7 @@
 /turf/open/floor/iron,
 /area/station/security/brig)
 "yjz" = (
-/obj/structure/flora/bush/flowers_br/style_random,
-/obj/structure/flora/bush/lavendergrass,
-/mob/living/simple_animal/chicken,
-/turf/open/misc/grass,
+/turf/open/floor/carpet/purple,
 /area/station/service/hydroponics/garden)
 "yjY" = (
 /obj/structure/disposalpipe/segment{
@@ -88835,7 +88845,7 @@ ymi
 dQO
 uOg
 lcz
-jyg
+yjz
 yjz
 lUK
 wVR
@@ -89092,8 +89102,8 @@ ymi
 xSD
 uOg
 lUK
-dDs
-lUK
+nbO
+eku
 cdh
 xDp
 xPw
@@ -89350,7 +89360,7 @@ xSD
 uOg
 dDs
 eip
-vMB
+sWk
 rnT
 cdh
 sfu
@@ -89607,7 +89617,7 @@ xSD
 uOg
 lUK
 uWt
-uWt
+rlb
 dDs
 vMB
 axo
@@ -89863,8 +89873,8 @@ ymi
 kpU
 uOg
 xpi
-ubO
-bUc
+dDs
+lUK
 omE
 nIo
 axo
@@ -90121,7 +90131,7 @@ xSD
 uOg
 vMB
 bHw
-uWt
+vMB
 rLI
 wzB
 jvM
@@ -100928,7 +100938,7 @@ beN
 cmy
 yju
 aJw
-fJN
+kMR
 fJN
 fJN
 fJN
