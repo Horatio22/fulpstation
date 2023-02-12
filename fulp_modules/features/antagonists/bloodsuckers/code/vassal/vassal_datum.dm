@@ -11,6 +11,14 @@
 	antag_hud_name = "vassal"
 	show_in_roundend = FALSE
 	hud_icon = 'fulp_modules/features/antagonists/bloodsuckers/icons/bloodsucker_icons.dmi'
+	tip_theme = "spookyconsole"
+	antag_tips = list(
+		"You are a Vassal, enslaved to your Vampiric Master, you obey their instructions above all else.",
+		"You have the ability tp Recuperate, allowing you to heal at the exchange of your own Blood.",
+		"Fear Mindshields! You will get deconverted if you get mindshielded, resist them at all costs!",
+		"Help ensure your Master is safe from Daylight! Solar flares will bombard the station periodically, and if your Master is exposed, they will burn alive.",
+		"Your Master can optionally upgrade you into the Favorite Vassal. Depending on their Clan, you will get different benefits.",
+	)
 
 	/// The Master Bloodsucker's antag datum.
 	var/datum/antagonist/bloodsucker/master
@@ -73,7 +81,7 @@
 		examine_text += vassal_examine
 
 /datum/antagonist/vassal/on_gain()
-	RegisterSignal(owner.current, COMSIG_PARENT_EXAMINE, .proc/on_examine)
+	RegisterSignal(owner.current, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
 	RegisterSignal(SSsunlight, COMSIG_SOL_WARNING_GIVEN, PROC_REF(give_warning))
 	/// Enslave them to their Master
 	if(!master || !istype(master, master))

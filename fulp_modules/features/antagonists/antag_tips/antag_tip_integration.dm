@@ -114,15 +114,6 @@
 		"The agent must be sent down by the scientist to stun and cuff a target and drag it into a hidden spot and wait for the scientist.",
 	)
 
-/datum/antagonist/bloodsucker
-	tip_theme = "spookyconsole"
-	antag_tips = list(
-		"You are a Bloodsucker, an undead blood-seeking monster living aboard Space Station 13.",
-		"You regenerate your health slowly, you're weak to fire, and you depend on blood to survive. Don't allow your blood to run too low, or you'll enter a Frenzy!",
-		"Use your Antagonist UI page to enter a Clan and learn how your Powers work.",
-		"While not in a Clan, you will be unable to rank up, Feed, or do any other Bloodsucker activities.",
-	)
-
 /datum/antagonist/changeling
 	antag_tips = list(
 		"You are a Changeling, a shapeshifting alien assuming the form of a crewmember on Space Station 13.",
@@ -202,16 +193,6 @@
 		"To utilize the internal uplink, use the action button on the top left of your screen to access the uplink menu.",
 		"The uplink starts out with 20 telecrystals (16 if you use the internal uplink) which are utilized to purchase different items to aid you in fulfilling your objectives.",
 		"The Syndicate has also given you and any other agents on board code-words which can be used to find eachother. They're highlighted in red and blue.",
-	)
-
-/datum/antagonist/vassal
-	tip_theme = "spookyconsole"
-	antag_tips = list(
-		"You are a Vassal, enslaved to your Vampiric Master, you obey their instructions above all else.",
-		"You have the ability tp Recuperate, allowing you to heal at the exchange of your own Blood.",
-		"Fear Mindshields! You will get deconverted if you get mindshielded, resist them at all costs!",
-		"Help ensure your Master is safe from Daylight! Solar flares will bombard the station periodically, and if your Master is exposed, they will burn alive.",
-		"Your Master can optionally upgrade you into the Favorite Vassal. Depending on their Clan, you will get different benefits.",
 	)
 
 /datum/antagonist/wizard
