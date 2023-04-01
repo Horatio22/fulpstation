@@ -140,11 +140,9 @@
 /datum/antagonist/bloodsucker/proc/heal_vampire_organs()
 	var/mob/living/carbon/bloodsuckeruser = owner.current
 
-	// Step 1 - Fix basic things, husk and organs.
 	bloodsuckeruser.cure_husk()
-	bloodsuckeruser.regenerate_organs()
+	bloodsuckeruser.regenerate_organs(regenerate_existing = FALSE)
 
-	// Step 2 NOTE: Giving passive organ regeneration will cause Torpor to spam /datum/client_colour/monochrome at the Bloodsucker, permanently making them colorblind!
 	for(var/all_organs in bloodsuckeruser.internal_organs)
 		var/obj/item/organ/organ = all_organs
 		organ.setOrganDamage(0)
@@ -157,12 +155,10 @@
 	var/obj/item/organ/internal/eyes/current_eyes = bloodsuckeruser.getorganslot(ORGAN_SLOT_EYES)
 	if(current_eyes)
 		current_eyes.flash_protect = max(initial(current_eyes.flash_protect) - 1, FLASH_PROTECTION_SENSITIVE)
+		current_eyes.color_cutoffs = list(25, 8, 5)
 		current_eyes.sight_flags = SEE_MOBS
-		current_eyes.see_in_dark = 8
-		current_eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	bloodsuckeruser.update_sight()
 
-	// Step 3
 	if(bloodsuckeruser.stat == DEAD)
 		bloodsuckeruser.revive()
 	for(var/i in bloodsuckeruser.all_wounds)
