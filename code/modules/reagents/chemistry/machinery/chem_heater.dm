@@ -49,9 +49,9 @@
 		QDEL_NULL(beaker)
 	return ..()
 
-/obj/machinery/chem_heater/handle_atom_del(atom/A)
+/obj/machinery/chem_heater/Exited(atom/movable/gone, direction)
 	. = ..()
-	if(A == beaker)
+	if(gone == beaker)
 		beaker = null
 		update_appearance()
 
@@ -78,8 +78,8 @@
 	if(!user)
 		return FALSE
 	if(beaker)
-		try_put_in_hand(beaker, user)
 		UnregisterSignal(beaker.reagents, COMSIG_REAGENTS_REACTION_STEP)
+		try_put_in_hand(beaker, user)
 		beaker = null
 	if(new_beaker)
 		beaker = new_beaker
@@ -154,6 +154,11 @@
 			beaker.reagents.handle_reactions()
 
 			use_power(active_power_usage * seconds_per_tick)
+
+/obj/machinery/chem_heater/wrench_act(mob/living/user, obj/item/tool)
+	. = ..()
+	default_unfasten_wrench(user, tool)
+	return TOOL_ACT_TOOLTYPE_SUCCESS
 
 /obj/machinery/chem_heater/attackby(obj/item/I, mob/user, params)
 	if(default_deconstruction_screwdriver(user, "mixer0b", "mixer0b", I))
@@ -442,10 +447,10 @@ To continue set your target temperature to 390K."}
 			if(acid_reagent_heater)
 				cur_vol = acid_reagent_heater.volume
 			volume = 100 - cur_vol
-			beaker.reagents.trans_id_to(src, acid_reagent.type, volume)//negative because we're going backwards
+			beaker.reagents.trans_to(src, volume, target_id = acid_reagent.type)//negative because we're going backwards
 			return
 		//We must be positive here
-		reagents.trans_id_to(beaker, /datum/reagent/reaction_agent/acidic_buffer, dispense_volume)
+		reagents.trans_to(beaker, dispense_volume, target_id = /datum/reagent/reaction_agent/acidic_buffer)
 		return
 
 	if(buffer_type == "basic")
@@ -459,9 +464,9 @@ To continue set your target temperature to 390K."}
 			if(basic_reagent_heater)
 				cur_vol = basic_reagent_heater.volume
 			volume = 100 - cur_vol
-			beaker.reagents.trans_id_to(src, basic_reagent.type, volume)//negative because we're going backwards
+			beaker.reagents.trans_to(src, volume, target_id = basic_reagent.type)//negative because we're going backwards
 			return
-		reagents.trans_id_to(beaker, /datum/reagent/reaction_agent/basic_buffer, dispense_volume)
+		reagents.trans_to(beaker, dispense_volume, target_id = /datum/reagent/reaction_agent/basic_buffer)
 		return
 
 

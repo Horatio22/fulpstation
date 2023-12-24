@@ -54,8 +54,8 @@ GLOBAL_VAR_INIT(bsa_unlock, FALSE)
 	if(!multitool_check_buffer(user, I)) //make sure it has a data buffer
 		return
 	var/obj/item/multitool/M = I
-	M.buffer = src
-	to_chat(user, span_notice("You store linkage information in [I]'s buffer."))
+	M.set_buffer(src)
+	balloon_alert(user, "saved to multitool buffer")
 	return TRUE
 
 /obj/machinery/bsa/front
@@ -71,8 +71,8 @@ GLOBAL_VAR_INIT(bsa_unlock, FALSE)
 	if(!multitool_check_buffer(user, I)) //make sure it has a data buffer
 		return
 	var/obj/item/multitool/M = I
-	M.buffer = src
-	to_chat(user, span_notice("You store linkage information in [I]'s buffer."))
+	M.set_buffer(src)
+	balloon_alert(user, "saved to multitool buffer")
 	return TRUE
 
 /obj/machinery/bsa/middle
@@ -94,11 +94,11 @@ GLOBAL_VAR_INIT(bsa_unlock, FALSE)
 		if(istype(M.buffer, /obj/machinery/bsa/back))
 			back_ref = WEAKREF(M.buffer)
 			to_chat(user, span_notice("You link [src] with [M.buffer]."))
-			M.buffer = null
+			M.set_buffer(null)
 		else if(istype(M.buffer, /obj/machinery/bsa/front))
 			front_ref = WEAKREF(M.buffer)
 			to_chat(user, span_notice("You link [src] with [M.buffer]."))
-			M.buffer = null
+			M.set_buffer(null)
 	else
 		to_chat(user, span_warning("[I]'s data buffer is empty!"))
 	return TRUE
@@ -241,7 +241,12 @@ GLOBAL_VAR_INIT(bsa_unlock, FALSE)
 	point.Beam(target, icon_state = "bsa_beam", time = 5 SECONDS, maxdistance = world.maxx) //ZZZAP
 	new /obj/effect/temp_visual/bsa_splash(point, dir)
 
-	notify_ghosts("The Bluespace Artillery has been fired!", source = bullseye, header = "KABOOM!")
+	notify_ghosts(
+		"The Bluespace Artillery has been fired!",
+		source = bullseye,
+		header = "KABOOM!",
+	)
+
 	if(!blocker)
 		message_admins("[ADMIN_LOOKUPFLW(user)] has launched an artillery strike targeting [ADMIN_VERBOSEJMP(bullseye)].")
 		user.log_message("has launched an artillery strike targeting [AREACOORD(bullseye)].", LOG_GAME)

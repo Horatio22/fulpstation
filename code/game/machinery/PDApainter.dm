@@ -7,6 +7,7 @@
 	base_icon_state = "pdapainter"
 	density = TRUE
 	max_integrity = 200
+	integrity_failure = 0.5
 	/// Current ID card inserted into the machine.
 	var/obj/item/card/id/stored_id_card = null
 	/// Current PDA inserted into the machine.
@@ -93,11 +94,12 @@
 			if(stored_id_card)
 				SSexplosions.low_mov_atom += stored_id_card
 
-/obj/machinery/pdapainter/handle_atom_del(atom/A)
-	if(A == stored_pda)
+/obj/machinery/pdapainter/Exited(atom/movable/gone, direction)
+	. = ..()
+	if(gone == stored_pda)
 		stored_pda = null
 		update_appearance(UPDATE_ICON)
-	if(A == stored_id_card)
+	if(gone == stored_id_card)
 		stored_id_card = null
 		update_appearance(UPDATE_ICON)
 
@@ -158,9 +160,6 @@
 	else
 		eject_id_card(user)
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-
-/obj/machinery/pdapainter/deconstruct(disassembled = TRUE)
-	atom_break()
 
 /**
  * Insert a PDA into the machine.
