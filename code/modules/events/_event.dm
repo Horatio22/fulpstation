@@ -87,7 +87,8 @@
 	if(ispath(typepath, /datum/round_event/ghost_role) && !(GLOB.ghost_role_flags & GHOSTROLE_MIDROUND_EVENT))
 		return FALSE
 
-	if (dynamic_should_hijack && SSdynamic.random_event_hijacked != HIJACKED_NOTHING)
+	var/datum/game_mode/dynamic/dynamic = SSticker.mode
+	if (istype(dynamic) && dynamic_should_hijack && dynamic.random_event_hijacked != HIJACKED_NOTHING)
 		return FALSE
 
 	return TRUE
@@ -231,6 +232,8 @@ Runs the event
 			notify_ghosts(
 				"[control.name] has an object of interest: [atom_of_interest]!",
 				source = atom_of_interest,
+				action = NOTIFY_ORBIT,
+				header = "Something's Interesting!",
 			)
 	return
 

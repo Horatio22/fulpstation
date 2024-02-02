@@ -276,7 +276,7 @@
 /datum/action/droppod_item
 	name = "Summon Monster Hunter tools"
 	desc = "Summon specific monster hunter tools that will aid us with our hunt."
-	button_icon = 'icons/obj/devices/tracker.dmi'
+	button_icon = 'icons/obj/device.dmi'
 	button_icon_state = "beacon"
 	///path of item we are spawning
 	var/item_path
@@ -324,6 +324,7 @@
 		return
 	COOLDOWN_START(src, cooldown_last, cooldown_time)
 	var/mob/living/echolocator = parent
+	var/datum/antagonist/monsterhunter/hunter = echolocator.mind.has_antag_datum(/datum/antagonist/monsterhunter)
 	var/real_echo_range = echo_range
 	if(HAS_TRAIT(echolocator, TRAIT_ECHOLOCATION_EXTRA_RANGE))
 		real_echo_range += 2
@@ -337,13 +338,14 @@
 	if(!length(filtered))
 		return
 	var/current_time = "[world.time]"
-	var/datum/antagonist/monsterhunter/hunter = echolocator.mind.has_antag_datum(/datum/antagonist/monsterhunter)
+	images[current_time] = list()
+	receivers[current_time] = list()
 	var/list/objectives_list = hunter.objectives
 	for(var/mob/living/viewer in filtered)
 		if(blocking_trait && HAS_TRAIT(viewer, blocking_trait))
 			continue
 		if(HAS_TRAIT_FROM(viewer, TRAIT_ECHOLOCATION_RECEIVER, echo_group))
-			receivers[viewer] = list()
+			receivers[current_time] += viewer
 		var/remove_from_vision = TRUE
 		for(var/datum/objective/assassinate/hunter/goal in objectives_list) //take them out if they are not our prey
 			if(goal.target == viewer.mind)
@@ -361,6 +363,7 @@
 	copied_appearance.appearance = input
 	if(istype(input, /mob/living))
 		copied_appearance.cut_overlays()
+		copied_appearance.icon = 'fulp_modules/features/antagonists/monster_hunter/icons/rabbit.dmi'
 		copied_appearance.icon_state = "white_rabbit"
 	copied_appearance.color = black_white_matrix
 	copied_appearance.filters += outline_filter(size = 1, color = COLOR_WHITE)

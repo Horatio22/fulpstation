@@ -101,7 +101,7 @@
 
 	QDEL_NULL(attached_circuit)
 
-/datum/component/shell/Destroy(force)
+/datum/component/shell/Destroy(force, silent)
 	QDEL_LIST(unremovable_circuit_components)
 	return ..()
 
@@ -154,7 +154,7 @@
  */
 /datum/component/shell/proc/on_set_anchored(atom/movable/source, previous_value)
 	SIGNAL_HANDLER
-	attached_circuit?.set_on(source.anchored)
+	attached_circuit?.on = source.anchored
 
 /**
  * Called when an item hits the parent. This is the method to add the circuitboard to the component.
@@ -225,10 +225,10 @@
 		if(shell_flags & SHELL_FLAG_ALLOW_FAILURE_ACTION)
 			return
 		source.balloon_alert(user, "it's locked!")
-		return ITEM_INTERACT_BLOCKING
+		return COMPONENT_BLOCK_TOOL_ATTACK
 
 	attached_circuit.interact(user)
-	return ITEM_INTERACT_BLOCKING
+	return COMPONENT_BLOCK_TOOL_ATTACK
 
 /**
  * Called when a screwdriver is used on the parent. Removes the circuitboard from the component.
@@ -245,12 +245,12 @@
 		if(shell_flags & SHELL_FLAG_ALLOW_FAILURE_ACTION)
 			return
 		source.balloon_alert(user, "it's locked!")
-		return ITEM_INTERACT_BLOCKING
+		return COMPONENT_BLOCK_TOOL_ATTACK
 
 	tool.play_tool_sound(parent)
 	source.balloon_alert(user, "you unscrew [attached_circuit] from [parent].")
 	remove_circuit()
-	return ITEM_INTERACT_BLOCKING
+	return COMPONENT_BLOCK_TOOL_ATTACK
 
 /**
  * Checks for when the circuitboard moves. If it moves, removes it from the component.
@@ -318,21 +318,20 @@
 		parent_atom.name = "[initial(parent_atom.name)] ([attached_circuit.display_name])"
 	attached_circuit.set_locked(FALSE)
 
+	if(shell_flags & SHELL_FLAG_REQUIRE_ANCHOR)
+		attached_circuit.on = parent_atom.anchored
+
 	if((shell_flags & SHELL_FLAG_CIRCUIT_UNREMOVABLE) || circuitboard.admin_only)
 		circuitboard.moveToNullspace()
 	else if(circuitboard.loc != parent_atom)
 		circuitboard.forceMove(parent_atom)
 	attached_circuit.set_shell(parent_atom)
-	
-	// call after set_shell() sets on to true
-	if(shell_flags & SHELL_FLAG_REQUIRE_ANCHOR)
-		attached_circuit.set_on(parent_atom.anchored)
 
 /**
  * Removes the circuit from the component. Doesn't do any checks to see for an existing circuit so that should be done beforehand.
  */
 /datum/component/shell/proc/remove_circuit()
-	// remove_current_shell() also turns off the circuit
+	attached_circuit.on = TRUE
 	attached_circuit.remove_current_shell()
 	UnregisterSignal(attached_circuit, list(
 		COMSIG_MOVABLE_MOVED,

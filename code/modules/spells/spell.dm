@@ -48,7 +48,7 @@
 	button_icon_state = "spell_default"
 	overlay_icon_state = "bg_spell_border"
 	active_overlay_icon_state = "bg_spell_border_active_red"
-	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_PHASED
+	check_flags = AB_CHECK_CONSCIOUS
 	panel = "Spells"
 	melee_cooldown_time = 0 SECONDS
 

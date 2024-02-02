@@ -5,22 +5,21 @@
  *
  * A Steward's Secret
  * Grasp of Lock
- * Key Keeper’s Burden
  * > Sidepaths:
- *   Mindgate
+ *   Ashen Eyes
+ *	 Codex Cicatrix
+ * Key Keeper’s Burden
+ *
  * Concierge's Rite
  * Mark Of Lock
  * Ritual of Knowledge
  * Burglar's Finesse
  * > Sidepaths:
+ *   Apetra Vulnera
  *   Opening Blast
- *   Unfathomable Curio
- * 	 Unsealed arts
  *
  * Opening Blade
  * Caretaker’s Last Refuge
- * > Sidepaths:
- * 	 Apetra Vulnera
  *
  * Unlock the Labyrinth
  */
@@ -46,7 +45,11 @@
 		DNA locks on mechs will be removed, and any pilot will be ejected. Works on consoles. \
 		Makes a distinctive knocking sound on use."
 	gain_text = "Nothing may remain closed from my touch."
-	next_knowledge = list(/datum/heretic_knowledge/key_ring)
+	next_knowledge = list(
+		/datum/heretic_knowledge/key_ring,
+		/datum/heretic_knowledge/medallion,
+		/datum/heretic_knowledge/codex_cicatrix,
+	)
 	cost = 1
 	route = PATH_LOCK
 
@@ -96,16 +99,29 @@
 		You can use it in-hand to change its form to a card you fused. \
 		Does not preserve the card used in the ritual."
 	gain_text = "The Keeper sneered. \"These plastic rectangles are a mockery of keys, and I curse every door that desires them.\""
+	adds_sidepath_points = 1
 	required_atoms = list(
 		/obj/item/storage/wallet = 1,
 		/obj/item/stack/rods = 1,
 		/obj/item/card/id = 1,
 	)
 	result_atoms = list(/obj/item/card/id/advanced/heretic)
-	next_knowledge = list(
-		/datum/heretic_knowledge/mark/lock_mark,
-		/datum/heretic_knowledge/spell/mind_gate,
+	next_knowledge = list(/datum/heretic_knowledge/limited_amount/concierge_rite)
+	cost = 1
+	route = PATH_LOCK
+
+/datum/heretic_knowledge/limited_amount/concierge_rite // item that creates 3 max at a time heretic only barriers, probably should limit to 1 only, holy people can also pass
+	name = "Concierge's Rite"
+	desc = "Allows you to transmute a white crayon, a wooden plank, and a multitool to create a Labyrinth Handbook. \
+		It can materialize a barricade at range that only you and people resistant to magic can pass. 3 uses."
+	gain_text = "The Concierge scribbled my name into the Handbook. \"Welcome to your new home, fellow Steward.\""
+	required_atoms = list(
+		/obj/item/toy/crayon/white = 1,
+		/obj/item/stack/sheet/mineral/wood = 1,
+		/obj/item/multitool = 1,
 	)
+	result_atoms = list(/obj/item/heretic_labyrinth_handbook)
+	next_knowledge = list(/datum/heretic_knowledge/mark/lock_mark)
 	cost = 1
 	route = PATH_LOCK
 
@@ -120,22 +136,7 @@
 	mark_type = /datum/status_effect/eldritch/lock
 
 /datum/heretic_knowledge/knowledge_ritual/lock
-	next_knowledge = list(/datum/heretic_knowledge/limited_amount/concierge_rite)
-	route = PATH_LOCK
-
-/datum/heretic_knowledge/limited_amount/concierge_rite // item that creates 3 max at a time heretic only barriers, probably should limit to 1 only, holy people can also pass
-	name = "Concierge's Rite"
-	desc = "Allows you to transmute a white crayon, a wooden plank, and a multitool to create a Labyrinth Handbook. \
-		It can materialize a barricade at range that only you and people resistant to magic can pass. 3 uses."
-	gain_text = "The Concierge scribbled my name into the Handbook. \"Welcome to your new home, fellow Steward.\""
-	required_atoms = list(
-		/obj/item/toy/crayon/white = 1,
-		/obj/item/stack/sheet/mineral/wood = 1,
-		/obj/item/multitool = 1,
-	)
-	result_atoms = list(/obj/item/heretic_labyrinth_handbook)
 	next_knowledge = list(/datum/heretic_knowledge/spell/burglar_finesse)
-	cost = 1
 	route = PATH_LOCK
 
 /datum/heretic_knowledge/spell/burglar_finesse
@@ -143,12 +144,11 @@
 	desc = "Grants you Burglar's Finesse, a single-target spell \
 		that puts a random item from the victims backpack into your hand."
 	gain_text = "Consorting with Burglar spirits is frowned upon, but a Steward will always want to learn about new doors."
+	adds_sidepath_points = 1
 	next_knowledge = list(
+		/datum/heretic_knowledge/spell/apetra_vulnera,
 		/datum/heretic_knowledge/spell/opening_blast,
-		/datum/heretic_knowledge/reroll_targets,
 		/datum/heretic_knowledge/blade_upgrade/flesh/lock,
-		/datum/heretic_knowledge/unfathomable_curio,
-		/datum/heretic_knowledge/painting,
 	)
 	spell_to_add = /datum/action/cooldown/spell/pointed/burglar_finesse
 	cost = 2
@@ -173,10 +173,8 @@
 		While in refuge, you cannot use your hands or spells, and you are immune to slowdown. \
 		You are invincible but unable to harm anything. Cancelled by being hit with an anti-magic item."
 	gain_text = "Jealously, the Guard and the Hound hunted me. But I unlocked my form, and was but a haze, untouchable."
-	next_knowledge = list(
-		/datum/heretic_knowledge/ultimate/lock_final,
-		/datum/heretic_knowledge/spell/apetra_vulnera,
-	)
+	adds_sidepath_points = 1
+	next_knowledge = list(/datum/heretic_knowledge/ultimate/lock_final)
 	route = PATH_LOCK
 	spell_to_add = /datum/action/cooldown/spell/caretaker
 	cost = 1
@@ -204,7 +202,8 @@
 	for(var/mob/living/carbon/human/body in atoms)
 		if(body.stat != DEAD)
 			continue
-		if(LAZYLEN(body.get_organs_for_zone(BODY_ZONE_CHEST)))
+		var/obj/item/bodypart/chest = body.get_bodypart(BODY_ZONE_CHEST)
+		if(LAZYLEN(chest.get_organs()))
 			to_chat(user, span_hierophant_warning("[body] has organs in their chest."))
 			continue
 

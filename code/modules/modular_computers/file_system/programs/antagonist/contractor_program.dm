@@ -2,12 +2,16 @@
 	filename = "contractor uplink"
 	filedesc = "Syndicate Contractor Uplink"
 	extended_desc = "A standard, Syndicate issued system for handling important contracts while on the field."
-	program_open_overlay = "contractor-assign"
+	category = PROGRAM_CATEGORY_MISC
+	program_icon_state = "contractor-assign"
 	program_icon = "tasks"
 	size = 10
 
-	program_flags = PROGRAM_UNIQUE_COPY
-	can_run_on_flags = PROGRAM_PDA //this is all we've got sprites for :sob:
+	requires_ntnet = FALSE
+	available_on_ntnet = FALSE
+	available_on_syndinet = FALSE
+	usage_flags = PROGRAM_PDA //this is all we've got sprites for :sob:
+	unique_copy = TRUE
 	undeletable = TRUE
 	tgui_id = "SyndicateContractor"
 
@@ -41,7 +45,7 @@
 			var/contract_id = text2num(params["contract_id"])
 			traitor_data.uplink_handler.contractor_hub.assigned_contracts[contract_id].status = CONTRACT_STATUS_ACTIVE
 			traitor_data.uplink_handler.contractor_hub.current_contract = traitor_data.uplink_handler.contractor_hub.assigned_contracts[contract_id]
-			program_open_overlay = "contractor-contract"
+			program_icon_state = "contractor-contract"
 			return TRUE
 
 		if("PRG_login")
@@ -55,7 +59,7 @@
 				traitor_data.uplink_handler.contractor_hub = new
 				traitor_data.uplink_handler.contractor_hub.create_contracts(traitor_user.owner)
 				user.playsound_local(user, 'sound/effects/contractstartup.ogg', 100, FALSE)
-				program_open_overlay = "contractor-contractlist"
+				program_icon_state = "contractor-contractlist"
 			return TRUE
 
 		if("PRG_call_extraction")
@@ -64,7 +68,7 @@
 					user.playsound_local(user, 'sound/effects/confirmdropoff.ogg', 100, TRUE)
 					traitor_data.uplink_handler.contractor_hub.current_contract.status = CONTRACT_STATUS_EXTRACTING
 
-					program_open_overlay = "contractor-extracted"
+					program_icon_state = "contractor-extracted"
 				else
 					user.playsound_local(user, 'sound/machines/uplinkerror.ogg', 50)
 					error = "Either both you or your target aren't at the dropoff location, or the pod hasn't got a valid place to land. Clear space, or make sure you're both inside."
@@ -79,7 +83,7 @@
 			traitor_data.uplink_handler.contractor_hub.current_contract = null
 			traitor_data.uplink_handler.contractor_hub.assigned_contracts[contract_id].status = CONTRACT_STATUS_ABORTED
 
-			program_open_overlay = "contractor-contractlist"
+			program_icon_state = "contractor-contractlist"
 
 			return TRUE
 		if("PRG_redeem_TC")
@@ -125,10 +129,10 @@
 
 	data["ongoing_contract"] = !!traitor_data.uplink_handler.contractor_hub.current_contract
 	if(traitor_data.uplink_handler.contractor_hub.current_contract)
-		program_open_overlay = "contractor-contract"
+		program_icon_state = "contractor-contract"
 		if (traitor_data.uplink_handler.contractor_hub.current_contract.status == CONTRACT_STATUS_EXTRACTING)
 			data["extraction_enroute"] = TRUE
-			program_open_overlay = "contractor-extracted"
+			program_icon_state = "contractor-extracted"
 		else
 			data["extraction_enroute"] = FALSE
 		var/turf/curr = get_turf(user)

@@ -38,7 +38,7 @@
 		var/obj/structure/spacevine/vine = new()
 
 		for(var/area/station/hallway/area in GLOB.areas)
-			for(var/turf/open/floor in area.get_turfs_from_all_zlevels())
+			for(var/turf/open/floor in area.get_contained_turfs())
 				if(floor.Enter(vine))
 					turfs += floor
 

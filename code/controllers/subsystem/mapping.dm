@@ -173,7 +173,7 @@ SUBSYSTEM_DEF(mapping)
 	// Cache for sonic speed
 	var/list/unused_turfs = src.unused_turfs
 	var/list/world_contents = GLOB.areas_by_type[world.area].contents
-	var/list/world_turf_contents_by_z = GLOB.areas_by_type[world.area].turfs_by_zlevel
+	var/list/world_turf_contents = GLOB.areas_by_type[world.area].contained_turfs
 	var/list/lists_to_reserve = src.lists_to_reserve
 	var/index = 0
 	while(index < length(lists_to_reserve))
@@ -189,12 +189,10 @@ SUBSYSTEM_DEF(mapping)
 			LAZYINITLIST(unused_turfs["[T.z]"])
 			unused_turfs["[T.z]"] |= T
 			var/area/old_area = T.loc
-			LISTASSERTLEN(old_area.turfs_to_uncontain_by_zlevel, T.z, list())
-			old_area.turfs_to_uncontain_by_zlevel[T.z] += T
+			old_area.turfs_to_uncontain += T
 			T.turf_flags = UNUSED_RESERVATION_TURF
 			world_contents += T
-			LISTASSERTLEN(world_turf_contents_by_z, T.z, list())
-			world_turf_contents_by_z[T.z] += T
+			world_turf_contents += T
 			packet.len--
 			packetlen = length(packet)
 
@@ -829,14 +827,12 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 	// Faster
 	if(space_guaranteed)
 		var/area/global_area = GLOB.areas_by_type[world.area]
-		LISTASSERTLEN(global_area.turfs_by_zlevel, z_level, list())
-		global_area.turfs_by_zlevel[z_level] = Z_TURFS(z_level)
+		global_area.contained_turfs += Z_TURFS(z_level)
 		return
 
 	for(var/turf/to_contain as anything in Z_TURFS(z_level))
 		var/area/our_area = to_contain.loc
-		LISTASSERTLEN(our_area.turfs_by_zlevel, z_level, list())
-		our_area.turfs_by_zlevel[z_level] += to_contain
+		our_area.contained_turfs += to_contain
 
 /datum/controller/subsystem/mapping/proc/update_plane_tracking(datum/space_level/update_with)
 	// We're essentially going to walk down the stack of connected z levels, and set their plane offset as we go

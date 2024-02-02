@@ -1,15 +1,15 @@
 import { useBackend } from '../backend';
 import { Section, Stack } from '../components';
 import { Window } from '../layouts';
-import { Objective, ObjectivePrintout } from './common/Objectives';
+import { ObjectivePrintout, Objective } from './common/Objectives';
 
 type Info = {
   antag_name: string;
   objectives: Objective[];
 };
 
-export const AntagInfoGeneric = (props) => {
-  const { data } = useBackend<Info>();
+export const AntagInfoGeneric = (props, context) => {
+  const { data } = useBackend<Info>(context);
   const { antag_name, objectives } = data;
   return (
     <Window width={620} height={250}>

@@ -5,11 +5,12 @@
 	actions_types = null
 
 /obj/item/implant/weapons_auth/get_data()
-	return "<b>Implant Specifications:</b><BR> \
-		<b>Name:</b> Firearms Authentication Implant<BR> \
-		<b>Life:</b> 4 hours after death of host<BR> \
-		<b>Implant Details:</b> <BR> \
-		<b>Function:</b> Allows operation of implant-locked weaponry, preventing equipment from falling into enemy hands."
+	var/dat = {"<b>Implant Specifications:</b><BR>
+				<b>Name:</b> Firearms Authentication Implant<BR>
+				<b>Life:</b> 4 hours after death of host<BR>
+				<b>Implant Details:</b> <BR>
+				<b>Function:</b> Allows operation of implant-locked weaponry, preventing equipment from falling into enemy hands."}
+	return dat
 
 /obj/item/implant/emp
 	name = "emp implant"
@@ -33,7 +34,7 @@
 	var/obj/item/radio/radio
 	var/radio_key
 	var/subspace_transmission = FALSE
-	icon = 'icons/obj/devices/voice.dmi'
+	icon = 'icons/obj/radio.dmi'
 	icon_state = "walkietalkie"
 
 /obj/item/implant/radio/activate()
@@ -74,10 +75,11 @@
 	subspace_transmission = TRUE
 
 /obj/item/implant/radio/get_data()
-	return "<b>Implant Specifications:</b><BR> \
-		<b>Name:</b> Internal Radio Implant<BR> \
-		<b>Life:</b> 24 hours<BR> \
-		<b>Implant Details:</b> Allows user to use an internal radio, useful if user expects equipment loss, or cannot equip conventional radios."
+	var/dat = {"<b>Implant Specifications:</b><BR>
+				<b>Name:</b> Internal Radio Implant<BR>
+				<b>Life:</b> 24 hours<BR>
+				<b>Implant Details:</b> Allows user to use an internal radio, useful if user expects equipment loss, or cannot equip conventional radios."}
+	return dat
 
 /obj/item/implanter/radio
 	name = "implanter (internal radio)"

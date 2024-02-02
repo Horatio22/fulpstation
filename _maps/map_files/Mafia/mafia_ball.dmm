@@ -92,12 +92,12 @@
 /obj/effect/mapping_helpers/burnt_floor,
 /turf/open/floor/plating,
 /area/centcom/mafia)
-"E" = (
+"B" = (
 /turf/template_noop,
 /area/template_noop)
 
 (1,1,1) = {"
-E
+B
 a
 a
 a
@@ -119,10 +119,10 @@ a
 a
 a
 a
-E
+B
 "}
 (2,1,1) = {"
-E
+B
 a
 b
 b
@@ -144,10 +144,10 @@ b
 b
 b
 a
-E
+B
 "}
 (3,1,1) = {"
-E
+B
 a
 b
 c
@@ -169,10 +169,10 @@ c
 c
 b
 a
-E
+B
 "}
 (4,1,1) = {"
-E
+B
 a
 b
 c
@@ -194,7 +194,7 @@ k
 c
 b
 a
-E
+B
 "}
 (5,1,1) = {"
 a
@@ -572,7 +572,7 @@ a
 a
 "}
 (20,1,1) = {"
-E
+B
 a
 b
 c
@@ -594,10 +594,10 @@ v
 c
 b
 a
-E
+B
 "}
 (21,1,1) = {"
-E
+B
 a
 b
 c
@@ -619,10 +619,10 @@ c
 c
 b
 a
-E
+B
 "}
 (22,1,1) = {"
-E
+B
 a
 b
 b
@@ -644,10 +644,10 @@ b
 b
 b
 a
-E
+B
 "}
 (23,1,1) = {"
-E
+B
 a
 a
 a
@@ -669,5 +669,5 @@ a
 a
 a
 a
-E
+B
 "}

@@ -1,18 +1,11 @@
-import { deepMerge } from 'common/collections';
-import { Color } from 'common/color';
-import { BooleanLike } from 'common/react';
-
 import { useBackend } from '../backend';
-import {
-  Box,
-  Button,
-  Icon,
-  NoticeBox,
-  Stack,
-  StyleableSection,
-} from '../components';
+import { Box, Button, StyleableSection, Icon, Stack, NoticeBox } from '../components';
 import { Window } from '../layouts';
+import { Color } from 'common/color';
+import { SFC } from 'inferno';
 import { JOB2ICON } from './common/JobToIcon';
+import { deepMerge } from 'common/collections';
+import { BooleanLike } from 'common/react';
 
 type Job = {
   unavailable_reason: string | null;
@@ -39,12 +32,12 @@ type Data = {
   round_duration: string;
 };
 
-export const JobEntry = (data: {
+export const JobEntry: SFC<{
   jobName: string;
   job: Job;
   department: Department;
   onClick: () => void;
-}) => {
+}> = (data) => {
   const jobName = data.jobName;
   const job = data.job;
   const department = data.department;
@@ -54,22 +47,26 @@ export const JobEntry = (data: {
       fluid
       style={{
         // Try not to think too hard about this one.
-        backgroundColor: job.unavailable_reason
+        'background-color': job.unavailable_reason
           ? '#949494' // Grey background
           : job.prioritized
             ? '#16fc0f' // Bright green background
-            : Color.fromHex(department.color).darken(10).toString(),
-        color: job.unavailable_reason
+            : Color.fromHex(department.color)
+              .darken(10)
+              .toString(),
+        'color': job.unavailable_reason
           ? '#616161' // Dark grey font
-          : Color.fromHex(department.color).darken(90).toString(),
-        fontSize: '1.1rem',
-        cursor: job.unavailable_reason ? 'initial' : 'pointer',
+          : Color.fromHex(department.color)
+            .darken(90)
+            .toString(),
+        'font-size': '1.1rem',
+        'cursor': job.unavailable_reason ? 'initial' : 'pointer',
       }}
       tooltip={
         job.unavailable_reason ||
         (job.prioritized ? (
           <>
-            <p style={{ marginTop: '0px' }}>
+            <p style={{ 'margin-top': '0px' }}>
               <b>The HoP wants more people in this job!</b>
             </p>
             {job.description}
@@ -80,18 +77,16 @@ export const JobEntry = (data: {
       }
       onClick={() => {
         !job.unavailable_reason && data.onClick();
-      }}
-    >
+      }}>
       <>
         {jobIcon && <Icon name={jobIcon} />}
         {job.command ? <b>{jobName}</b> : jobName}
         <span
           style={{
-            whiteSpace: 'nowrap',
-            position: 'absolute',
-            right: '0.5em',
-          }}
-        >
+            'white-space': 'nowrap',
+            'position': 'absolute',
+            'right': '0.5em',
+          }}>
           {job.used_slots} / {job.open_slots}
         </span>
       </>
@@ -99,21 +94,24 @@ export const JobEntry = (data: {
   );
 };
 
-export const JobSelection = (props) => {
-  const { act, data } = useBackend<Data>();
+export const JobSelection = (props, context) => {
+  const { act, data } = useBackend<Data>(context);
   if (!data?.departments_static) {
     return null; // Stop TGUI whitescreens with TGUI-dev!
   }
   const departments: Record<string, Department> = deepMerge(
     data.departments,
-    data.departments_static,
+    data.departments_static
   );
 
   return (
     <Window
       width={1012}
       height={data.shuttle_status ? 690 : 666 /* Hahahahahaha */}
-    >
+      onComponentDidMount={() => {
+        // Send a heartbeat back to DM to let it know the window is alive and well
+        act('ui_mounted_with_no_bluescreen');
+      }}>
       <Window.Content scrollable>
         <StyleableSection
           title={
@@ -121,20 +119,19 @@ export const JobSelection = (props) => {
               {data.shuttle_status && (
                 <NoticeBox info>{data.shuttle_status}</NoticeBox>
               )}
-              <span style={{ color: 'grey' }}>
+              <span style={{ 'color': 'grey' }}>
                 It is currently {data.round_duration} into the shift.
               </span>
               <Button
-                style={{ position: 'absolute', right: '1em' }}
-                onClick={() => act('select_job', { job: 'Random' })}
+                style={{ 'position': 'absolute', 'right': '1em' }}
+                onClick={() => act('select_job', { 'job': 'Random' })}
                 content="Random Job!"
                 tooltip="Roll target random job. You can re-roll or cancel your random job if you don't like it."
               />
             </>
           }
-          titleStyle={{ minHeight: '3.4em' }}
-        >
-          <Box style={{ columns: '20em' }}>
+          titleStyle={{ 'min-height': '3.4em' }}>
+          <Box wrap="wrap" style={{ 'columns': '20em' }}>
             {Object.entries(departments).map((departmentEntry) => {
               const departmentName = departmentEntry[0];
               const entry = departmentEntry[1];
@@ -146,15 +143,14 @@ export const JobSelection = (props) => {
                         {departmentName}
                         <span
                           style={{
-                            fontSize: '1rem',
-                            whiteSpace: 'nowrap',
-                            position: 'absolute',
-                            right: '1em',
-                            color: Color.fromHex(entry.color)
+                            'font-size': '1rem',
+                            'white-space': 'nowrap',
+                            'position': 'absolute',
+                            'right': '1em',
+                            'color': Color.fromHex(entry.color)
                               .darken(60)
                               .toString(),
-                          }}
-                        >
+                          }}>
                           {entry.open_slots +
                             (entry.open_slots === 1 ? ' slot' : ' slots') +
                             ' available'}
@@ -162,9 +158,9 @@ export const JobSelection = (props) => {
                       </>
                     }
                     style={{
-                      backgroundColor: entry.color,
-                      marginBottom: '1em',
-                      breakInside: 'avoid-column',
+                      'background-color': entry.color,
+                      'margin-bottom': '1em',
+                      'break-inside': 'avoid-column',
                     }}
                     titleStyle={{
                       'border-bottom-color': Color.fromHex(entry.color)
@@ -172,9 +168,10 @@ export const JobSelection = (props) => {
                         .toString(),
                     }}
                     textStyle={{
-                      color: Color.fromHex(entry.color).darken(80).toString(),
-                    }}
-                  >
+                      'color': Color.fromHex(entry.color)
+                        .darken(80)
+                        .toString(),
+                    }}>
                     <Stack vertical>
                       {Object.entries(entry.jobs).map((job) => (
                         <Stack.Item key={job[0]}>

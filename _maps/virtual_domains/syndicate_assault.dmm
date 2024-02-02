@@ -310,9 +310,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/powered/virtual_domain)
 "kJ" = (
-/obj/modular_map_root/safehouse{
-	key = "shuttle_space"
-	},
+/obj/effect/landmark/bitrunning/safehouse_spawn,
 /turf/template_noop,
 /area/virtual_domain/safehouse)
 "li" = (
@@ -370,6 +368,14 @@
 "nG" = (
 /obj/machinery/light/directional/south,
 /turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/powered/virtual_domain)
+"nO" = (
+/obj/machinery/mineral/ore_redemption{
+	name = "Syndicate ore redemption machine";
+	ore_multiplier = 4;
+	req_access = list("syndicate")
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/virtual_domain)
 "nU" = (
 /obj/structure/sign/poster/contraband/syndicate_pistol,
@@ -954,6 +960,10 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/virtual_domain)
+"ND" = (
+/obj/effect/landmark/bitrunning/mob_segment,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/virtual_domain)
 "Of" = (
 /obj/structure/closet/crate/secure/gear{
 	req_access = list("syndicate")
@@ -1016,10 +1026,6 @@
 /obj/structure/tank_dispenser/oxygen,
 /turf/closed/mineral/random,
 /area/space)
-"QX" = (
-/obj/effect/landmark/bitrunning/mob_segment,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/virtual_domain)
 "Ra" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer2,
 /obj/machinery/light/small/directional/north,
@@ -2013,7 +2019,7 @@ ru
 Io
 uP
 uP
-QX
+ND
 lN
 uP
 uP
@@ -2022,7 +2028,7 @@ uP
 uP
 lN
 uP
-QX
+ND
 uP
 Io
 hA
@@ -2312,7 +2318,7 @@ pM
 vK
 uP
 uP
-QX
+ND
 sL
 Im
 ru
@@ -2732,7 +2738,7 @@ nB
 ru
 eB
 uP
-uP
+nO
 uP
 ru
 nB

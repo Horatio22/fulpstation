@@ -2,12 +2,11 @@
 	name = "Mushroomperson"
 	plural_form = "Mushroompeople"
 	id = SPECIES_MUSHROOM
+	mutant_bodyparts = list("caps" = "Round")
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
 
 	fixed_mut_color = "#DBBF92"
 	hair_color = "#FF4B19" //cap color, spot color uses eye color
-
-	external_organs = list(/obj/item/organ/external/mushroom_cap = "Round")
 
 	inherent_traits = list(
 		TRAIT_MUTANT_COLORS,
@@ -42,8 +41,12 @@
 /datum/species/mush/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	. = ..()
 	if(ishuman(C))
+		var/mob/living/carbon/human/H = C
+		if(!H.dna.features["caps"])
+			H.dna.features["caps"] = "Round"
+			handle_mutant_bodyparts(H)
 		mush = new(null)
-		mush.teach(C)
+		mush.teach(H)
 
 /datum/species/mush/on_species_loss(mob/living/carbon/C)
 	. = ..()
@@ -57,34 +60,6 @@
 	if(chem.type == /datum/reagent/toxin/plantbgone/weedkiller)
 		affected.adjustToxLoss(3 * REM * seconds_per_tick)
 
-/// A mushpersons mushroom cap organ
-/obj/item/organ/external/mushroom_cap
-	name = "mushroom cap"
-	desc = "These are yummie, no cap."
-
-	use_mob_sprite_as_obj_sprite = TRUE
-
-	zone = BODY_ZONE_HEAD
-	slot = ORGAN_SLOT_EXTERNAL_POD_HAIR
-
-	preference = "feature_mushperson_cap"
-
-	dna_block = DNA_MUSHROOM_CAPS_BLOCK
-	restyle_flags = EXTERNAL_RESTYLE_PLANT
-
-	bodypart_overlay = /datum/bodypart_overlay/mutant/mushroom_cap
-
-/// Bodypart overlay for the mushroom cap organ
-/datum/bodypart_overlay/mutant/mushroom_cap
-	layers = EXTERNAL_ADJACENT
-	feature_key = "caps"
-
-/datum/bodypart_overlay/mutant/mushroom_cap/get_global_feature_list()
-	return GLOB.caps_list
-
-/datum/bodypart_overlay/mutant/mushroom_cap/can_draw_on_bodypart(mob/living/carbon/human/human)
-	if((human.head?.flags_inv & HIDEHAIR) || (human.wear_mask?.flags_inv & HIDEHAIR))
-		return FALSE
-
-	return TRUE
-
+/datum/species/mush/handle_mutant_bodyparts(mob/living/carbon/human/H, forced_colour)
+	forced_colour = FALSE
+	return ..()

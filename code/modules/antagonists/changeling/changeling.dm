@@ -350,12 +350,12 @@
 /datum/antagonist/changeling/proc/regain_powers()
 	emporium_action.Grant(owner.current)
 	for(var/datum/action/changeling/power as anything in innate_powers)
-		power.on_purchase(owner.current)
+		power.Grant(owner.current)
 
 	for(var/power_path in purchased_powers)
 		var/datum/action/changeling/power = purchased_powers[power_path]
 		if(istype(power))
-			power.on_purchase(owner.current)
+			power.Grant(owner.current)
 
 /*
  * The act of purchasing a certain power for a changeling.
@@ -415,8 +415,7 @@
 
 	purchased_powers[power_path] = new_action
 	new_action.on_purchase(owner.current) // Grant() is ran in this proc, see changeling_powers.dm.
-	log_changeling_power("[key_name(owner)] adapted the [new_action.name] power")
-	SSblackbox.record_feedback("tally", "changeling_power_purchase", 1, new_action.name)
+	log_changeling_power("[key_name(owner)] adapted the [new_action] power")
 
 	return TRUE
 
@@ -691,21 +690,16 @@
 		else
 			var/datum/objective/maroon/maroon_objective = new
 			maroon_objective.owner = owner
+			maroon_objective.find_target()
+			objectives += maroon_objective
 
 			if (!(locate(/datum/objective/escape) in objectives) && escape_objective_possible)
 				var/datum/objective/escape/escape_with_identity/identity_theft = new
 				identity_theft.owner = owner
-				identity_theft.find_target()
+				identity_theft.target = maroon_objective.target
 				identity_theft.update_explanation_text()
-				escape_objective_possible = FALSE
-				maroon_objective.target = identity_theft.target || maroon_objective.find_target()
-				maroon_objective.update_explanation_text()
-				objectives += maroon_objective
 				objectives += identity_theft
-			else
-				maroon_objective.find_target()
-				objectives += maroon_objective
-
+				escape_objective_possible = FALSE
 
 	if (!(locate(/datum/objective/escape) in objectives) && escape_objective_possible)
 		if(prob(50))

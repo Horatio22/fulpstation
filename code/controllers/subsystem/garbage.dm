@@ -145,6 +145,12 @@ SUBSYSTEM_DEF(garbage)
 			pass_counts[i] = 0
 			fail_counts[i] = 0
 
+#ifdef EXPERIMENT_515_QDEL_HARD_REFERENCE
+// 1 from the hard reference in the queue, and 1 from the variable used before this
+#define IS_DELETED(datum, _) (refcount(##datum) == 2)
+#else
+#define IS_DELETED(datum, gcd_at_time) (isnull(##datum) || ##datum.gc_destroyed != gcd_at_time)
+#endif
 
 /datum/controller/subsystem/garbage/proc/HandleQueue(level = GC_QUEUE_FILTER)
 	if (level == GC_QUEUE_FILTER)
@@ -162,10 +168,7 @@ SUBSYSTEM_DEF(garbage)
 
 	lastlevel = level
 
-// 1 from the hard reference in the queue, and 1 from the variable used before this
-#define REFS_WE_EXPECT 2
-
-	//We do this rather then for(var/list/ref_info in queue) because that sort of for loop copies the whole list.
+	//We do this rather then for(var/refID in queue) because that sort of for loop copies the whole list.
 	//Normally this isn't expensive, but the gc queue can grow to 40k items, and that gets costly/causes overrun.
 	for (var/i in 1 to length(queue))
 		var/list/L = queue[i]
@@ -180,10 +183,17 @@ SUBSYSTEM_DEF(garbage)
 			break // Everything else is newer, skip them
 		count++
 
+#ifdef EXPERIMENT_515_QDEL_HARD_REFERENCE
 		var/datum/D = L[GC_QUEUE_ITEM_REF]
+#else
+		var/GCd_at_time = L[GC_QUEUE_ITEM_GCD_DESTROYED]
 
-		// If that's all we've got, send er off
-		if (refcount(D) == REFS_WE_EXPECT)
+		var/refID = L[GC_QUEUE_ITEM_REF]
+		var/datum/D
+		D = locate(refID)
+#endif
+
+		if (IS_DELETED(D, GCd_at_time)) // So if something else coincidently gets the same ref, it's not deleted by mistake
 			++gcedlasttick
 			++totalgcs
 			pass_counts[level]++
@@ -204,15 +214,12 @@ SUBSYSTEM_DEF(garbage)
 		switch (level)
 			if (GC_QUEUE_CHECK)
 				#ifdef REFERENCE_TRACKING
-				// Decides how many refs to look for (potentially)
-				// Based off the remaining and the ones we can account for
-				var/remaining_refs = refcount(D) - REFS_WE_EXPECT
 				if(reference_find_on_fail[text_ref(D)])
-					INVOKE_ASYNC(D, TYPE_PROC_REF(/datum,find_references), remaining_refs)
+					INVOKE_ASYNC(D, TYPE_PROC_REF(/datum,find_references))
 					ref_searching = TRUE
 				#ifdef GC_FAILURE_HARD_LOOKUP
 				else
-					INVOKE_ASYNC(D, TYPE_PROC_REF(/datum,find_references), remaining_refs)
+					INVOKE_ASYNC(D, TYPE_PROC_REF(/datum,find_references))
 					ref_searching = TRUE
 				#endif
 				reference_find_on_fail -= text_ref(D)
@@ -221,9 +228,10 @@ SUBSYSTEM_DEF(garbage)
 				var/datum/qdel_item/I = items[type]
 
 				var/message = "## TESTING: GC: -- [text_ref(D)] | [type] was unable to be GC'd --"
+#if DM_VERSION >= 515
 				message = "[message] (ref count of [refcount(D)])"
+#endif
 				log_world(message)
-
 				var/detail = D.dump_harddel_info()
 				if(detail)
 					LAZYADD(I.extra_details, detail)
@@ -262,7 +270,7 @@ SUBSYSTEM_DEF(garbage)
 		queue.Cut(1,count+1)
 		count = 0
 
-#undef REFS_WE_EXPECT
+#undef IS_DELETED
 
 /datum/controller/subsystem/garbage/proc/Queue(datum/D, level = GC_QUEUE_FILTER)
 	if (isnull(D))
@@ -272,11 +280,21 @@ SUBSYSTEM_DEF(garbage)
 		return
 	var/queue_time = world.time
 
+#ifdef EXPERIMENT_515_QDEL_HARD_REFERENCE
+	var/refid = D
 	if (D.gc_destroyed <= 0)
 		D.gc_destroyed = queue_time
+#else
+	var/refid = text_ref(D)
+	var/static/uid = 0
+	if (D.gc_destroyed <= 0)
+		uid = WRAP(uid+1, 1, SHORT_REAL_LIMIT - 1)
+		D.gc_destroyed = uid
+#endif
 
 	var/list/queue = queues[level]
-	queue[++queue.len] = list(queue_time, D, D.gc_destroyed) // not += for byond reasons
+
+	queue[++queue.len] = list(queue_time, refid, D.gc_destroyed) // not += for byond reasons
 
 //this is mainly to separate things profile wise.
 /datum/controller/subsystem/garbage/proc/HardDelete(datum/D)
@@ -344,7 +362,7 @@ SUBSYSTEM_DEF(garbage)
 /// Should be treated as a replacement for the 'del' keyword.
 ///
 /// Datums passed to this will be given a chance to clean up references to allow the GC to collect them.
-/proc/qdel(datum/to_delete, force = FALSE)
+/proc/qdel(datum/to_delete, force = FALSE, ...)
 	if(!istype(to_delete))
 		del(to_delete)
 		return
@@ -366,7 +384,7 @@ SUBSYSTEM_DEF(garbage)
 	var/start_time = world.time
 	var/start_tick = world.tick_usage
 	SEND_SIGNAL(to_delete, COMSIG_QDELETING, force) // Let the (remaining) components know about the result of Destroy
-	var/hint = to_delete.Destroy(force) // Let our friend know they're about to get fucked up.
+	var/hint = to_delete.Destroy(arglist(args.Copy(2))) // Let our friend know they're about to get fucked up.
 
 	if(world.time != start_time)
 		trash.slept_destroy++

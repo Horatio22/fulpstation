@@ -5,12 +5,17 @@
 "b" = (
 /turf/closed/indestructible/riveted/plastinum,
 /area/centcom/mafia)
+"c" = (
+/obj/effect/landmark/mafia,
+/turf/open/floor/iron,
+/area/centcom/mafia)
 "d" = (
 /turf/open/floor/plating,
 /area/centcom/mafia)
 "e" = (
+/obj/structure/lattice/catwalk,
 /obj/effect/landmark/mafia,
-/turf/open/floor/iron/dark,
+/turf/open/lava/plasma/mafia,
 /area/centcom/mafia)
 "f" = (
 /obj/effect/mapping_helpers/burnt_floor,
@@ -177,21 +182,16 @@
 "K" = (
 /turf/closed/indestructible/rock/snow,
 /area/centcom/mafia)
-"L" = (
-/turf/template_noop,
-/area/template_noop)
-"R" = (
+"T" = (
 /obj/effect/landmark/mafia,
-/turf/open/floor/iron,
+/turf/open/floor/iron/dark,
 /area/centcom/mafia)
 "W" = (
-/obj/structure/lattice/catwalk,
-/obj/effect/landmark/mafia,
-/turf/open/lava/plasma/mafia,
-/area/centcom/mafia)
+/turf/template_noop,
+/area/template_noop)
 
 (1,1,1) = {"
-L
+W
 a
 a
 a
@@ -216,7 +216,7 @@ a
 a
 "}
 (2,1,1) = {"
-L
+W
 a
 b
 b
@@ -241,7 +241,7 @@ K
 a
 "}
 (3,1,1) = {"
-L
+W
 a
 b
 s
@@ -266,7 +266,7 @@ K
 a
 "}
 (4,1,1) = {"
-L
+W
 a
 b
 s
@@ -399,13 +399,13 @@ s
 s
 p
 r
-R
+c
 p
-e
+T
 p
 y
 p
-W
+e
 z
 p
 p
@@ -449,7 +449,7 @@ j
 F
 F
 q
-e
+T
 x
 J
 t
@@ -499,7 +499,7 @@ j
 F
 F
 r
-R
+c
 A
 J
 t
@@ -549,13 +549,13 @@ s
 s
 p
 q
-e
+T
 p
-R
+c
 p
 y
 p
-W
+e
 z
 p
 p
@@ -666,7 +666,7 @@ K
 a
 "}
 (20,1,1) = {"
-L
+W
 a
 b
 s
@@ -691,7 +691,7 @@ K
 a
 "}
 (21,1,1) = {"
-L
+W
 a
 b
 s
@@ -716,7 +716,7 @@ K
 a
 "}
 (22,1,1) = {"
-L
+W
 a
 b
 b
@@ -741,7 +741,7 @@ K
 a
 "}
 (23,1,1) = {"
-L
+W
 a
 a
 a

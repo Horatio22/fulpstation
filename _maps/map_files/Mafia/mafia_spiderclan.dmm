@@ -67,8 +67,8 @@
 	name = "Station Night Shutters"
 	},
 /turf/closed/indestructible/fakeglass{
-	icon = 'icons/obj/smooth_structures/structure_variations.dmi';
-	icon_state = "paper-whole"
+	icon = 'icons/obj/smooth_structures/paperframes.dmi';
+	icon_state = "paper"
 	},
 /area/centcom/mafia)
 "q" = (
@@ -94,7 +94,7 @@
 /obj/structure/showcase/katana,
 /turf/open/misc/beach/sand,
 /area/centcom/mafia)
-"Q" = (
+"O" = (
 /turf/template_noop,
 /area/template_noop)
 "S" = (
@@ -102,7 +102,7 @@
 /area/centcom/mafia)
 
 (1,1,1) = {"
-Q
+O
 a
 a
 a
@@ -124,10 +124,10 @@ a
 a
 a
 a
-Q
+O
 "}
 (2,1,1) = {"
-Q
+O
 a
 S
 S
@@ -149,10 +149,10 @@ S
 S
 S
 a
-Q
+O
 "}
 (3,1,1) = {"
-Q
+O
 a
 S
 c
@@ -174,10 +174,10 @@ c
 c
 S
 a
-Q
+O
 "}
 (4,1,1) = {"
-Q
+O
 a
 S
 c
@@ -199,7 +199,7 @@ k
 c
 S
 a
-Q
+O
 "}
 (5,1,1) = {"
 a
@@ -577,7 +577,7 @@ a
 a
 "}
 (20,1,1) = {"
-Q
+O
 a
 S
 c
@@ -599,10 +599,10 @@ v
 c
 S
 a
-Q
+O
 "}
 (21,1,1) = {"
-Q
+O
 a
 S
 c
@@ -624,10 +624,10 @@ c
 c
 S
 a
-Q
+O
 "}
 (22,1,1) = {"
-Q
+O
 a
 S
 S
@@ -649,10 +649,10 @@ S
 S
 S
 a
-Q
+O
 "}
 (23,1,1) = {"
-Q
+O
 a
 a
 a
@@ -674,5 +674,5 @@ a
 a
 a
 a
-Q
+O
 "}

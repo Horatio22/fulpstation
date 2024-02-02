@@ -49,12 +49,12 @@
 		else
 			show_eyeless = FALSE
 	else
-		if(!hair_hidden && !(locate(/obj/item/organ/internal/brain) in src))
+		if(!hair_hidden && !brain)
 			show_debrained = TRUE
 		else
 			show_debrained = FALSE
 
-		if(!(locate(/obj/item/organ/internal/eyes) in src))
+		if(!eyes)
 			show_eyeless = TRUE
 		else
 			show_eyeless = FALSE

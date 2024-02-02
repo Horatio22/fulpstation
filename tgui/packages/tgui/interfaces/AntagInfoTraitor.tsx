@@ -1,10 +1,9 @@
-import { BooleanLike } from 'common/react';
-import { multiline } from 'common/string';
-
 import { useBackend } from '../backend';
+import { multiline } from 'common/string';
 import { BlockQuote, Button, Dimmer, Section, Stack } from '../components';
+import { BooleanLike } from 'common/react';
 import { Window } from '../layouts';
-import { Objective, ObjectivePrintout } from './common/Objectives';
+import { ObjectivePrintout, Objective } from './common/Objectives';
 
 const allystyle = {
   fontWeight: 'bold',
@@ -39,8 +38,8 @@ type Info = {
   objectives: Objective[];
 };
 
-const IntroductionSection = (props) => {
-  const { act, data } = useBackend<Info>();
+const IntroductionSection = (props, context) => {
+  const { act, data } = useBackend<Info>(context);
   const { intro, objectives } = data;
   return (
     <Section fill title="Intro" scrollable>
@@ -54,8 +53,8 @@ const IntroductionSection = (props) => {
   );
 };
 
-const EmployerSection = (props) => {
-  const { data } = useBackend<Info>();
+const EmployerSection = (props, context) => {
+  const { data } = useBackend<Info>(context);
   const { allies, goal } = data;
   return (
     <Section
@@ -69,12 +68,10 @@ const EmployerSection = (props) => {
             This is a gameplay suggestion for bored traitors.
             You don't have to follow it, unless you want some
             ideas for how to spend the round.`}
-          tooltipPosition="bottom-start"
-        >
+          tooltipPosition="bottom-start">
           Policy
         </Button>
-      }
-    >
+      }>
       <Stack vertical fill>
         <Stack.Item grow>
           <Stack vertical>
@@ -100,8 +97,8 @@ const EmployerSection = (props) => {
   );
 };
 
-const UplinkSection = (props) => {
-  const { data } = useBackend<Info>();
+const UplinkSection = (props, context) => {
+  const { data } = useBackend<Info>(context);
   const {
     has_uplink,
     uplink_intro,
@@ -175,8 +172,8 @@ const UplinkSection = (props) => {
   );
 };
 
-const CodewordsSection = (props) => {
-  const { data } = useBackend<Info>();
+const CodewordsSection = (props, context) => {
+  const { data } = useBackend<Info>(context);
   const { has_codewords, phrases, responses } = data;
   return (
     <Section title="Codewords" mb={!has_codewords && -1}>
@@ -221,8 +218,8 @@ const CodewordsSection = (props) => {
   );
 };
 
-export const AntagInfoTraitor = (props) => {
-  const { data } = useBackend<Info>();
+export const AntagInfoTraitor = (props, context) => {
+  const { data } = useBackend<Info>(context);
   const { theme } = data;
   return (
     <Window width={620} height={580} theme={theme}>

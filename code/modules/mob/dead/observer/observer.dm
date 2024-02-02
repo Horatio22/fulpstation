@@ -151,7 +151,6 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 
 	SSpoints_of_interest.make_point_of_interest(src)
 	ADD_TRAIT(src, TRAIT_HEAR_THROUGH_DARKNESS, ref(src))
-	ADD_TRAIT(src, TRAIT_SECURITY_HUD, ref(src))
 
 /mob/dead/observer/get_photo_description(obj/item/camera/camera)
 	if(!invisibility || camera.see_ghosts)
@@ -172,10 +171,10 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 		mind.current.med_hud_set_status()
 
 	GLOB.ghost_images_default -= ghostimage_default
-	ghostimage_default = null
+	QDEL_NULL(ghostimage_default)
 
 	GLOB.ghost_images_simple -= ghostimage_simple
-	ghostimage_simple = null
+	QDEL_NULL(ghostimage_simple)
 
 	updateallghostimages()
 
@@ -305,13 +304,7 @@ Works together with spawning an observer, noted above.
 	ghost.client?.init_verbs()
 	if(!can_reenter_corpse)// Disassociates observer mind from the body mind
 		ghost.mind = null
-
-	var/recordable_time = world.time
-	var/mob/living/former_mob = ghost.mind?.current
-	if(isliving(former_mob))
-		recordable_time = former_mob.timeofdeath
-
-	ghost.client?.player_details.time_of_death = recordable_time
+	ghost.client?.player_details.time_of_death = ghost.mind?.current ? mind.current.timeofdeath : world.time
 	SEND_SIGNAL(src, COMSIG_MOB_GHOSTIZED)
 	return ghost
 
@@ -430,13 +423,13 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	to_chat(src, span_boldnotice("You can no longer be brought back into your body."))
 	return TRUE
 
-/mob/dead/observer/proc/send_revival_notification(message, sound, atom/source, flashwindow)
+/mob/dead/observer/proc/notify_cloning(message, sound, atom/source, flashwindow = TRUE)
 	if(flashwindow)
 		window_flash(client)
 	if(message)
 		to_chat(src, span_ghostalert("[message]"))
 		if(source)
-			var/atom/movable/screen/alert/A = throw_alert("[REF(source)]_revival", /atom/movable/screen/alert/revival)
+			var/atom/movable/screen/alert/A = throw_alert("[REF(source)]_notify_cloning", /atom/movable/screen/alert/notify_cloning)
 			if(A)
 				var/ui_style = client?.prefs?.read_preference(/datum/preference/choiced/ui_style)
 				if(ui_style)
@@ -712,7 +705,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 	client.crew_manifest_delay = world.time + (1 SECONDS)
 
-	GLOB.manifest.ui_interact(src)
+	if(!GLOB.crew_manifest_tgui)
+		GLOB.crew_manifest_tgui = new /datum/crew_manifest(src)
+
+	GLOB.crew_manifest_tgui.ui_interact(src)
 
 //this is called when a ghost is drag clicked to something.
 /mob/dead/observer/MouseDrop(atom/over)
@@ -746,33 +742,17 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			reenter_corpse()
 			return
 
-		if(href_list["view"])
-			var/atom/target = locate(href_list["view"])
-			observer_view(target)
-			return
+		if(href_list["jump"])
+			var/atom/movable/target = locate(href_list["jump"])
+			var/turf/target_turf = get_turf(target)
+			if(target_turf && isturf(target_turf))
+				abstract_move(target_turf)
 
 		if(href_list["play"])
 			var/atom/movable/target = locate(href_list["play"])
-			jump_to_interact(target)
-
-/// We orbit and interact with the target
-/mob/dead/observer/proc/jump_to_interact(atom/target)
-	if(isnull(target) || target == src)
-		return
-
-	ManualFollow(target)
-	target.attack_ghost(usr)
-
-/// We orbit the target or jump if its a turf
-/mob/dead/observer/proc/observer_view(atom/target)
-	if(isnull(target) || target == src)
-		return
-
-	if(isturf(target))
-		abstract_move(target)
-		return
-
-	ManualFollow(target)
+			if(istype(target) && (target != src))
+				target.attack_ghost(usr)
+				return
 
 //We don't want to update the current var
 //But we will still carry a mind.

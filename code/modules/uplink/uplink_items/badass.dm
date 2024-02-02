@@ -24,7 +24,8 @@
 
 	notify_ghosts(
 		"[user] has purchased a BADASS Syndicate Balloon!",
-		source = .,
+		source = src,
+		action = NOTIFY_ORBIT,
 		header = "What are they THINKING?",
 	)
 

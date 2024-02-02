@@ -149,7 +149,7 @@
 "ev" = (
 /obj/effect/baseturf_helper/virtual_domain,
 /turf/template_noop,
-/area/virtual_domain/safehouse)
+/area/virtual_domain)
 "eJ" = (
 /obj/structure/disposalpipe/sorting{
 	dir = 2
@@ -220,6 +220,7 @@
 /area/virtual_domain)
 "gc" = (
 /obj/structure/disposalpipe/broken,
+/obj/effect/landmark/bitrunning/mob_segment,
 /turf/open/floor/plating,
 /area/virtual_domain)
 "gj" = (
@@ -362,10 +363,6 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plating,
 /area/virtual_domain)
-"lt" = (
-/obj/effect/landmark/bitrunning/mob_segment,
-/turf/open/floor/plating,
-/area/virtual_domain)
 "lx" = (
 /obj/machinery/door/poddoor/shutters/indestructible{
 	dir = 4;
@@ -477,12 +474,6 @@
 	},
 /turf/open/floor/carpet/orange,
 /area/virtual_domain)
-"pb" = (
-/obj/structure/broken_flooring/corner{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/virtual_domain)
 "pf" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/effect/mapping_helpers/damaged_window,
@@ -494,7 +485,7 @@
 /area/virtual_domain)
 "po" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/random/structure/closet_empty/crate/with_loot,
+/obj/structure/closet/crate/maint,
 /turf/open/floor/iron,
 /area/virtual_domain)
 "pv" = (
@@ -636,13 +627,6 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/virtual_domain)
-"tE" = (
-/obj/structure/disposalpipe/segment{
-	dir = 10
-	},
-/obj/effect/landmark/bitrunning/mob_segment,
-/turf/open/floor/plating,
-/area/virtual_domain)
 "ud" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/carpet/royalblue{
@@ -709,7 +693,7 @@
 /turf/open/floor/plating,
 /area/virtual_domain)
 "vA" = (
-/obj/effect/spawner/random/structure/closet_empty/crate/with_loot,
+/obj/structure/closet/crate/maint,
 /obj/effect/turf_decal/stripes{
 	dir = 9
 	},
@@ -851,6 +835,10 @@
 /obj/effect/mapping_helpers/airlock/welded,
 /turf/open/floor/plating,
 /area/virtual_domain)
+"yJ" = (
+/obj/structure/disposalpipe/broken,
+/turf/open/floor/plating,
+/area/virtual_domain)
 "yM" = (
 /turf/closed/indestructible/fakedoor{
 	name = "Stairwell Access"
@@ -897,12 +885,6 @@
 "Av" = (
 /obj/item/stack/rods/two,
 /turf/open/space/basic,
-/area/virtual_domain)
-"Aw" = (
-/obj/structure/lattice/catwalk{
-	name = "industrial lift"
-	},
-/turf/open/chasm,
 /area/virtual_domain)
 "AJ" = (
 /obj/effect/decal/cleanable/generic,
@@ -1064,7 +1046,7 @@
 /area/virtual_domain)
 "Fa" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/random/structure/closet_empty/crate/with_loot,
+/obj/structure/closet/crate/maint,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
 /area/virtual_domain)
@@ -1233,7 +1215,7 @@
 /area/virtual_domain)
 "JR" = (
 /turf/template_noop,
-/area/virtual_domain/safehouse)
+/area/virtual_domain)
 "JT" = (
 /obj/structure/lattice/catwalk{
 	name = "industrial lift"
@@ -1257,9 +1239,10 @@
 /turf/open/floor/plating,
 /area/virtual_domain)
 "KX" = (
-/obj/structure/disposalpipe/broken,
-/obj/effect/landmark/bitrunning/mob_segment,
-/turf/open/floor/plating,
+/obj/structure/lattice/catwalk{
+	name = "industrial lift"
+	},
+/turf/open/chasm,
 /area/virtual_domain)
 "Ln" = (
 /obj/structure/disposalpipe/broken{
@@ -1455,11 +1438,9 @@
 /turf/open/floor/plating,
 /area/virtual_domain)
 "Qo" = (
-/obj/modular_map_root/safehouse{
-	key = "shuttle_space"
-	},
+/obj/effect/landmark/bitrunning/safehouse_spawn,
 /turf/template_noop,
-/area/virtual_domain/safehouse)
+/area/virtual_domain)
 "Qr" = (
 /turf/closed/indestructible/fakedoor/maintenance{
 	name = "maintenance access"
@@ -1589,6 +1570,12 @@
 	},
 /obj/effect/mob_spawn/corpse/human/factory/qm,
 /turf/open/floor/iron,
+/area/virtual_domain)
+"Tn" = (
+/obj/structure/broken_flooring/corner{
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/virtual_domain)
 "Tp" = (
 /obj/machinery/door/poddoor/shutters/indestructible{
@@ -1821,7 +1808,7 @@
 /turf/open/floor/plating,
 /area/virtual_domain)
 "Ym" = (
-/mob/living/basic/pet/cat/space,
+/mob/living/simple_animal/pet/cat/space,
 /obj/structure/bed/dogbed{
 	name = "cat bed"
 	},
@@ -1871,6 +1858,13 @@
 	icon_state = "carpet_royalblue-157"
 	},
 /area/virtual_domain)
+"Zq" = (
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/obj/effect/landmark/bitrunning/mob_segment,
+/turf/open/floor/plating,
+/area/virtual_domain)
 "Zy" = (
 /obj/structure/table,
 /obj/item/flashlight/lantern,
@@ -1880,6 +1874,10 @@
 /turf/open/floor/carpet/royalblue{
 	icon_state = "carpet_royalblue-203"
 	},
+/area/virtual_domain)
+"ZK" = (
+/obj/effect/landmark/bitrunning/mob_segment,
+/turf/open/floor/plating,
 /area/virtual_domain)
 "ZP" = (
 /obj/structure/railing,
@@ -2163,7 +2161,7 @@ vA
 Dr
 bw
 Jq
-gc
+yJ
 eg
 RJ
 eg
@@ -2261,8 +2259,8 @@ RJ
 eg
 uU
 gj
-lt
-pb
+ZK
+Tn
 OR
 eg
 RJ
@@ -2508,7 +2506,7 @@ kU
 pv
 AP
 IZ
-Aw
+KX
 Wd
 uv
 DE
@@ -2557,14 +2555,14 @@ mu
 uF
 xl
 AP
-Aw
+KX
 JT
 bG
-tE
+Zq
 DA
 DA
 zE
-KX
+gc
 mu
 Yz
 lW
@@ -2607,8 +2605,8 @@ iz
 jS
 gj
 rJ
-Aw
-Aw
+KX
+KX
 Wd
 Ff
 lN
@@ -2859,9 +2857,9 @@ Yl
 pJ
 eg
 kn
-pb
+Tn
 kU
-lt
+ZK
 kU
 Fa
 kU
@@ -2911,7 +2909,7 @@ eg
 rc
 mu
 rM
-gc
+yJ
 vQ
 vQ
 mu

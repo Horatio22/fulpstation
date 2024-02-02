@@ -58,7 +58,7 @@
 		COMSIG_GEIGER_COUNTER_SCAN,
 	))
 
-/datum/component/irradiated/Destroy(force)
+/datum/component/irradiated/Destroy(force, silent)
 	var/atom/movable/parent_movable = parent
 	if (istype(parent_movable))
 		parent_movable.remove_filter("rad_glow")

@@ -45,8 +45,8 @@
 /obj/mafia_game_board,
 /turf/open/floor/plating,
 /area/centcom/mafia)
-"o" = (
-/turf/open/floor/iron/dark,
+"l" = (
+/turf/closed/wall/mineral/plastitanium,
 /area/centcom/mafia)
 "p" = (
 /obj/machinery/door/poddoor/preopen{
@@ -145,21 +145,21 @@
 /obj/effect/spawner/random/clothing/syndie,
 /turf/open/floor/iron/dark,
 /area/centcom/mafia)
+"H" = (
+/turf/open/floor/iron/dark,
+/area/centcom/mafia)
+"L" = (
+/turf/template_noop,
+/area/template_noop)
 "Q" = (
 /turf/open/floor/circuit/red,
 /area/centcom/mafia)
 "S" = (
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/mafia)
-"W" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/centcom/mafia)
-"Y" = (
-/turf/template_noop,
-/area/template_noop)
 
 (1,1,1) = {"
-Y
+L
 a
 a
 a
@@ -181,10 +181,10 @@ a
 a
 a
 a
-Y
+L
 "}
 (2,1,1) = {"
-Y
+L
 a
 w
 w
@@ -206,10 +206,10 @@ w
 w
 w
 a
-Y
+L
 "}
 (3,1,1) = {"
-Y
+L
 a
 w
 c
@@ -231,10 +231,10 @@ c
 c
 w
 a
-Y
+L
 "}
 (4,1,1) = {"
-Y
+L
 a
 w
 c
@@ -256,7 +256,7 @@ k
 c
 w
 a
-Y
+L
 "}
 (5,1,1) = {"
 a
@@ -267,13 +267,13 @@ h
 d
 d
 i
-W
-W
+l
+l
 j
-W
+l
 j
-W
-W
+l
+l
 d
 d
 i
@@ -289,19 +289,19 @@ w
 w
 c
 i
-W
-W
+l
+l
 j
-W
+l
 b
 r
-W
-o
+l
+H
 G
-W
+l
 j
-W
-W
+l
+l
 d
 c
 w
@@ -314,19 +314,19 @@ w
 c
 c
 d
-W
+l
 G
-o
+H
 p
 r
 r
 p
-o
-o
+H
+H
 p
 r
 b
-W
+l
 d
 c
 c
@@ -339,19 +339,19 @@ w
 c
 d
 d
-W
-o
-o
-W
-W
+l
+H
+H
+l
+l
 r
-W
-o
-W
-W
+l
+H
+l
+l
 r
 r
-W
+l
 d
 d
 c
@@ -363,10 +363,10 @@ a
 w
 c
 d
-W
-W
+l
+l
 p
-o
+H
 x
 p
 B
@@ -376,8 +376,8 @@ p
 B
 r
 p
-W
-W
+l
+l
 d
 c
 w
@@ -388,10 +388,10 @@ a
 w
 c
 d
-W
+l
 b
 p
-W
+l
 p
 p
 p
@@ -399,10 +399,10 @@ p
 p
 p
 p
-W
+l
 p
 G
-W
+l
 d
 c
 w
@@ -424,9 +424,9 @@ Q
 S
 p
 q
-o
-o
-o
+H
+H
+H
 j
 i
 c
@@ -438,10 +438,10 @@ a
 w
 c
 i
-W
-W
+l
+l
 p
-W
+l
 p
 p
 Q
@@ -449,10 +449,10 @@ u
 Q
 p
 p
-W
+l
 p
-W
-W
+l
+l
 d
 c
 w
@@ -464,9 +464,9 @@ w
 c
 d
 j
-o
-o
-o
+H
+H
+H
 z
 p
 S
@@ -488,10 +488,10 @@ a
 w
 c
 d
-W
+l
 G
 p
-W
+l
 p
 p
 p
@@ -499,10 +499,10 @@ p
 p
 p
 p
-W
+l
 p
 b
-W
+l
 i
 c
 w
@@ -513,8 +513,8 @@ a
 w
 c
 d
-W
-W
+l
+l
 p
 r
 A
@@ -524,10 +524,10 @@ p
 A
 p
 C
-o
+H
 p
-W
-W
+l
+l
 d
 c
 w
@@ -539,19 +539,19 @@ w
 c
 f
 d
-W
+l
 r
 r
-W
-W
-o
-W
+l
+l
+H
+l
 r
-W
-W
-o
-o
-W
+l
+l
+H
+H
+l
 d
 d
 c
@@ -564,19 +564,19 @@ w
 c
 c
 d
-W
+l
 b
 r
 p
-o
-o
+H
+H
 p
 r
 r
 p
-o
+H
 G
-W
+l
 d
 c
 c
@@ -589,19 +589,19 @@ w
 w
 c
 d
-W
-W
+l
+l
 j
-W
+l
 G
-o
-W
+H
+l
 r
 b
-W
+l
 j
-W
-W
+l
+l
 d
 c
 w
@@ -617,13 +617,13 @@ h
 i
 d
 d
-W
-W
+l
+l
 j
-W
+l
 j
-W
-W
+l
+l
 d
 i
 d
@@ -634,7 +634,7 @@ a
 a
 "}
 (20,1,1) = {"
-Y
+L
 a
 w
 c
@@ -656,10 +656,10 @@ v
 c
 w
 a
-Y
+L
 "}
 (21,1,1) = {"
-Y
+L
 a
 w
 c
@@ -681,10 +681,10 @@ c
 c
 w
 a
-Y
+L
 "}
 (22,1,1) = {"
-Y
+L
 a
 w
 w
@@ -706,10 +706,10 @@ w
 w
 w
 a
-Y
+L
 "}
 (23,1,1) = {"
-Y
+L
 a
 a
 a
@@ -731,5 +731,5 @@ a
 a
 a
 a
-Y
+L
 "}

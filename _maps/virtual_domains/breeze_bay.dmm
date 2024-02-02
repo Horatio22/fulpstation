@@ -58,9 +58,7 @@
 /area/virtual_domain/fullbright)
 "v" = (
 /obj/effect/baseturf_helper/virtual_domain,
-/obj/modular_map_root/safehouse{
-	key = "wood"
-	},
+/obj/effect/landmark/bitrunning/safehouse_spawn,
 /turf/template_noop,
 /area/virtual_domain/safehouse)
 "y" = (
