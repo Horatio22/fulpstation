@@ -50,3 +50,18 @@
 
 /obj/effect/particle_effect/fluid/smoke/transparent/dancefloor_devil
 	lifetime = 2
+
+/datum/action/cooldown/spell/conjure/frogs
+	name = "Conjure Frogs"
+	desc = "something something plagues of egypt idk"
+
+	school = SCHOOL_CONJURATION
+	cooldown_time = 1 MINUTES
+	cooldown_reduction_per_rank = 13.75 SECONDS
+
+	invocation = "Ribbit!"
+	invocation_type = INVOCATION_SHOUT
+
+	summon_radius = 3
+	summon_type = list(/mob/living/basic/frog)
+	summon_amount = 4

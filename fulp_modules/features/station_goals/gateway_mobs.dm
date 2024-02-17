@@ -28,3 +28,7 @@
 /mob/living/basic/seedling/gateway
 	faction = list(FACTION_GATEWAY)
 
+/mob/living/carbon/human/species/monkey
+	faction = list(FACTION_GATEWAY)
+
+
