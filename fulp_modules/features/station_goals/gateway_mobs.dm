@@ -28,7 +28,7 @@
 /mob/living/basic/seedling/gateway
 	faction = list("gateway")
 
-/mob/living/carbon/human/species/monkey
+/mob/living/carbon/human/species/monkey/gateway
 	faction = list("gateway")
 
 /mob/living/basic/gorilla/gateway
