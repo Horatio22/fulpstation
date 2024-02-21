@@ -174,7 +174,7 @@ ALLOW_AI_MULTICAM
 GATEWAY_DELAY 18000
 
 ## The probability of the gateway mission being a config one
-CONFIG_GATEWAY_CHANCE 0
+CONFIG_GATEWAY_CHANCE 100
 
 ## ACCESS ###
 

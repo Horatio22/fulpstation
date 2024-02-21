@@ -67,3 +67,24 @@
 /area/ruin/space/has_grav/powered/beef/atmos
 	name = "beef station atmos"
 	icon_state = "beef_station_atmos"
+
+/// gateway
+///
+/area/awaymission/fulp_jungle
+	name = "Jungle"
+	icon_state = "away"
+	static_lighting = TRUE
+	base_lighting_alpha = 255
+	base_lighting_color = "#FFFFCC"
+	requires_power = TRUE
+	has_gravity = STANDARD_GRAVITY
+
+/area/awaymission/fulp_junglebase
+	name = "Jungle Base"
+	icon_state = "away"
+	static_lighting = FALSE
+	base_lighting_alpha = 255
+	base_lighting_color = "#FFFFCC"
+	requires_power = TRUE
+	has_gravity = STANDARD_GRAVITY
+

@@ -1,34 +1,4 @@
 
-
-//Station Shield
-// A chain of satellites encircles the station
-// Satellites be actived to generate a shield that will block unorganic matter from passing it.
-/datum/station_goal/gateway
-	name = "Gateway Research Post"
-	requires_space = FALSE
-
-/datum/station_goal/gateway/get_report()
-	return list(
-		"<blockquote>NanoTrasen is interested in expanding our research to a nearby asteroid.",
-		"The Gateway is set to the location's coordinates. Clear the area and deploy a research post pod.",
-		"",
-		"You can order the research post pods at cargo.</blockquote>",
-	).Join("\n")
-
-
-/datum/station_goal/gateway/on_report()
-	//Unlock
-	var/datum/supply_pack/P = SSshuttle.supply_packs[/datum/supply_pack/science/research_pod]
-	P.special_enabled = TRUE
-
-	P = SSshuttle.supply_packs[/datum/supply_pack/science/research_pod]
-	P.special_enabled = TRUE
-
-/datum/station_goal/gateway/check_completion()
-	if(..())
-		return TRUE
-	return FALSE
-
 /datum/supply_pack/science/research_pod
 	name = "Research Post Pod"
 	desc = "Establish a state-of-the-art research post anywhere in the universe! \
@@ -68,4 +38,8 @@
 
 /obj/effect/mob_spawn/corpse/human/engineer/gateway
 	outfit = /datum/outfit/job/engineer/gloved/no_id
+
+//
+/obj/structure/statue/gold/rd/indestructible
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 

@@ -1,5 +1,4 @@
 
-
 //Station Shield
 // A chain of satellites encircles the station
 // Satellites be actived to generate a shield that will block unorganic matter from passing it.
@@ -17,17 +16,12 @@
 
 
 /datum/station_goal/gateway/on_report()
-	//Unlock
-	var/datum/supply_pack/P = SSshuttle.supply_packs[/datum/supply_pack/science/research_pod]
-	P.special_enabled = TRUE
-
-	P = SSshuttle.supply_packs[/datum/supply_pack/science/research_pod]
-	P.special_enabled = TRUE
+	createRandomZlevel(TRUE)
 
 /datum/station_goal/gateway/check_completion()
-	if(..())
-		return TRUE
-	return FALSE
+	return !isnull(/obj/structure/statue/gold/rd)
+
+
 
 /datum/supply_pack/science/research_pod
 	name = "Research Post Pod"
