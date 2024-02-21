@@ -6243,6 +6243,7 @@
 #include "fulp_modules\features\spells\_spells.dm"
 #include "fulp_modules\features\spells\fulp_spellbook.dm"
 #include "fulp_modules\features\station_goals\gateway_goal.dm"
+#include "fulp_modules\features\station_goals\gateway_misc.dm"
 #include "fulp_modules\features\station_goals\gateway_mobs.dm"
 #include "fulp_modules\features\toys\code\plushies.dm"
 #include "fulp_modules\fulp_world\_global_vars.dm"

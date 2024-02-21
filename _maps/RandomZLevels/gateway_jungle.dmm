@@ -8,7 +8,7 @@
 /area/space)
 "an" = (
 /mob/living/carbon/human/species/monkey/gateway,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "aD" = (
 /turf/closed/indestructible/rock,
@@ -22,7 +22,7 @@
 /area/space)
 "bG" = (
 /mob/living/basic/seedling/gateway,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "bY" = (
 /turf/open/space/basic,
@@ -41,7 +41,7 @@
 "cR" = (
 /obj/structure/flora/grass/jungle/b/style_random,
 /mob/living/basic/frog/gateway,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "do" = (
 /obj/effect/decal/cleanable/dirt,
@@ -56,7 +56,7 @@
 /turf/open/floor/plating,
 /area/space)
 "dM" = (
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "es" = (
 /obj/structure/grille/broken,
@@ -66,15 +66,15 @@
 /obj/structure/flora/rock/pile/jungle/style_random,
 /obj/structure/flora/grass/jungle/b/style_random,
 /obj/structure/flora/bush/jungle/c/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "eS" = (
 /obj/structure/flora/bush/jungle/b/style_random,
-/turf/open/water/jungle,
+/turf/open/water/jungle/gateway,
 /area/space)
 "fe" = (
 /mob/living/basic/mega_arachnid/gateway,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "fC" = (
 /obj/effect/decal/cleanable/dirt,
@@ -84,11 +84,11 @@
 /area/space)
 "fE" = (
 /obj/effect/mob_spawn/corpse/human/skeleton,
-/turf/open/water/jungle,
+/turf/open/water/jungle/gateway,
 /area/space)
 "fG" = (
 /mob/living/basic/lizard/gateway,
-/turf/open/water/jungle,
+/turf/open/water/jungle/gateway,
 /area/space)
 "fL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -114,12 +114,12 @@
 /turf/open/floor/plating/rust,
 /area/space)
 "gp" = (
-/turf/open/water/jungle,
+/turf/open/water/jungle/gateway,
 /area/space)
 "gr" = (
 /obj/structure/flora/bush/jungle/b/style_random,
 /obj/structure/flora/bush/jungle/c/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "gA" = (
 /obj/effect/decal/cleanable/dirt,
@@ -128,11 +128,11 @@
 /area/space)
 "hf" = (
 /obj/structure/flora/grass/jungle/a/style_5,
-/turf/open/water/jungle,
+/turf/open/water/jungle/gateway,
 /area/space)
 "hP" = (
 /obj/structure/flora/grass/jungle/a/style_random,
-/turf/open/misc/dirt/jungle,
+/turf/open/misc/dirt/jungle/gateway,
 /area/space)
 "ib" = (
 /obj/effect/decal/cleanable/dirt,
@@ -141,7 +141,7 @@
 /area/space)
 "iy" = (
 /obj/structure/fake_stairs/wood,
-/turf/open/misc/dirt/jungle,
+/turf/open/misc/dirt/jungle/gateway,
 /area/space)
 "iA" = (
 /obj/effect/decal/cleanable/dirt,
@@ -150,7 +150,7 @@
 /area/space)
 "iU" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
-/turf/open/misc/dirt/jungle,
+/turf/open/misc/dirt/jungle/gateway,
 /area/space)
 "jY" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
@@ -158,12 +158,12 @@
 /area/space)
 "kj" = (
 /mob/living/basic/frog/gateway,
-/turf/open/water/jungle,
+/turf/open/water/jungle/gateway,
 /area/space)
 "kz" = (
 /obj/structure/flora/grass/jungle/b/style_random,
 /obj/structure/flora/bush/jungle/b/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "kE" = (
 /obj/structure/mineral_door/wood,
@@ -171,20 +171,20 @@
 /area/space)
 "kP" = (
 /obj/effect/mob_spawn/corpse/human/monkey,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "kU" = (
 /obj/structure/fence/door,
 /obj/structure/flora/grass/jungle/a/style_random,
-/turf/open/misc/dirt/jungle,
+/turf/open/misc/dirt/jungle/gateway,
 /area/space)
 "lb" = (
 /obj/structure/fence/corner,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "le" = (
 /obj/structure/flora/bush/jungle/b/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "ll" = (
 /obj/effect/decal/cleanable/dirt,
@@ -199,17 +199,17 @@
 "mc" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/jungle/a/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "me" = (
 /obj/structure/fence{
 	dir = 8
 	},
-/turf/open/water/jungle,
+/turf/open/water/jungle/gateway,
 /area/space)
 "mf" = (
 /obj/structure/flora/tree/jungle/small/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "mL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -218,7 +218,7 @@
 /area/space)
 "nt" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "oe" = (
 /obj/effect/decal/cleanable/dirt,
@@ -235,11 +235,11 @@
 "oE" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /obj/structure/flora/tree/jungle/small/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "oH" = (
 /obj/structure/flora/grass/jungle/b/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "oN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -264,7 +264,7 @@
 /area/space)
 "pn" = (
 /obj/structure/flora/bush/jungle/c/style_random,
-/turf/open/water/jungle,
+/turf/open/water/jungle/gateway,
 /area/space)
 "pG" = (
 /obj/effect/decal/cleanable/dirt,
@@ -279,14 +279,14 @@
 "qs" = (
 /obj/structure/flora/bush/jungle/a/style_random,
 /mob/living/basic/frog/gateway,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "qD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/broken_flooring/plating/always_floorplane/directional/south,
 /obj/structure/flora/grass/jungle/b/style_3,
 /obj/machinery/portable_atmospherics/canister/oxygen,
-/turf/open/misc/dirt/jungle,
+/turf/open/misc/dirt/jungle/gateway,
 /area/space)
 "rl" = (
 /turf/closed/mineral/random/jungle,
@@ -302,7 +302,7 @@
 /turf/open/misc/dirt/dark/jungle,
 /area/space)
 "sF" = (
-/turf/open/misc/dirt/jungle/wasteland,
+/turf/open/misc/dirt/jungle/wasteland/gateway,
 /area/space)
 "tu" = (
 /obj/effect/decal/cleanable/dirt,
@@ -354,7 +354,7 @@
 /obj/structure/fence{
 	dir = 1
 	},
-/turf/open/misc/dirt/jungle,
+/turf/open/misc/dirt/jungle/gateway,
 /area/space)
 "vX" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -368,16 +368,16 @@
 /area/space)
 "wu" = (
 /obj/structure/flora/grass/jungle/b/style_random,
-/turf/open/water/jungle,
+/turf/open/water/jungle/gateway,
 /area/space)
 "wP" = (
 /obj/structure/flora/grass/jungle/a/style_random,
-/turf/open/water/jungle,
+/turf/open/water/jungle/gateway,
 /area/space)
 "wW" = (
 /obj/structure/flora/tree/jungle/style_random,
 /obj/structure/flora/grass/jungle/b/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "xb" = (
 /obj/effect/decal/cleanable/dirt,
@@ -402,7 +402,7 @@
 /area/space)
 "xR" = (
 /obj/structure/flora/tree/jungle/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "yq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -418,7 +418,7 @@
 "yC" = (
 /obj/structure/flora/tree/jungle/small/style_random,
 /obj/structure/flora/grass/jungle/b/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "yW" = (
 /mob/living/basic/mega_arachnid/gateway,
@@ -431,11 +431,11 @@
 /area/space)
 "zz" = (
 /obj/structure/flora/tree/jungle,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "zA" = (
 /obj/structure/flora/tree/jungle/style_2,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "zE" = (
 /obj/effect/decal/cleanable/dirt,
@@ -446,11 +446,11 @@
 "zS" = (
 /obj/structure/flora/grass/jungle/b/style_random,
 /obj/structure/flora/bush/jungle/c/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "Ad" = (
 /obj/structure/flora/grass/jungle/a/style_5,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "At" = (
 /obj/structure/flora/bush/jungle/a/style_random,
@@ -458,12 +458,12 @@
 /area/space)
 "AD" = (
 /obj/structure/flora/bush/jungle/c/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "Bx" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/mob_spawn/corpse/human/skeleton,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "Cn" = (
 /obj/effect/decal/cleanable/dirt,
@@ -481,7 +481,7 @@
 "CL" = (
 /obj/structure/flora/tree/jungle/style_random,
 /obj/structure/flora/grass/jungle/a/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "De" = (
 /obj/structure/flora/grass/jungle/a,
@@ -489,21 +489,21 @@
 /area/space)
 "Dg" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
-/turf/open/water/jungle,
+/turf/open/water/jungle/gateway,
 /area/space)
 "DI" = (
 /obj/structure/flora/rock/pile/jungle/large/style_random,
 /obj/structure/flora/tree/jungle/small/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "En" = (
 /mob/living/basic/seedling/meanie/gateway,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "Fo" = (
 /obj/structure/flora/bush/jungle/b/style_random,
 /obj/structure/flora/rock/pile/jungle/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "FR" = (
 /obj/effect/decal/cleanable/dirt,
@@ -513,11 +513,11 @@
 "GL" = (
 /obj/structure/flora/grass/jungle/b/style_random,
 /obj/structure/flora/tree/jungle/small/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "GX" = (
 /obj/structure/flora/grass/jungle/a,
-/turf/open/water/jungle,
+/turf/open/water/jungle/gateway,
 /area/space)
 "Ha" = (
 /obj/effect/decal/cleanable/dirt,
@@ -528,26 +528,26 @@
 "Iw" = (
 /obj/structure/flora/grass/jungle/a/style_5,
 /obj/structure/flora/grass/jungle/b/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "IH" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
 /mob/living/basic/frog/gateway,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "JQ" = (
 /obj/structure/fence{
 	dir = 8
 	},
-/turf/open/misc/dirt/jungle,
+/turf/open/misc/dirt/jungle/gateway,
 /area/space)
 "JR" = (
 /mob/living/basic/gorilla/gateway,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "LA" = (
 /obj/structure/flora/rock/pile/jungle/large/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "LG" = (
 /obj/effect/decal/cleanable/dirt,
@@ -562,7 +562,7 @@
 /area/space)
 "Mm" = (
 /obj/item/pickaxe,
-/turf/open/misc/dirt/jungle/wasteland,
+/turf/open/misc/dirt/jungle/wasteland/gateway,
 /area/space)
 "Mn" = (
 /obj/effect/decal/cleanable/dirt,
@@ -571,7 +571,7 @@
 "Ms" = (
 /obj/structure/flora/grass/jungle/a/style_5,
 /obj/structure/flora/grass/jungle/a/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "MK" = (
 /obj/effect/decal/cleanable/dirt,
@@ -581,16 +581,16 @@
 "MX" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /obj/structure/flora/bush/jungle/a/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "Nd" = (
 /obj/effect/mob_spawn/corpse/human/engineer,
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "Ne" = (
 /mob/living/basic/lizard/gateway,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "NS" = (
 /obj/effect/decal/cleanable/dirt,
@@ -610,26 +610,26 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/broken_flooring/plating/always_floorplane/directional/north,
-/turf/open/misc/dirt/jungle,
+/turf/open/misc/dirt/jungle/gateway,
 /area/space)
 "QC" = (
 /obj/structure/flora/grass/jungle/a/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "Re" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /obj/structure/flora/grass/jungle/b/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "Rk" = (
 /obj/structure/flora/rock/pile/jungle/large/style_random,
 /obj/structure/flora/grass/jungle/b/style_random,
-/turf/open/water/jungle,
+/turf/open/water/jungle/gateway,
 /area/space)
 "RA" = (
 /obj/item/tank/internals/emergency_oxygen/engi/empty,
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "RP" = (
 /obj/effect/decal/cleanable/dirt,
@@ -642,7 +642,7 @@
 /area/space)
 "SB" = (
 /obj/structure/flora/rock/pile/jungle/large/style_3,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "SE" = (
 /obj/structure/flora/grass/jungle/b/style_random,
@@ -656,11 +656,11 @@
 /area/space)
 "SS" = (
 /obj/structure/flora/tree/jungle/style_4,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "Tc" = (
 /mob/living/basic/frog/gateway,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "Th" = (
 /obj/effect/decal/cleanable/dirt,
@@ -672,7 +672,7 @@
 /obj/structure/fence{
 	dir = 8
 	},
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "Ts" = (
 /obj/structure/flora/bush/jungle/c/style_random,
@@ -691,12 +691,12 @@
 "Ut" = (
 /obj/structure/flora/bush/jungle/b/style_random,
 /obj/structure/flora/grass/jungle/b/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "UH" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /obj/structure/flora/rock/pile/jungle/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "UY" = (
 /obj/structure/flora/rock/pile/jungle/large/style_random,
@@ -704,11 +704,11 @@
 /area/space)
 "Vg" = (
 /obj/structure/flora/tree/jungle/style_5,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "Vy" = (
 /obj/structure/flora/bush/jungle/a/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "VA" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -718,14 +718,14 @@
 "VR" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /obj/structure/flora/bush/jungle/b/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "VV" = (
 /obj/structure/fence{
 	dir = 8
 	},
 /obj/structure/flora/grass/jungle/a/style_random,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "VW" = (
 /obj/effect/decal/cleanable/dirt,
@@ -745,7 +745,7 @@
 /area/space)
 "WI" = (
 /obj/structure/flora/rock/pile/jungle/large/style_random,
-/turf/open/water/jungle,
+/turf/open/water/jungle/gateway,
 /area/space)
 "WN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -755,11 +755,11 @@
 /area/space)
 "XI" = (
 /obj/structure/flora/grass/jungle/a,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "Yl" = (
 /mob/living/basic/leaper/gateway,
-/turf/open/water/jungle,
+/turf/open/water/jungle/gateway,
 /area/space)
 "Yu" = (
 /turf/closed/wall/r_wall,
@@ -779,15 +779,15 @@
 /turf/open/misc/dirt/dark/jungle,
 /area/space)
 "ZK" = (
-/turf/open/misc/dirt/jungle,
+/turf/open/misc/dirt/jungle/gateway,
 /area/space)
 "ZP" = (
 /mob/living/basic/butterfly/gateway,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 "ZS" = (
 /obj/structure/fence/door,
-/turf/open/misc/grass/jungle,
+/turf/open/misc/grass/jungle/gateway,
 /area/space)
 
 (1,1,1) = {"
