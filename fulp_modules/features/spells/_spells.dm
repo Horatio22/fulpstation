@@ -51,6 +51,7 @@
 /obj/effect/particle_effect/fluid/smoke/transparent/dancefloor_devil
 	lifetime = 2
 
+/// frog stuff
 /datum/action/cooldown/spell/conjure/frogs
 	name = "Conjure Frogs"
 	desc = "something something plagues of egypt idk"
@@ -65,3 +66,13 @@
 	summon_radius = 3
 	summon_type = list(/mob/living/basic/frog)
 	summon_amount = 4
+
+/obj/item/book/granter/action/spell/frog
+	granted_action = /datum/action/cooldown/spell/conjure/frogs
+	action_name = "smoke"
+	icon_state ="booksmoke"
+	desc = "This book has a cute picture of a frog on the cover."
+	remarks = list(
+		"They're just frogs... right?",
+		"What's the worst they could do?",
+	)

@@ -6,6 +6,10 @@
 /obj/item/surgery_tray/full,
 /turf/open/floor/plating/rust,
 /area/space)
+"an" = (
+/mob/living/carbon/human/species/monkey/gateway,
+/turf/open/misc/grass/jungle,
+/area/space)
 "aD" = (
 /turf/closed/indestructible/rock,
 /area/space)
@@ -147,10 +151,6 @@
 "iU" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
 /turf/open/misc/dirt/jungle,
-/area/space)
-"jF" = (
-/mob/living/carbon/human/species/monkey/gateway,
-/turf/open/misc/grass/jungle,
 /area/space)
 "jY" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
@@ -541,6 +541,10 @@
 	},
 /turf/open/misc/dirt/jungle,
 /area/space)
+"JR" = (
+/mob/living/basic/gorilla/gateway,
+/turf/open/misc/grass/jungle,
+/area/space)
 "LA" = (
 /obj/structure/flora/rock/pile/jungle/large/style_random,
 /turf/open/misc/grass/jungle,
@@ -607,10 +611,6 @@
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/broken_flooring/plating/always_floorplane/directional/north,
 /turf/open/misc/dirt/jungle,
-/area/space)
-"PW" = (
-/mob/living/basic/gorilla/gateway,
-/turf/open/misc/grass/jungle,
 /area/space)
 "QC" = (
 /obj/structure/flora/grass/jungle/a/style_random,
@@ -22027,7 +22027,7 @@ rl
 rl
 dM
 dM
-jF
+an
 dM
 dM
 dM
@@ -24587,7 +24587,7 @@ dM
 dM
 dM
 dM
-PW
+JR
 dM
 dM
 dM
@@ -25110,7 +25110,7 @@ dM
 dM
 dM
 dM
-jF
+an
 dM
 dM
 dM
@@ -25352,7 +25352,7 @@ dM
 dM
 QC
 dM
-jF
+an
 dM
 dM
 dM
@@ -26664,7 +26664,7 @@ dM
 dM
 dM
 dM
-jF
+an
 dM
 dM
 dM
@@ -27409,7 +27409,7 @@ oH
 dM
 QC
 dM
-PW
+JR
 dM
 dM
 dM
@@ -27918,7 +27918,7 @@ rl
 ZK
 dM
 dM
-jF
+an
 dM
 dM
 dM
@@ -27930,7 +27930,7 @@ dM
 dM
 QC
 dM
-jF
+an
 dM
 dM
 dM
@@ -30247,7 +30247,7 @@ dM
 dM
 dM
 dM
-jF
+an
 dM
 dM
 dM
