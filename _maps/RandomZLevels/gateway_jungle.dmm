@@ -148,6 +148,10 @@
 /obj/structure/flora/rock/pile/jungle/style_random,
 /turf/open/misc/dirt/jungle,
 /area/space)
+"jF" = (
+/mob/living/carbon/human/species/monkey/gateway,
+/turf/open/misc/grass/jungle,
+/area/space)
 "jY" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
 /turf/open/misc/dirt/dark/jungle,
@@ -603,6 +607,10 @@
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/broken_flooring/plating/always_floorplane/directional/north,
 /turf/open/misc/dirt/jungle,
+/area/space)
+"PW" = (
+/mob/living/basic/gorilla/gateway,
+/turf/open/misc/grass/jungle,
 /area/space)
 "QC" = (
 /obj/structure/flora/grass/jungle/a/style_random,
@@ -22019,7 +22027,7 @@ rl
 rl
 dM
 dM
-dM
+jF
 dM
 dM
 dM
@@ -24579,7 +24587,7 @@ dM
 dM
 dM
 dM
-dM
+PW
 dM
 dM
 dM
@@ -25102,7 +25110,7 @@ dM
 dM
 dM
 dM
-dM
+jF
 dM
 dM
 dM
@@ -25344,7 +25352,7 @@ dM
 dM
 QC
 dM
-dM
+jF
 dM
 dM
 dM
@@ -26656,7 +26664,7 @@ dM
 dM
 dM
 dM
-dM
+jF
 dM
 dM
 dM
@@ -27401,7 +27409,7 @@ oH
 dM
 QC
 dM
-dM
+PW
 dM
 dM
 dM
@@ -27910,7 +27918,7 @@ rl
 ZK
 dM
 dM
-dM
+jF
 dM
 dM
 dM
@@ -27922,7 +27930,7 @@ dM
 dM
 QC
 dM
-dM
+jF
 dM
 dM
 dM
@@ -30239,7 +30247,7 @@ dM
 dM
 dM
 dM
-dM
+jF
 dM
 dM
 dM

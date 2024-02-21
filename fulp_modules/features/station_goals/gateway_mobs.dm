@@ -15,6 +15,7 @@
 
 /mob/living/basic/leaper/gateway
 	faction = list("gateway")
+	maxhealth = 2500
 
 /mob/living/basic/butterfly/gateway
 	faction = list("gateway")
