@@ -5,92 +5,92 @@
 /obj/effect/decal/cleanable/glass,
 /obj/item/surgery_tray/full,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "an" = (
 /mob/living/carbon/human/species/monkey/gateway,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "aD" = (
 /turf/closed/indestructible/rock,
-/area/space)
+/area/awaymission/fulp_jungle)
 "bh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer/mech_bay_power_console{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "bG" = (
 /mob/living/basic/seedling/gateway,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "bY" = (
 /turf/open/space/basic,
 /area/space)
 "ck" = (
 /obj/structure/flora/bush/jungle/b/style_random,
 /turf/open/misc/dirt/dark/jungle,
-/area/space)
+/area/awaymission/fulp_jungle)
 "cM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table_frame,
 /obj/effect/decal/cleanable/glass,
 /obj/item/storage/medkit/ancient,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "cR" = (
 /obj/structure/flora/grass/jungle/b/style_random,
 /mob/living/basic/frog/gateway,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "do" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/flashlight/flare/torch,
 /obj/item/flashlight/flare/torch,
 /obj/structure/table/wood,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "dI" = (
 /obj/machinery/gateway/away,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "dM" = (
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "es" = (
 /obj/structure/grille/broken,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "et" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
 /obj/structure/flora/grass/jungle/b/style_random,
 /obj/structure/flora/bush/jungle/c/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "eS" = (
 /obj/structure/flora/bush/jungle/b/style_random,
 /turf/open/water/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "fe" = (
 /mob/living/basic/mega_arachnid/gateway,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "fC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table_frame/wood,
 /obj/item/stack/cable_coil/five,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "fE" = (
 /obj/effect/mob_spawn/corpse/human/skeleton,
 /obj/item/kinetic_crusher,
 /turf/open/water/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "fG" = (
 /mob/living/basic/lizard/gateway,
 /turf/open/water/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "fL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/broken_flooring/plating/directional/east,
@@ -99,303 +99,319 @@
 /obj/item/storage/medkit/ancient,
 /obj/item/stack/medical/bandage/makeshift,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "fQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/rack_parts,
 /obj/item/storage/toolbox/emergency/old,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
+"fU" = (
+/turf/closed/indestructible/rock,
+/area/awaymission/fulp_junglebase)
 "ge" = (
 /turf/open/misc/dirt/dark/jungle,
-/area/space)
+/area/awaymission/fulp_jungle)
 "gl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/construction/rcd,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "gp" = (
 /turf/open/water/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "gr" = (
 /obj/structure/flora/bush/jungle/b/style_random,
 /obj/structure/flora/bush/jungle/c/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "gA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/medical/gauze/improvised,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "hf" = (
 /obj/structure/flora/grass/jungle/a/style_5,
 /turf/open/water/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
+"hG" = (
+/turf/open/misc/grass/jungle/gateway,
+/area/awaymission/fulp_junglebase)
+"hO" = (
+/obj/effect/mob_spawn/corpse/human/damaged,
+/turf/open/misc/grass/jungle/gateway,
+/area/awaymission/fulp_jungle)
 "hP" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /turf/open/misc/dirt/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_junglebase)
+"hQ" = (
+/turf/open/water/jungle/gateway,
+/area/awaymission/fulp_junglebase)
 "ib" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "iy" = (
 /obj/structure/fake_stairs/wood,
 /turf/open/misc/dirt/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "iA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "iU" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
 /turf/open/misc/dirt/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "jY" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
 /turf/open/misc/dirt/dark/jungle,
-/area/space)
+/area/awaymission/fulp_jungle)
 "kj" = (
 /mob/living/basic/frog/gateway,
 /turf/open/water/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "kz" = (
 /obj/structure/flora/grass/jungle/b/style_random,
 /obj/structure/flora/bush/jungle/b/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "kE" = (
 /obj/structure/mineral_door/wood,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "kP" = (
 /obj/effect/mob_spawn/corpse/human/monkey,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "kU" = (
 /obj/structure/fence/door,
 /obj/structure/flora/grass/jungle/a/style_random,
 /turf/open/misc/dirt/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "lb" = (
 /obj/structure/fence/corner,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "le" = (
 /obj/structure/flora/bush/jungle/b/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "ll" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "lx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/sheet/iron/five,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "mc" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/jungle/a/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "me" = (
 /obj/structure/fence{
 	dir = 8
 	},
 /turf/open/water/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "mf" = (
 /obj/structure/flora/tree/jungle/small/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "mL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/crowbar,
 /turf/open/floor/iron,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "nt" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "oe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/emergency_bed,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "oy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/mech_bay_recharge_port{
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "oE" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /obj/structure/flora/tree/jungle/small/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "oH" = (
 /obj/structure/flora/grass/jungle/b/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "oN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "oP" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /turf/closed/mineral/random/jungle,
-/area/space)
+/area/awaymission/fulp_jungle)
 "oR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer/operating,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
+"oX" = (
+/turf/open/misc/dirt/jungle/wasteland/gateway,
+/area/awaymission/fulp_junglebase)
 "pa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/mapping_helpers/broken_floor,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "pn" = (
 /obj/structure/flora/bush/jungle/c/style_random,
 /turf/open/water/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "pG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/awaystart,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "pS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "qs" = (
 /obj/structure/flora/bush/jungle/a/style_random,
 /mob/living/basic/frog/gateway,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "qD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/broken_flooring/plating/always_floorplane/directional/south,
 /obj/structure/flora/grass/jungle/b/style_3,
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/misc/dirt/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "rl" = (
 /turf/closed/mineral/random/jungle,
-/area/space)
+/area/awaymission/fulp_jungle)
 "rB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "rZ" = (
 /obj/structure/flora/rock/pile/jungle/large/style_random,
 /obj/structure/flora/grass/jungle/a/style_random,
 /turf/open/misc/dirt/dark/jungle,
-/area/space)
+/area/awaymission/fulp_jungle)
 "sF" = (
 /turf/open/misc/dirt/jungle/wasteland/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "tu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "tG" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "tK" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "tP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/broken_flooring/plating/always_floorplane/directional/west,
 /obj/item/stack/cable_coil/five,
 /turf/open/floor/iron,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "tR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/iv_drip,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "uc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "um" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "vm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/recharge_station,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "vw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/optable,
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/mob_spawn/corpse/human/damaged,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "vN" = (
 /obj/structure/fence{
 	dir = 1
 	},
 /turf/open/misc/dirt/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "vX" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "wa" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/basic/cockroach/gateway,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "wu" = (
 /obj/structure/flora/grass/jungle/b/style_random,
 /turf/open/water/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "wP" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /turf/open/water/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "wW" = (
 /obj/structure/flora/tree/jungle/style_random,
 /obj/structure/flora/grass/jungle/b/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "xb" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "xj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer/crew{
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "xl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/sheet/iron/ten,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "xB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
@@ -403,77 +419,77 @@
 /obj/item/gun/energy/recharge/kinetic_accelerator,
 /obj/item/gun/energy/recharge/kinetic_accelerator,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "xR" = (
 /obj/structure/flora/tree/jungle/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "yq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/crowbar/power,
 /obj/item/stack/sheet/iron/ten,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "yt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/mecha_wreckage/reticence,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "yC" = (
 /obj/structure/flora/tree/jungle/small/style_random,
 /obj/structure/flora/grass/jungle/b/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "yW" = (
 /mob/living/basic/mega_arachnid/gateway,
 /turf/open/misc/dirt/dark/jungle,
-/area/space)
+/area/awaymission/fulp_jungle)
 "zp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/iron,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "zz" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "zA" = (
 /obj/structure/flora/tree/jungle/style_2,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "zE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/jungle/b/style_2,
 /obj/item/stack/medical/bandage/makeshift,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "zS" = (
 /obj/structure/flora/grass/jungle/b/style_random,
 /obj/structure/flora/bush/jungle/c/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Ad" = (
 /obj/structure/flora/grass/jungle/a/style_5,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "At" = (
 /obj/structure/flora/bush/jungle/a/style_random,
 /turf/open/misc/dirt/dark/jungle,
-/area/space)
+/area/awaymission/fulp_jungle)
 "AD" = (
 /obj/structure/flora/bush/jungle/c/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Bx" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/mob_spawn/corpse/human/skeleton,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Cn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "CC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/stasis{
@@ -481,318 +497,329 @@
 	},
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "CL" = (
 /obj/structure/flora/tree/jungle/style_random,
 /obj/structure/flora/grass/jungle/a/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "De" = (
 /obj/structure/flora/grass/jungle/a,
 /turf/open/misc/dirt/dark/jungle,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Dg" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
 /turf/open/water/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "DI" = (
 /obj/structure/flora/rock/pile/jungle/large/style_random,
 /obj/structure/flora/tree/jungle/small/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "En" = (
 /mob/living/basic/seedling/meanie/gateway,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Fo" = (
 /obj/structure/flora/bush/jungle/b/style_random,
 /obj/structure/flora/rock/pile/jungle/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "FR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table_frame/wood,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "GL" = (
 /obj/structure/flora/grass/jungle/b/style_random,
 /obj/structure/flora/tree/jungle/small/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "GX" = (
 /obj/structure/flora/grass/jungle/a,
 /turf/open/water/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Ha" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/broken_floor,
 /obj/structure/broken_flooring/plating/always_floorplane/directional/north,
 /turf/open/floor/iron,
-/area/space)
+/area/awaymission/fulp_junglebase)
+"Hj" = (
+/obj/structure/flora/grass/jungle/a/style_random,
+/turf/open/misc/grass/jungle/gateway,
+/area/awaymission/fulp_junglebase)
 "Iw" = (
 /obj/structure/flora/grass/jungle/a/style_5,
 /obj/structure/flora/grass/jungle/b/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "IH" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
 /mob/living/basic/frog/gateway,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "JQ" = (
 /obj/structure/fence{
 	dir = 8
 	},
 /turf/open/misc/dirt/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "JR" = (
 /mob/living/basic/gorilla/gateway,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "LA" = (
 /obj/structure/flora/rock/pile/jungle/large/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "LG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
 /obj/item/stack/sheet/iron/fifty,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "LQ" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
 /obj/structure/flora/bush/jungle/a/style_random,
 /turf/open/misc/dirt/dark/jungle,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Mm" = (
 /obj/item/pickaxe,
 /turf/open/misc/dirt/jungle/wasteland/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Mn" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "Ms" = (
 /obj/structure/flora/grass/jungle/a/style_5,
 /obj/structure/flora/grass/jungle/a/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "MK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/iron,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "MX" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /obj/structure/flora/bush/jungle/a/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Nd" = (
 /obj/effect/mob_spawn/corpse/human/engineer,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Ne" = (
 /mob/living/basic/lizard/gateway,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "NS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/cable_coil/five,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "Ol" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/broken_floor,
 /obj/effect/landmark/awaystart,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
+"Om" = (
+/obj/structure/flora/rock/pile/jungle/style_random,
+/turf/open/misc/grass/jungle/gateway,
+/area/awaymission/fulp_junglebase)
 "Pe" = (
 /turf/closed/wall/r_wall/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "PL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/broken_flooring/plating/always_floorplane/directional/north,
 /turf/open/misc/dirt/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "QC" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Re" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /obj/structure/flora/grass/jungle/b/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Rk" = (
 /obj/structure/flora/rock/pile/jungle/large/style_random,
 /obj/structure/flora/grass/jungle/b/style_random,
 /turf/open/water/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "RA" = (
 /obj/item/tank/internals/emergency_oxygen/engi/empty,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "RP" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/basic/cockroach/gateway,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "RU" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "SB" = (
 /obj/structure/flora/rock/pile/jungle/large/style_3,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "SE" = (
 /obj/structure/flora/grass/jungle/b/style_random,
 /turf/open/misc/dirt/dark/jungle,
-/area/space)
+/area/awaymission/fulp_jungle)
 "SJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/sheet/iron/twenty,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "SS" = (
 /obj/structure/flora/tree/jungle/style_4,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Tc" = (
 /mob/living/basic/frog/gateway,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Th" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/basic/cockroach/gateway,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "Tp" = (
 /obj/structure/fence{
 	dir = 8
 	},
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "Ts" = (
 /obj/structure/flora/bush/jungle/c/style_random,
 /turf/open/misc/dirt/dark/jungle,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Tt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/weldingtool/empty,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "TW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/broken_flooring/plating/always_floorplane,
 /turf/open/floor/iron,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "Ut" = (
 /obj/structure/flora/bush/jungle/b/style_random,
 /obj/structure/flora/grass/jungle/b/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "UH" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /obj/structure/flora/rock/pile/jungle/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "UY" = (
 /obj/structure/flora/rock/pile/jungle/large/style_random,
 /turf/open/misc/dirt/dark/jungle,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Vg" = (
 /obj/structure/flora/tree/jungle/style_5,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Vy" = (
 /obj/structure/flora/bush/jungle/a/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "VA" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/broken_flooring/plating/directional/north,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "VR" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /obj/structure/flora/bush/jungle/b/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "VV" = (
 /obj/structure/fence{
 	dir = 8
 	},
 /obj/structure/flora/grass/jungle/a/style_random,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "VW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/stasis{
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "Wa" = (
 /turf/closed/wall/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "WE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
 /obj/item/reagent_containers/blood,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "WI" = (
 /obj/structure/flora/rock/pile/jungle/large/style_random,
 /turf/open/water/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "WN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/stack/medical/suture/emergency,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "XI" = (
 /obj/structure/flora/grass/jungle/a,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Yl" = (
 /mob/living/basic/leaper/gateway,
 /turf/open/water/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "Yu" = (
 /turf/closed/wall/r_wall,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "YD" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/broken_flooring/plating/directional/east,
 /turf/open/floor/plating,
-/area/space)
+/area/awaymission/fulp_junglebase)
+"YQ" = (
+/turf/open/misc/dirt/jungle/gateway,
+/area/awaymission/fulp_junglebase)
 "YS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/recharge_station,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/awaymission/fulp_junglebase)
 "Zz" = (
 /obj/structure/flora/tree/jungle/small/style_random,
 /turf/open/misc/dirt/dark/jungle,
-/area/space)
+/area/awaymission/fulp_jungle)
 "ZK" = (
 /turf/open/misc/dirt/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "ZP" = (
 /mob/living/basic/butterfly/gateway,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_jungle)
 "ZS" = (
 /obj/structure/fence/door,
 /turf/open/misc/grass/jungle/gateway,
-/area/space)
+/area/awaymission/fulp_junglebase)
 
 (1,1,1) = {"
 bY
@@ -11112,25 +11139,25 @@ bY
 bY
 bY
 bY
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
 bY
 bY
 aD
@@ -11369,25 +11396,25 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-aD
+fU
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+fU
 bY
 bY
 aD
@@ -11626,27 +11653,27 @@ bY
 bY
 bY
 bY
-aD
-ZK
+fU
+YQ
 hP
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-QC
-ZK
-ZK
-aD
-aD
-aD
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+Hj
+YQ
+YQ
+fU
+fU
+fU
 aD
 sF
 sF
@@ -11883,15 +11910,15 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
+fU
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
 Yu
 Yu
 Yu
@@ -11899,10 +11926,10 @@ Yu
 Yu
 Yu
 Yu
-ZK
-ZK
-QC
-gp
+YQ
+YQ
+Hj
+hQ
 me
 sF
 sF
@@ -12140,13 +12167,13 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
-ZK
+fU
+YQ
+YQ
+YQ
+YQ
 iU
-ZK
+YQ
 Pe
 Pe
 Pe
@@ -12157,9 +12184,9 @@ VW
 fL
 Yu
 Yu
-ZK
-dM
-ZK
+YQ
+hG
+YQ
 JQ
 gp
 sF
@@ -12397,13 +12424,13 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
+fU
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
 Pe
 aj
 WE
@@ -12414,9 +12441,9 @@ Mn
 Mn
 rB
 YD
-sF
+oX
 iU
-dM
+hG
 Tp
 dM
 RA
@@ -12654,13 +12681,13 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
+fU
+YQ
+YQ
 iU
-ZK
-ZK
-ZK
+YQ
+YQ
+YQ
 Yu
 vw
 RP
@@ -12672,8 +12699,8 @@ ll
 ll
 kE
 iy
-ZK
-dM
+YQ
+hG
 kU
 Nd
 dM
@@ -12911,13 +12938,13 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
+fU
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
 Yu
 oR
 Mn
@@ -12928,9 +12955,9 @@ Mn
 zp
 FR
 VA
-ZK
-ZK
-ZK
+YQ
+YQ
+YQ
 Tp
 dM
 dM
@@ -13168,10 +13195,10 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
+fU
+YQ
+YQ
+YQ
 Yu
 Pe
 Pe
@@ -13185,9 +13212,9 @@ ib
 Mn
 do
 Wa
-ZK
-ZK
-ZK
+YQ
+YQ
+YQ
 Tp
 dM
 dM
@@ -13425,10 +13452,10 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
+fU
+YQ
+YQ
+YQ
 Yu
 pa
 Mn
@@ -13442,8 +13469,8 @@ TW
 iA
 xB
 vX
-ZK
-dM
+YQ
+hG
 hP
 Tp
 dM
@@ -13682,10 +13709,10 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
+fU
+YQ
+YQ
+YQ
 Pe
 Mn
 dI
@@ -13700,8 +13727,8 @@ ll
 ll
 kE
 iy
-ZK
-ZK
+YQ
+YQ
 ZS
 dM
 dM
@@ -13939,10 +13966,10 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
+fU
+YQ
+YQ
+YQ
 Yu
 Cn
 Mn
@@ -13956,9 +13983,9 @@ Mn
 xb
 FR
 tG
-ZK
-ZK
-ZK
+YQ
+YQ
+YQ
 Tp
 dM
 dM
@@ -14196,10 +14223,10 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
+fU
+YQ
+YQ
+YQ
 Yu
 Pe
 Pe
@@ -14213,9 +14240,9 @@ iA
 Mn
 LG
 Yu
-ZK
+YQ
 hP
-dM
+hG
 Tp
 dM
 dM
@@ -14453,13 +14480,13 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
+fU
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
 Yu
 vm
 Mn
@@ -14470,9 +14497,9 @@ mL
 Th
 fC
 vX
-ZK
-ZK
-dM
+YQ
+YQ
+hG
 Tp
 dM
 dM
@@ -14710,13 +14737,13 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
+fU
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
 Pe
 ll
 NS
@@ -14728,8 +14755,8 @@ Mn
 ll
 kE
 iy
-ZK
-dM
+YQ
+hG
 ZS
 dM
 QC
@@ -14967,13 +14994,13 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
+fU
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
 Pe
 YS
 yq
@@ -14984,9 +15011,9 @@ ll
 Mn
 qD
 tG
-ZK
-ZK
-dM
+YQ
+YQ
+hG
 VV
 dM
 dM
@@ -15224,13 +15251,13 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
+fU
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
 Yu
 Yu
 Pe
@@ -15241,9 +15268,9 @@ tu
 um
 Wa
 Wa
-ZK
-ZK
-dM
+YQ
+YQ
+hG
 Tp
 dM
 dM
@@ -15481,15 +15508,15 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
-ZK
+fU
+YQ
+YQ
+YQ
+YQ
 hP
-ZK
-ZK
-ZK
+YQ
+YQ
+YQ
 Yu
 Yu
 Yu
@@ -15497,10 +15524,10 @@ Pe
 Yu
 Wa
 Wa
-ZK
-ZK
-ZK
-ZK
+YQ
+YQ
+YQ
+YQ
 JQ
 dM
 dM
@@ -15738,26 +15765,26 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-nt
-dM
+fU
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+Om
+hG
 JQ
 dM
 dM
@@ -15995,26 +16022,26 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
+fU
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
 iU
-ZK
-ZK
-ZK
+YQ
+YQ
+YQ
 hP
-ZK
-ZK
-ZK
-dM
-ZK
-ZK
+YQ
+YQ
+YQ
+hG
+YQ
+YQ
 JQ
 dM
 nt
@@ -16252,26 +16279,26 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
+fU
+YQ
+YQ
+YQ
 hP
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-dM
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+hG
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
 JQ
 dM
 dM
@@ -16509,26 +16536,26 @@ bY
 bY
 bY
 bY
-aD
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
-ZK
+fU
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
 Tp
 dM
 dM
@@ -16557,7 +16584,7 @@ dM
 gp
 ge
 gp
-dM
+hO
 gp
 gp
 gp
@@ -16766,24 +16793,24 @@ bY
 bY
 bY
 bY
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
-aD
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
+fU
 vN
 vN
 lb
@@ -19176,7 +19203,7 @@ dM
 le
 dM
 dM
-dM
+hO
 dM
 dM
 dM
@@ -32764,7 +32791,7 @@ dM
 dM
 dM
 dM
-dM
+hO
 dM
 dM
 dM
@@ -37699,7 +37726,7 @@ dM
 dM
 dM
 dM
-dM
+hO
 dM
 dM
 dM
