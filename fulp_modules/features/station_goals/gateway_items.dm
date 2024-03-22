@@ -5,7 +5,7 @@
 	icon_state = "capsule"
 	icon = 'icons/obj/mining.dmi'
 	w_class = WEIGHT_CLASS_TINY
-	template_id = "research"
+	template_id = "research_pod"
 
 //corpses no ID
 
