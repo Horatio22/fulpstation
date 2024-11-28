@@ -18,7 +18,6 @@
 		TRAIT_RADIMMUNE,
 		TRAIT_SNOWSTORM_IMMUNE, // Shared with plasma river... but I guess if you can survive a plasma river a blizzard isn't a big deal
 		TRAIT_UNHUSKABLE,
-		TRAIT_BOULDER_BREAKER,
 	)
 	mutantheart = null
 	mutantlungs = null
@@ -50,15 +49,6 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/golem,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/golem,
 	)
-
-	/// Chance that we will generate a human surname, for lore reasons
-	var/human_surname_chance = 3
-
-/datum/species/golem/random_name(gender,unique,lastname)
-	var/name = pick(GLOB.golem_names)
-	if (prob(human_surname_chance))
-		name += " [pick(GLOB.last_names)]"
-	return name
 
 /datum/species/golem/get_physical_attributes()
 	return "Golems are hardy creatures made out of stone, which are thus naturally resistant to many dangers, including asphyxiation, fire, radiation, electricity, and viruses.\

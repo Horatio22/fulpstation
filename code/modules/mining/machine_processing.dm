@@ -94,7 +94,7 @@
 /obj/machinery/mineral/processing_unit_console/ui_data(mob/user)
 	return processing_machine.ui_data()
 
-/obj/machinery/mineral/processing_unit_console/ui_act(action, list/params)
+/obj/machinery/mineral/processing_unit_console/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return
@@ -152,7 +152,7 @@
 
 	materials = AddComponent( \
 		/datum/component/material_container, \
-		DSmaterials.materials_by_category[MAT_CATEGORY_SILO], \
+		SSmaterials.materials_by_category[MAT_CATEGORY_SILO], \
 		INFINITY, \
 		MATCONTAINER_EXAMINE, \
 		allowed_items = accepted_type \

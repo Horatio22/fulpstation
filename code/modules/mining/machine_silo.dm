@@ -20,7 +20,7 @@
 
 	materials = AddComponent( \
 		/datum/component/material_container, \
-		DSmaterials.materials_by_category[MAT_CATEGORY_SILO], \
+		SSmaterials.materials_by_category[MAT_CATEGORY_SILO], \
 		INFINITY, \
 		MATCONTAINER_EXAMINE, \
 		container_signals = list( \
@@ -143,7 +143,7 @@
 
 	return data
 
-/obj/machinery/ore_silo/ui_act(action, list/params)
+/obj/machinery/ore_silo/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return

@@ -56,7 +56,7 @@
 	search_range = (mode_flags & MEDBOT_STATIONARY_MODE) ? 1 : initial(search_range)
 	var/list/ignore_keys = controller.blackboard[BB_TEMPORARY_IGNORE_LIST]
 	for(var/mob/living/carbon/human/treatable_target in oview(search_range, controller.pawn))
-		if(LAZYACCESS(ignore_keys, REF(treatable_target)) || treatable_target.stat == DEAD)
+		if(LAZYACCESS(ignore_keys, treatable_target) || treatable_target.stat == DEAD)
 			continue
 		if((access_flags & BOT_COVER_EMAGGED) && treatable_target.stat == CONSCIOUS)
 			controller.set_if_can_reach(BB_PATIENT_TARGET, treatable_target, distance =BOT_PATIENT_PATH_LIMIT, bypass_add_to_blacklist = (search_range == 1))
@@ -107,18 +107,18 @@
 	return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 
 // only clear the target if they get healed
-/datum/ai_behavior/tend_to_patient/finish_action(datum/ai_controller/controller, succeeded, target_key, is_stationary, healed_target = FALSE)
+/datum/ai_behavior/tend_to_patient/finish_action(datum/ai_controller/controller, succeeded, target_key, threshold, damage_type_healer, access_flags, is_stationary)
 	. = ..()
 	var/atom/target = controller.blackboard[target_key]
 	if(!succeeded)
 
 		if(!isnull(target) && !is_stationary)
-			controller.set_blackboard_key_assoc_lazylist(BB_TEMPORARY_IGNORE_LIST, REF(target), TRUE)
+			controller.set_blackboard_key_assoc_lazylist(BB_TEMPORARY_IGNORE_LIST, target, TRUE)
 
 		controller.clear_blackboard_key(target_key)
 		return
 
-	if(QDELETED(target) || !healed_target)
+	if(QDELETED(target) || !check_if_healed(target, threshold, damage_type_healer, access_flags))
 		return
 
 	var/datum/action/cooldown/bot_announcement/announcement = controller.blackboard[BB_ANNOUNCE_ABILITY]
@@ -217,6 +217,13 @@
 /datum/ai_planning_subtree/find_patrol_beacon/medbot
 	///travel towards beacon behavior
 	travel_behavior = /datum/ai_behavior/travel_towards/beacon/medbot
+
+/datum/ai_planning_subtree/find_patrol_beacon/medbot/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
+	var/mob/living/basic/bot/medbot/bot_pawn = controller.pawn
+	if(bot_pawn.medical_mode_flags & MEDBOT_STATIONARY_MODE)
+		return
+	return ..()
+
 
 /datum/ai_behavior/travel_towards/beacon/medbot
 	new_movement_type = /datum/ai_movement/jps/bot/medbot/travel_to_beacon

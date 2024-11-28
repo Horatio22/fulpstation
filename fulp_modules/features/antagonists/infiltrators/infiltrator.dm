@@ -32,7 +32,7 @@
 
 /datum/antagonist/traitor/fulp_infiltrator/on_gain()
 	. = ..()
-	owner.current.mind.set_assigned_role(SSjob.GetJobType(/datum/job/infiltrator))
+	owner.current.mind.set_assigned_role(SSjob.get_job_type(/datum/job/infiltrator))
 	owner.current.mind.special_role = ROLE_INFILTRATOR
 	uplink_handler.has_progression = FALSE
 	uplink_handler.has_objectives = FALSE
@@ -142,7 +142,7 @@
 	suit = /obj/item/clothing/suit/jacket/oversized
 	gloves = /obj/item/clothing/gloves/fingerless
 	glasses = /obj/item/clothing/glasses/sunglasses
-	mask = /obj/item/clothing/mask/cigarette/cigar
+	mask = /obj/item/cigarette/cigar
 	ears = /obj/item/radio/headset
 	back = /obj/item/storage/backpack
 	backpack_contents = list(

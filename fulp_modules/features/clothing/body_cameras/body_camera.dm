@@ -26,10 +26,10 @@
 
 /obj/item/bodycam_upgrade/examine_more(mob/user)
 	. = ..()
-	. += list(span_notice("Use [src] on any valid vest to quickly install."))
+	. += list(span_notice("Use [src] on any valid vest to instantaneously install"))
 	. += list(span_notice("Use a [span_bold("screwdriver")] to remove it."))
-	. += list(span_notice("While equipped, use your ID card on the vest to activate/deactivate the camera."))
-	. += list(span_notice("Unequipping the vest will immediately deactivate the camera."))
+	. += list(span_notice("Once installed, the camera will activate/deactivate whenever its associated vest is worn/removed."))
+	. += list(span_notice("You can also use your ID card on the vest to toggle its camera manually."))
 
 /obj/item/bodycam_upgrade/Destroy()
 	if(builtin_bodycamera)
@@ -41,19 +41,26 @@
 		return FALSE
 	return TRUE
 
-/obj/item/bodycam_upgrade/proc/turn_on(mob/user, obj/item/card/id/id_card)
+/obj/item/bodycam_upgrade/proc/turn_on(mob/living/user, obj/item/card/id/id_card)
+	if(!id_card)
+		var/obj/item/card/id/card = user.get_idcard()
+		if(card)
+			id_card = card
 	builtin_bodycamera = new(user)
 	builtin_bodycamera.internal_light = FALSE
 	builtin_bodycamera.network = list("ss13")
-	builtin_bodycamera.c_tag = "-Body Camera: [(id_card.registered_name)] ([id_card.assignment])"
-	playsound(loc, 'sound/machines/beep.ogg', get_clamped_volume(), TRUE, -1)
+	if(id_card)
+		builtin_bodycamera.c_tag = "-Body Camera: [(id_card.registered_name)] ([id_card.assignment])"
+	else
+		builtin_bodycamera.c_tag = "-Body Camera: [(user.name)]"
+	playsound(loc, 'sound/machines/beep/beep.ogg', get_clamped_volume(), TRUE, -1)
 	if(user)
 		user.balloon_alert(user, "bodycamera activated")
 
 /obj/item/bodycam_upgrade/proc/turn_off(mob/user)
 	if(user)
 		user.balloon_alert(user, "bodycamera deactivated")
-	playsound(loc, 'sound/machines/beep.ogg', get_clamped_volume(), TRUE, -1)
+	playsound(loc, 'sound/machines/beep/beep.ogg', get_clamped_volume(), TRUE, -1)
 	QDEL_NULL(builtin_bodycamera)
 
 
@@ -75,9 +82,12 @@
 	RegisterSignal(parent, COMSIG_ATOM_TOOL_ACT(TOOL_SCREWDRIVER), PROC_REF(on_screwdriver_act))
 
 /datum/component/bodycamera_holder/UnregisterFromParent()
-	UnregisterSignal(parent, COMSIG_ATOM_TOOL_ACT(TOOL_SCREWDRIVER))
-	UnregisterSignal(parent, COMSIG_ATOM_ATTACKBY)
-	UnregisterSignal(parent, COMSIG_ATOM_EXAMINE)
+	UnregisterSignal(parent, list(
+		COMSIG_ATOM_TOOL_ACT(TOOL_SCREWDRIVER),
+		COMSIG_ATOM_ATTACKBY,
+		COMSIG_ATOM_EXAMINE,
+		COMSIG_ITEM_POST_EQUIPPED
+	))
 	QDEL_NULL(bodycamera_installed)
 	return ..()
 
@@ -88,6 +98,14 @@
 /datum/component/bodycamera_holder/proc/turn_camera_off(mob/living/user)
 	UnregisterSignal(parent, COMSIG_ITEM_POST_UNEQUIP)
 	bodycamera_installed.turn_off(user)
+
+/// When the camera holder is equipped
+/datum/component/bodycamera_holder/proc/on_parent_equipped(mob/living/source, force, atom/newloc, no_move, invdrop, silent)
+	SIGNAL_HANDLER
+	var/obj/item/clothing/parent_item = parent
+	var/mob/living/equipper = isliving(parent_item.loc) ? parent_item.loc : null
+	if(equipper && equipper.get_item_by_slot(clothingtype_required) == parent)
+		turn_camera_on(equipper)
 
 /// When the camera holder is unequipped
 /datum/component/bodycamera_holder/proc/on_unequip(mob/living/source, force, atom/newloc, no_move, invdrop, silent)
@@ -110,11 +128,14 @@
 	if(istype(item, /obj/item/bodycam_upgrade))
 		if(bodycamera_installed)
 			user.balloon_alert(user, "camera already installed!")
-			playsound(source, 'sound/machines/buzz-two.ogg', item.get_clamped_volume(), TRUE, -1)
+			playsound(source, 'sound/machines/buzz/buzz-two.ogg', item.get_clamped_volume(), TRUE, -1)
 		else
 			item.forceMove(source)
 			bodycamera_installed = item
-			playsound(source, 'sound/items/drill_use.ogg', item.get_clamped_volume(), TRUE, -1)
+			playsound(source, 'sound/items/tools/drill_use.ogg', item.get_clamped_volume(), TRUE, -1)
+			RegisterSignal(parent, COMSIG_ITEM_POST_EQUIPPED, PROC_REF(on_parent_equipped))
+			if(user.get_item_by_slot(clothingtype_required) == parent)
+				turn_camera_on(user)
 		return
 
 	if(!bodycamera_installed)
@@ -142,7 +163,8 @@
 		return
 	if(bodycamera_installed.is_on())
 		turn_camera_off(user)
-	playsound(source, 'sound/items/drill_use.ogg', tool.get_clamped_volume(), TRUE, -1)
+	playsound(source, 'sound/items/tools/drill_use.ogg', tool.get_clamped_volume(), TRUE, -1)
+	UnregisterSignal(parent, COMSIG_ITEM_POST_EQUIPPED)
 	bodycamera_installed.forceMove(user.loc)
 	INVOKE_ASYNC(user, TYPE_PROC_REF(/mob, put_in_hands), bodycamera_installed)
 	bodycamera_installed = null

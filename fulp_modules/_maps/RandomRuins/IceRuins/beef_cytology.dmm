@@ -459,7 +459,7 @@
 /area/ruin/powered/beefcyto)
 "uZ" = (
 /obj/machinery/light/floor,
-/mob/living/simple_animal/slime,
+/mob/living/basic/slime,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/beefcyto)
 "ve" = (
@@ -997,12 +997,7 @@
 /turf/open/floor/wood,
 /area/ruin/powered/beefcyto)
 "Si" = (
-/obj/machinery/vending/dinnerware{
-	default_price = null;
-	extra_price = null;
-	fair_market_price = null;
-	onstation = 0
-	},
+/obj/machinery/vending/dinnerware,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/powered/beefcyto)
 "Sj" = (

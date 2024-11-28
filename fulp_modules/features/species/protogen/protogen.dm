@@ -3,10 +3,7 @@
 	plural_form = "Protofriends"
 	id = SPECIES_PROTOGEN
 	examine_limb_id = SPECIES_PROTOGEN
-	mutant_bodyparts = list(
-		"legs" = "Normal Legs",
-	)
-	external_organs = list(
+	mutant_organs = list(
 		/obj/item/organ/external/snout/protogen = "Bolted",
 		/obj/item/organ/external/tail/protogen = "Shark",
 		/obj/item/organ/external/protogen_antennae = "Default",
@@ -39,7 +36,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/protogen,
 	)
 	digitigrade_customization = DIGITIGRADE_OPTIONAL
-	death_sound = 'sound/voice/borg_deathsound.ogg'
+	death_sound = 'sound/mobs/non-humanoids/cyborg/borg_deathsound.ogg'
 
 /datum/species/protogen/check_roundstart_eligible()
 	if(check_holidays(APRIL_FOOLS))
@@ -48,9 +45,9 @@
 
 /datum/species/protogen/randomize_features()
 	var/list/features = ..()
-	features["tail_protogen"] = pick(GLOB.tails_list_protogen)
-	features["snout_protogen"] = pick(GLOB.snouts_list_protogen)
-	features["antennae_protogen"] = pick(GLOB.antennae_list_protogen)
+	features["tail_protogen"] = pick(SSaccessories.tails_list_protogen)
+	features["snout_protogen"] = pick(SSaccessories.snouts_list_protogen)
+	features["antennae_protogen"] = pick(SSaccessories.antennae_list_protogen)
 	return features
 
 /datum/species/protogen/prepare_human_for_preview(mob/living/carbon/human/human)
